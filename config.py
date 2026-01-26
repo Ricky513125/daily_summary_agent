@@ -35,8 +35,10 @@ ARCHIVE_URLS = os.getenv("ARCHIVE_URLS", "").split(",") if os.getenv("ARCHIVE_UR
 # arXiv配置
 ENABLE_ARXIV = os.getenv("ENABLE_ARXIV", "true").lower() == "true"
 ARXIV_CATEGORIES = os.getenv("ARXIV_CATEGORIES", "cs.AI,cs.CV,cs.LG,cs.CL").split(",") if os.getenv("ARXIV_CATEGORIES") else []
-ARXIV_MAX_RESULTS = int(os.getenv("ARXIV_MAX_RESULTS", "50"))
-ARXIV_DAYS_BACK = int(os.getenv("ARXIV_DAYS_BACK", "7"))
+ARXIV_MAX_RESULTS_PER_KEYWORD = int(os.getenv("ARXIV_MAX_RESULTS_PER_KEYWORD", "10"))
+ARXIV_DATE_FILTER = os.getenv("ARXIV_DATE_FILTER", "yesterday")  # yesterday, today, or number of days
+ARXIV_DOWNLOAD_PDF = os.getenv("ARXIV_DOWNLOAD_PDF", "true").lower() == "true"
+ARXIV_PAPERS_DIR = BASE_DIR / "data" / "papers"
 
 # 内容过滤关键词
 KEYWORDS = os.getenv("KEYWORDS", "大模型,AI,人工智能,计算机视觉,深度学习,机器学习,LLM,GPT,transformer").split(",")

@@ -82,17 +82,7 @@ class DailySummaryAgent:
             else:
                 self.logger.info("arXiv爬取已禁用")
             
-            # Archive爬取
-            if ARCHIVE_URLS:
-                self.logger.info(f"爬取Archive网站: {ARCHIVE_URLS}")
-                try:
-                    archive_articles = self.archive_crawler.crawl(urls=ARCHIVE_URLS)
-                    all_articles.extend(archive_articles)
-                    self.logger.info(f"从Archive网站获取 {len(archive_articles)} 篇文章")
-                except Exception as e:
-                    self.logger.error(f"Archive爬取失败: {e}", exc_info=True)
-            else:
-                self.logger.info("未配置ARCHIVE_URLS，跳过Archive爬取")
+            
             
             if not all_articles:
                 self.logger.warning("=" * 60)

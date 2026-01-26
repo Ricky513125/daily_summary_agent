@@ -113,6 +113,66 @@ class SummaryWriter:
         
         return "\n".join(prompt_parts)
     
+    def generate_keyword_summary(self, keyword: str, articles: List[Article]) -> str:
+        """为单个关键词生成总结"""
+        if not self.api_configured:
+            self.logger.error("DeepSeek API未配置，无法生成总结")
+            return "DeepSeek API未配置"
+        
+        # 构建提示词
+        prompt_parts = [
+            f"# 关键词: {keyword}",
+            f"\n共 {len(articles)} 篇相关论文\n",
+            "## 论文列表\n"
+        ]
+        
+        for idx, article in enumerate(articles, 1):
+            prompt_parts.append(f"\n### 论文 {idx}: {article.title}\n")
+            prompt_parts.append(f"**作者**: {article.author}")
+            prompt_parts.append(f"**发布时间**: {article.publish_time.strftime('%Y-%m-%d')}")
+            prompt_parts.append(f"**链接**: {article.url}")
+            prompt_parts.append(f"\n**摘要**:\n{article.content[:1000]}\n")
+        
+        prompt_parts.append("\n---\n")
+        prompt_parts.append(f"\n## 任务要求\n")
+        prompt_parts.append(f"请针对关键词「{keyword}」，根据以上论文内容，生成一份详细的总结报告。")
+        prompt_parts.append("报告应包括：")
+        prompt_parts.append(f"1. {keyword}领域概览")
+        prompt_parts.append("2. 主要研究方向和热点")
+        prompt_parts.append("3. 重要论文亮点（逐一介绍）")
+        prompt_parts.append("4. 技术趋势和发展方向")
+        prompt_parts.append("5. 总结和展望")
+        prompt_parts.append("\n请使用中文Markdown格式，确保内容结构清晰、重点突出。")
+        
+        prompt = "\n".join(prompt_parts)
+        
+        # 构建消息
+        messages = [
+            {
+                "role": "system",
+                "content": f"你是一个专业的{keyword}领域研究总结专家。请根据提供的论文内容，生成一份结构清晰、内容丰富的总结报告。"
+            },
+            {
+                "role": "user",
+                "content": prompt
+            }
+        ]
+        
+        try:
+            response = self.client.chat.completions.create(
+                model=DEEPSEEK_MODEL,
+                messages=messages,
+                temperature=0.7,
+                max_tokens=4000
+            )
+            
+            summary = response.choices[0].message.content
+            self.logger.info(f"[{keyword}] 总结生成成功")
+            return summary
+        except Exception as e:
+            self.logger.error(f"[{keyword}] 生成总结失败: {e}", exc_info=True)
+            return f"生成总结时出错: {str(e)}"
+    
     def save_summary(self, summary: str, filename: str = None) -> Path:
         """保存总结到文件"""
         if filename is None:
