@@ -15,8 +15,8 @@ langchain-community>=0.0.10
 chromadb>=0.4.15
 sentence-transformers>=2.2.2
 
-# LLM API (阿里千问)
-dashscope>=1.17.0
+# LLM API (DeepSeek)
+openai>=1.12.0
 
 # 文档处理
 markdown>=3.5.0

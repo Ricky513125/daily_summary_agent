@@ -19,9 +19,10 @@ OUTPUT_DIR = BASE_DIR / "output"
 for dir_path in [DATA_DIR, VECTOR_DB_DIR, LOGS_DIR, OUTPUT_DIR]:
     dir_path.mkdir(parents=True, exist_ok=True)
 
-# 阿里千问API配置
-DASHSCOPE_API_KEY = os.getenv("DASHSCOPE_API_KEY", "")
-QWEN_MODEL = os.getenv("QWEN_MODEL", "qwen-turbo")  # 可选: qwen-turbo, qwen-plus, qwen-max, qwen-max-longcontext
+# DeepSeek API配置
+DEEPSEEK_API_KEY = os.getenv("DEEPSEEK_API_KEY", "")
+DEEPSEEK_MODEL = os.getenv("DEEPSEEK_MODEL", "deepseek-chat")  # 可选: deepseek-chat, deepseek-coder
+DEEPSEEK_BASE_URL = os.getenv("DEEPSEEK_BASE_URL", "https://api.deepseek.com")
 
 # 向量数据库配置
 VECTOR_DB_PATH = str(VECTOR_DB_DIR)

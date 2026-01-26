@@ -2,8 +2,8 @@
 from typing import List, Dict, Optional
 from datetime import datetime
 from pathlib import Path
-import dashscope
-from config import DASHSCOPE_API_KEY, QWEN_MODEL, OUTPUT_DIR
+from openai import OpenAI
+from config import DEEPSEEK_API_KEY, DEEPSEEK_MODEL, DEEPSEEK_BASE_URL, OUTPUT_DIR
 from utils.logger import logger
 from crawlers.base_crawler import Article
 import json
@@ -14,12 +14,16 @@ class SummaryWriter:
     
     def __init__(self):
         self.logger = logger.bind(module="summary_writer")
-        if DASHSCOPE_API_KEY:
-            dashscope.api_key = DASHSCOPE_API_KEY
+        if DEEPSEEK_API_KEY:
+            self.client = OpenAI(
+                api_key=DEEPSEEK_API_KEY,
+                base_url=DEEPSEEK_BASE_URL
+            )
             self.api_configured = True
         else:
             self.api_configured = False
-            self.logger.warning("DashScope API密钥未配置")
+            self.client = None
+            self.logger.warning("DeepSeek API密钥未配置")
     
     def generate_summary(
         self,
@@ -29,8 +33,8 @@ class SummaryWriter:
     ) -> str:
         """生成总结"""
         if not self.api_configured:
-            self.logger.error("DashScope API未配置，无法生成总结")
-            return "DashScope API未配置"
+            self.logger.error("DeepSeek API未配置，无法生成总结")
+            return "DeepSeek API未配置"
         
         # 准备提示词
         prompt = self._build_prompt(articles, categories, stats)
@@ -48,22 +52,16 @@ class SummaryWriter:
         ]
         
         try:
-            response = dashscope.ChatCompletion.call(
-                model=QWEN_MODEL,
+            response = self.client.chat.completions.create(
+                model=DEEPSEEK_MODEL,
                 messages=messages,
                 temperature=0.7,
-                max_tokens=4000,
-                result_format='message'  # 返回格式为message
+                max_tokens=4000
             )
             
-            if response.status_code == 200:
-                summary = response.output.choices[0].message.content
-                self.logger.info("总结生成成功")
-                return summary
-            else:
-                error_msg = f"API调用失败: {response.message}"
-                self.logger.error(error_msg)
-                return f"生成总结时出错: {error_msg}"
+            summary = response.choices[0].message.content
+            self.logger.info("总结生成成功")
+            return summary
         except Exception as e:
             self.logger.error(f"生成总结失败: {e}", exc_info=True)
             return f"生成总结时出错: {str(e)}"
@@ -147,7 +145,7 @@ date: {datetime.now().strftime("%Y-%m-%d %H:%M:%S")}
     ) -> str:
         """使用RAG生成总结"""
         if not self.api_configured:
-            return "DashScope API未配置"
+            return "DeepSeek API未配置"
         
         # 检索相关内容
         results = retriever.retrieve(query, top_k=top_k)
@@ -168,22 +166,16 @@ date: {datetime.now().strftime("%Y-%m-%d %H:%M:%S")}
         ]
         
         try:
-            response = dashscope.ChatCompletion.call(
-                model=QWEN_MODEL,
+            response = self.client.chat.completions.create(
+                model=DEEPSEEK_MODEL,
                 messages=messages,
                 temperature=0.7,
-                max_tokens=4000,
-                result_format='message'
+                max_tokens=4000
             )
             
-            if response.status_code == 200:
-                summary = response.output.choices[0].message.content
-                self.logger.info("RAG总结生成成功")
-                return summary
-            else:
-                error_msg = f"API调用失败: {response.message}"
-                self.logger.error(error_msg)
-                return f"生成总结时出错: {error_msg}"
+            summary = response.choices[0].message.content
+            self.logger.info("RAG总结生成成功")
+            return summary
         except Exception as e:
             self.logger.error(f"RAG总结生成失败: {e}", exc_info=True)
             return f"生成总结时出错: {str(e)}"

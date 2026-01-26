@@ -32,9 +32,10 @@ pip install -r requirements.txt
 
 2. 配置环境变量：
 ```bash
-# 创建 .env 文件并配置（参考 CONFIG_GUIDE.md）
-DASHSCOPE_API_KEY=your_dashscope_api_key_here
-QWEN_MODEL=qwen-turbo
+# 创建 .env 文件并配置（参考 env.example）
+DEEPSEEK_API_KEY=your_deepseek_api_key_here
+DEEPSEEK_MODEL=deepseek-chat
+DEEPSEEK_BASE_URL=https://api.deepseek.com
 ARCHIVE_URLS=https://example.com/archive
 KEYWORDS=大模型,AI,人工智能,计算机视觉
 ```
@@ -119,7 +120,7 @@ python scheduler.py
 
 ## 注意事项
 
-- 需要配置阿里千问API密钥（DASHSCOPE_API_KEY）才能生成总结
+- 需要配置DeepSeek API密钥（DEEPSEEK_API_KEY）才能生成总结
 - 微信公众号爬取可能需要特殊处理（RSS订阅或第三方服务）
 - Archive网站爬取需要根据具体网站结构调整解析逻辑
 - 首次运行会自动下载嵌入模型（可能需要一些时间）

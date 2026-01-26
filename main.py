@@ -8,7 +8,7 @@ sys.path.insert(0, str(Path(__file__).parent))
 
 from config import (
     WECHAT_ACCOUNTS, ARCHIVE_URLS, KEYWORDS,
-    DASHSCOPE_API_KEY
+    DEEPSEEK_API_KEY
 )
 from crawlers.wechat_crawler import WeChatCrawler
 from crawlers.archive_crawler import ArchiveCrawler
@@ -93,7 +93,7 @@ class DailySummaryAgent:
             
             # 5. 生成总结
             self.logger.info("\n[步骤 5/6] 生成总结...")
-            if use_rag and DASHSCOPE_API_KEY:
+            if use_rag and DEEPSEEK_API_KEY:
                 # 使用RAG生成总结
                 summary = self.summary_writer.write_with_rag(
                     self.retriever,
