@@ -199,6 +199,36 @@ class ArxivCrawler(BaseCrawler):
             logger.warning(f"[{keyword}] 下载PDF失败: {e}")
             return None
     
+    def crawl(self, keywords: Optional[List[str]] = None, **kwargs) -> List[Article]:
+        """
+        实现抽象方法 crawl（为了兼容 BaseCrawler）
+        
+        Args:
+            keywords: 关键词列表
+            **kwargs: 其他参数
+        
+        Returns:
+            List[Article]: 论文列表
+        """
+        if not keywords:
+            logger.warning("未提供关键词")
+            return []
+        
+        all_articles = []
+        
+        # 对每个关键词调用 crawl_by_keyword
+        for keyword in keywords:
+            articles = self.crawl_by_keyword(
+                keyword=keyword,
+                categories=kwargs.get('categories'),
+                max_results=kwargs.get('max_results', 10),
+                date_filter=kwargs.get('date_filter', 'yesterday'),
+                download_pdf=kwargs.get('download_pdf', True)
+            )
+            all_articles.extend(articles)
+        
+        return all_articles
+    
     def crawl_by_categories(
         self, 
         categories: List[str], 
