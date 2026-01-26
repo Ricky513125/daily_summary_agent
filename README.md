@@ -4,6 +4,7 @@
 
 ## 功能特性
 
+- 📄 **arXiv论文爬虫**: 自动从arXiv获取最新AI/ML论文
 - 🔍 **微信公众号爬虫**: 自动抓取微信公众号文章
 - 📚 **Archive爬虫**: 从Archive网站抓取历史文章
 - 🔄 **信息整合**: 自动去重、分类、格式化内容
@@ -36,8 +37,15 @@ pip install -r requirements.txt
 DEEPSEEK_API_KEY=your_deepseek_api_key_here
 DEEPSEEK_MODEL=deepseek-chat
 DEEPSEEK_BASE_URL=https://api.deepseek.com
-ARCHIVE_URLS=https://example.com/archive
-KEYWORDS=大模型,AI,人工智能,计算机视觉
+
+# arXiv配置
+ENABLE_ARXIV=true
+ARXIV_CATEGORIES=cs.AI,cs.CV,cs.LG,cs.CL
+ARXIV_MAX_RESULTS=50
+ARXIV_DAYS_BACK=7
+
+# 关键词配置
+KEYWORDS=大模型,AI,人工智能,计算机视觉,后训练,强化学习,多模态,多模态大模型
 ```
 
 3. 运行Agent：
@@ -64,6 +72,7 @@ daily_summary_agent/
 ├── crawlers/              # 爬虫模块
 │   ├── __init__.py
 │   ├── base_crawler.py    # 基础爬虫类
+│   ├── arxiv_crawler.py   # arXiv论文爬虫
 │   ├── wechat_crawler.py  # 微信公众号爬虫
 │   └── archive_crawler.py # Archive爬虫
 ├── processors/            # 数据处理模块
@@ -110,17 +119,28 @@ python scheduler.py
 
 ## 工作流程
 
-1. **数据爬取**: 从微信公众号和Archive网站爬取文章
-2. **内容过滤**: 过滤无效内容和垃圾信息
+1. **数据爬取**: 从arXiv、微信公众号和Archive网站爬取文章
+2. **内容过滤**: 根据关键词过滤无效内容
 3. **信息整合**: 去重、分类、格式化
 4. **向量化存储**: 将文章内容向量化并存储到向量数据库
 5. **RAG检索**: 从向量数据库中检索相关内容
-6. **总结生成**: 使用LLM生成结构化的每日总结报告
+6. **总结生成**: 使用DeepSeek LLM生成结构化的每日总结报告
 7. **保存输出**: 将总结保存为Markdown文件
 
 ## 注意事项
 
 - 需要配置DeepSeek API密钥（DEEPSEEK_API_KEY）才能生成总结
+- arXiv爬虫使用官方API，稳定可靠，支持按关键词和分类搜索
 - 微信公众号爬取可能需要特殊处理（RSS订阅或第三方服务）
 - Archive网站爬取需要根据具体网站结构调整解析逻辑
 - 首次运行会自动下载嵌入模型（可能需要一些时间）
+
+## arXiv支持的分类
+
+常用AI/ML相关分类：
+- `cs.AI`: Artificial Intelligence
+- `cs.CV`: Computer Vision and Pattern Recognition
+- `cs.LG`: Machine Learning
+- `cs.CL`: Computation and Language (NLP)
+- `cs.NE`: Neural and Evolutionary Computing
+- `stat.ML`: Machine Learning (Statistics)

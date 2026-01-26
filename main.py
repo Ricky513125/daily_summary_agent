@@ -8,10 +8,12 @@ sys.path.insert(0, str(Path(__file__).parent))
 
 from config import (
     WECHAT_ACCOUNTS, ARCHIVE_URLS, KEYWORDS,
-    DEEPSEEK_API_KEY
+    DEEPSEEK_API_KEY, ENABLE_ARXIV, ARXIV_CATEGORIES, 
+    ARXIV_MAX_RESULTS, ARXIV_DAYS_BACK
 )
 from crawlers.wechat_crawler import WeChatCrawler
 from crawlers.archive_crawler import ArchiveCrawler
+from crawlers.arxiv_crawler import ArxivCrawler
 from processors.integrator import ContentIntegrator
 from processors.content_filter import ContentFilter
 from rag.vector_store import VectorStore
@@ -29,6 +31,7 @@ class DailySummaryAgent:
         # 初始化组件
         self.wechat_crawler = WeChatCrawler()
         self.archive_crawler = ArchiveCrawler()
+        self.arxiv_crawler = ArxivCrawler()
         self.integrator = ContentIntegrator()
         self.content_filter = ContentFilter()
         self.vector_store = VectorStore()
@@ -50,20 +53,56 @@ class DailySummaryAgent:
             
             # 微信公众号爬取
             if WECHAT_ACCOUNTS:
-                self.logger.info("爬取微信公众号...")
+                self.logger.info(f"爬取微信公众号: {WECHAT_ACCOUNTS}")
                 # 注意：这里需要提供RSS URL或使用其他方法
                 # wechat_articles = self.wechat_crawler.crawl(account_names=WECHAT_ACCOUNTS)
                 # all_articles.extend(wechat_articles)
                 self.logger.warning("微信公众号爬取需要配置RSS URL或使用其他方法")
+            else:
+                self.logger.info("未配置微信公众号账号，跳过微信公众号爬取")
+            
+            # arXiv爬取
+            if ENABLE_ARXIV:
+                self.logger.info("=" * 60)
+                self.logger.info("开始爬取arXiv论文")
+                self.logger.info(f"关键词: {KEYWORDS}")
+                self.logger.info(f"分类: {ARXIV_CATEGORIES}")
+                self.logger.info("=" * 60)
+                try:
+                    arxiv_articles = self.arxiv_crawler.crawl(
+                        keywords=KEYWORDS,
+                        categories=ARXIV_CATEGORIES,
+                        max_results=ARXIV_MAX_RESULTS,
+                        days_back=ARXIV_DAYS_BACK
+                    )
+                    all_articles.extend(arxiv_articles)
+                    self.logger.info(f"从arXiv获取 {len(arxiv_articles)} 篇论文")
+                except Exception as e:
+                    self.logger.error(f"arXiv爬取失败: {e}", exc_info=True)
+            else:
+                self.logger.info("arXiv爬取已禁用")
             
             # Archive爬取
             if ARCHIVE_URLS:
-                self.logger.info("爬取Archive网站...")
-                archive_articles = self.archive_crawler.crawl(urls=ARCHIVE_URLS)
-                all_articles.extend(archive_articles)
+                self.logger.info(f"爬取Archive网站: {ARCHIVE_URLS}")
+                try:
+                    archive_articles = self.archive_crawler.crawl(urls=ARCHIVE_URLS)
+                    all_articles.extend(archive_articles)
+                    self.logger.info(f"从Archive网站获取 {len(archive_articles)} 篇文章")
+                except Exception as e:
+                    self.logger.error(f"Archive爬取失败: {e}", exc_info=True)
+            else:
+                self.logger.info("未配置ARCHIVE_URLS，跳过Archive爬取")
             
             if not all_articles:
-                self.logger.warning("未获取到任何文章，请检查配置")
+                self.logger.warning("=" * 60)
+                self.logger.warning("未获取到任何文章！")
+                self.logger.warning("请检查以下配置：")
+                self.logger.warning("  1. ENABLE_ARXIV 是否启用")
+                self.logger.warning("  2. KEYWORDS 和 ARXIV_CATEGORIES 是否已配置")
+                self.logger.warning("  3. ARCHIVE_URLS 是否已配置且可访问")
+                self.logger.warning("  4. 网络连接是否正常")
+                self.logger.warning("=" * 60)
                 return
             
             self.logger.info(f"共爬取 {len(all_articles)} 篇文章")

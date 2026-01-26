@@ -32,6 +32,12 @@ EMBEDDING_MODEL = os.getenv("EMBEDDING_MODEL", "sentence-transformers/paraphrase
 WECHAT_ACCOUNTS = os.getenv("WECHAT_ACCOUNTS", "").split(",") if os.getenv("WECHAT_ACCOUNTS") else []
 ARCHIVE_URLS = os.getenv("ARCHIVE_URLS", "").split(",") if os.getenv("ARCHIVE_URLS") else []
 
+# arXiv配置
+ENABLE_ARXIV = os.getenv("ENABLE_ARXIV", "true").lower() == "true"
+ARXIV_CATEGORIES = os.getenv("ARXIV_CATEGORIES", "cs.AI,cs.CV,cs.LG,cs.CL").split(",") if os.getenv("ARXIV_CATEGORIES") else []
+ARXIV_MAX_RESULTS = int(os.getenv("ARXIV_MAX_RESULTS", "50"))
+ARXIV_DAYS_BACK = int(os.getenv("ARXIV_DAYS_BACK", "7"))
+
 # 内容过滤关键词
 KEYWORDS = os.getenv("KEYWORDS", "大模型,AI,人工智能,计算机视觉,深度学习,机器学习,LLM,GPT,transformer").split(",")
 

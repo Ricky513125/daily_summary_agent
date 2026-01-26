@@ -122,18 +122,23 @@ class ArchiveCrawler(BaseCrawler):
         
         all_articles = []
         
-        for url in urls:
+        logger.info(f"开始爬取 {len(urls)} 个Archive URL")
+        
+        for idx, url in enumerate(urls, 1):
+            logger.info(f"[{idx}/{len(urls)}] 正在爬取: {url}")
             try:
                 if 'archive.org' in url:
+                    logger.info("使用Internet Archive爬取方法")
                     articles = self.crawl_internet_archive(url)
                 else:
-                    # 通用Archive网站爬取
+                    logger.info("使用通用Archive爬取方法")
                     articles = self._crawl_generic_archive(url)
                 
                 all_articles.extend(articles)
+                logger.info(f"从 {url} 获取 {len(articles)} 篇文章")
                 time.sleep(1)  # 避免请求过快
             except Exception as e:
-                logger.error(f"爬取Archive URL失败 {url}: {e}")
+                logger.error(f"爬取Archive URL失败 {url}: {e}", exc_info=True)
                 continue
         
         logger.info(f"Archive爬虫共获取 {len(all_articles)} 篇文章")
@@ -143,31 +148,42 @@ class ArchiveCrawler(BaseCrawler):
         """通用Archive网站爬取"""
         articles = []
         try:
+            logger.debug(f"请求URL: {url}")
             response = self.session.get(url, timeout=CRAWL_TIMEOUT)
             response.raise_for_status()
+            logger.debug(f"响应状态码: {response.status_code}")
             
             soup = BeautifulSoup(response.text, 'html.parser')
             
             # 通用解析逻辑（需要根据实际网站调整）
             # 这里提供一个基础框架
             article_links = soup.find_all('a', href=True)
+            logger.info(f"找到 {len(article_links)} 个链接，将尝试前 {MAX_ARTICLES_PER_SOURCE} 个")
             
+            processed = 0
             for link in article_links[:MAX_ARTICLES_PER_SOURCE]:
                 try:
                     article_url = link.get('href', '')
+                    if not article_url or article_url.startswith('#') or article_url.startswith('javascript:'):
+                        continue
+                    
                     if not article_url.startswith('http'):
                         article_url = url.rstrip('/') + '/' + article_url.lstrip('/')
                     
+                    logger.debug(f"尝试获取文章: {article_url}")
                     article = self._fetch_article_detail(article_url)
                     if article:
                         articles.append(article)
+                        processed += 1
+                        logger.debug(f"成功获取文章: {article.title[:50]}")
                     
                     time.sleep(0.5)
                 except Exception as e:
                     logger.warning(f"获取文章失败: {e}")
                     continue
             
+            logger.info(f"成功处理 {processed} 篇文章")
             return articles
         except Exception as e:
-            logger.error(f"通用Archive爬取失败: {e}")
+            logger.error(f"通用Archive爬取失败: {e}", exc_info=True)
             return []
