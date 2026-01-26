@@ -1,7 +1,7 @@
 """arXiv爬虫"""
 import time
 from typing import List, Optional
-from datetime import datetime, timedelta
+from datetime import datetime, timedelta, timezone
 import arxiv
 from crawlers.base_crawler import BaseCrawler, Article
 from utils.logger import logger
@@ -85,8 +85,8 @@ class ArxivCrawler(BaseCrawler):
                 sort_order=arxiv.SortOrder.Descending  # 降序（最新的在前）
             )
             
-            # 计算日期阈值
-            date_threshold = datetime.now() - timedelta(days=days_back)
+            # 计算日期阈值（使用UTC时区）
+            date_threshold = datetime.now(timezone.utc) - timedelta(days=days_back)
             
             # 获取结果
             count = 0
@@ -172,7 +172,7 @@ class ArxivCrawler(BaseCrawler):
                     sort_order=arxiv.SortOrder.Descending
                 )
                 
-                date_threshold = datetime.now() - timedelta(days=days_back)
+                date_threshold = datetime.now(timezone.utc) - timedelta(days=days_back)
                 
                 for result in self.client.results(search):
                     if result.published < date_threshold:
