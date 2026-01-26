@@ -1,4 +1,4 @@
-"""定时任务调度器 V3 - 每天7:00运行"""
+"""定时任务调度器 V3 - 每周二至周六上午10:00运行"""
 import schedule
 import time
 from datetime import datetime
@@ -13,8 +13,8 @@ def run_daily_task():
         logger.info(f"定时任务启动: {datetime.now().strftime('%Y-%m-%d %H:%M:%S')}")
         logger.info("=" * 80)
         
-        # 创建并运行Agent
-        agent = DailySummaryAgentV3()
+        # 创建并运行Agent（抓取前一天的论文）
+        agent = DailySummaryAgentV3(days_ago=1)
         agent.run()
         
         logger.info("=" * 80)
@@ -30,15 +30,20 @@ def main():
     logger.info("=" * 80)
     logger.info("Daily Summary Agent V3 - 定时任务调度器")
     logger.info("=" * 80)
-    logger.info("配置: 每天 07:00 自动运行")
-    logger.info("功能: 爬取论文 → 生成总结 → 汇总文档 → 发送邮件")
+    logger.info("配置: 每周二至周六 10:00 (北京时间) 自动运行")
+    logger.info("功能: 爬取前一天的论文 → 生成总结 → 汇总文档 → 发送邮件")
+    logger.info("说明: 此时当天的更新已经完成，抓取前一天的论文")
     logger.info("=" * 80)
     
-    # 配置定时任务：每天7:00运行
-    schedule.every().day.at("07:00").do(run_daily_task)
+    # 配置定时任务：每周二至周六上午10:00运行
+    schedule.every().tuesday.at("10:00").do(run_daily_task)
+    schedule.every().wednesday.at("10:00").do(run_daily_task)
+    schedule.every().thursday.at("10:00").do(run_daily_task)
+    schedule.every().friday.at("10:00").do(run_daily_task)
+    schedule.every().saturday.at("10:00").do(run_daily_task)
     
     logger.info("定时任务已配置，等待执行...")
-    logger.info("下次运行时间: 明天 07:00")
+    logger.info("运行时间: 每周二至周六 10:00 (北京时间)")
     logger.info("按 Ctrl+C 停止")
     
     # 可选：立即运行一次（用于测试）

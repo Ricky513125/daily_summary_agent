@@ -45,7 +45,7 @@ ARXIV_DOWNLOAD_PDF = os.getenv("ARXIV_DOWNLOAD_PDF", "true").lower() == "true"
 ARXIV_PAPERS_DIR = BASE_DIR / "data" / "papers"
 
 # V3 配置：查看N天前的文章
-ARXIV_DAYS_AGO = int(os.getenv("ARXIV_DAYS_AGO", "2"))  # 默认看2天前的文章
+ARXIV_DAYS_AGO = int(os.getenv("ARXIV_DAYS_AGO", "1"))  # 默认看前一天的文章（每周二至周六10:00运行）
 
 # 邮件配置
 EMAIL_ENABLED = os.getenv("EMAIL_ENABLED", "false").lower() == "true"
