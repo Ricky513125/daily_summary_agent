@@ -19,10 +19,14 @@ OUTPUT_DIR = BASE_DIR / "output"
 for dir_path in [DATA_DIR, VECTOR_DB_DIR, LOGS_DIR, OUTPUT_DIR]:
     dir_path.mkdir(parents=True, exist_ok=True)
 
-# DeepSeek API配置
+# DeepSeek API配置（V2使用）
 DEEPSEEK_API_KEY = os.getenv("DEEPSEEK_API_KEY", "")
 DEEPSEEK_MODEL = os.getenv("DEEPSEEK_MODEL", "deepseek-chat")  # 可选: deepseek-chat, deepseek-coder
 DEEPSEEK_BASE_URL = os.getenv("DEEPSEEK_BASE_URL", "https://api.deepseek.com")
+
+# 阿里千问API配置（V3使用）
+DASHSCOPE_API_KEY = os.getenv("DASHSCOPE_API_KEY", "")
+QWEN_MODEL = os.getenv("QWEN_MODEL", "qwen-plus")  # 可选: qwen-turbo, qwen-plus, qwen-max
 
 # 向量数据库配置
 VECTOR_DB_PATH = str(VECTOR_DB_DIR)
@@ -39,6 +43,17 @@ ARXIV_MAX_RESULTS_PER_KEYWORD = int(os.getenv("ARXIV_MAX_RESULTS_PER_KEYWORD", "
 ARXIV_DATE_FILTER = os.getenv("ARXIV_DATE_FILTER", "yesterday")  # yesterday, today, or number of days
 ARXIV_DOWNLOAD_PDF = os.getenv("ARXIV_DOWNLOAD_PDF", "true").lower() == "true"
 ARXIV_PAPERS_DIR = BASE_DIR / "data" / "papers"
+
+# V3 配置：查看N天前的文章
+ARXIV_DAYS_AGO = int(os.getenv("ARXIV_DAYS_AGO", "2"))  # 默认看2天前的文章
+
+# 邮件配置
+EMAIL_ENABLED = os.getenv("EMAIL_ENABLED", "false").lower() == "true"
+SMTP_SERVER = os.getenv("SMTP_SERVER", "smtp.gmail.com")
+SMTP_PORT = int(os.getenv("SMTP_PORT", "465"))
+SENDER_EMAIL = os.getenv("SENDER_EMAIL", "")
+SENDER_PASSWORD = os.getenv("SENDER_PASSWORD", "")  # 邮箱授权码
+RECEIVER_EMAILS = os.getenv("RECEIVER_EMAILS", "").split(",") if os.getenv("RECEIVER_EMAILS") else []
 
 # 内容过滤关键词
 KEYWORDS = os.getenv("KEYWORDS", "大模型,AI,人工智能,计算机视觉,深度学习,机器学习,LLM,GPT,transformer").split(",")
