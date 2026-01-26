@@ -1,0 +1,125 @@
+# Daily Summary Agent
+
+一个智能的每日AI/大模型/计算机视觉内容总结Agent系统。
+
+## 功能特性
+
+- 🔍 **微信公众号爬虫**: 自动抓取微信公众号文章
+- 📚 **Archive爬虫**: 从Archive网站抓取历史文章
+- 🔄 **信息整合**: 自动去重、分类、格式化内容
+- 🧠 **RAG系统**: 基于向量数据库的检索增强生成
+- ✍️ **文档撰写**: 自动生成每日总结报告
+
+## 安装
+
+```bash
+pip install -r requirements.txt
+```
+
+## 配置
+
+1. 复制 `.env.example` 到 `.env`
+2. 填写必要的配置信息（API密钥等）
+
+## 使用
+
+### 快速开始
+
+1. 安装依赖：
+```bash
+pip install -r requirements.txt
+```
+
+2. 配置环境变量：
+```bash
+# 创建 .env 文件并配置（参考 CONFIG_GUIDE.md）
+DASHSCOPE_API_KEY=your_dashscope_api_key_here
+QWEN_MODEL=qwen-turbo
+ARCHIVE_URLS=https://example.com/archive
+KEYWORDS=大模型,AI,人工智能,计算机视觉
+```
+
+3. 运行Agent：
+```bash
+python main.py
+```
+
+4. 查看生成的总结：
+总结文件保存在 `output/` 目录下，文件名格式为 `daily_summary_YYYYMMDD.md`
+
+### 高级使用
+
+参考 `example_usage.py` 查看更多使用示例。
+
+## 项目结构
+
+```
+daily_summary_agent/
+├── main.py                 # 主入口
+├── run.py                  # 快速启动脚本
+├── scheduler.py            # 定时任务调度器
+├── config.py              # 配置文件
+├── example_usage.py       # 使用示例
+├── crawlers/              # 爬虫模块
+│   ├── __init__.py
+│   ├── base_crawler.py    # 基础爬虫类
+│   ├── wechat_crawler.py  # 微信公众号爬虫
+│   └── archive_crawler.py # Archive爬虫
+├── processors/            # 数据处理模块
+│   ├── __init__.py
+│   ├── integrator.py      # 信息整合
+│   └── content_filter.py  # 内容过滤
+├── rag/                   # RAG模块
+│   ├── __init__.py
+│   ├── vector_store.py    # 向量数据库
+│   └── retriever.py       # 检索器
+├── writers/               # 文档撰写模块
+│   ├── __init__.py
+│   └── summary_writer.py  # 总结撰写
+├── utils/                 # 工具函数
+│   ├── __init__.py
+│   └── logger.py          # 日志工具
+├── data/                  # 数据目录（自动创建）
+│   └── vector_db/         # 向量数据库
+├── logs/                  # 日志目录（自动创建）
+└── output/                # 输出目录（自动创建）
+```
+
+## 使用方式
+
+### 方式1: 直接运行
+```bash
+python main.py
+```
+
+### 方式2: 使用启动脚本
+```bash
+# 使用RAG（默认）
+python run.py
+
+# 不使用RAG
+python run.py --no-rag
+```
+
+### 方式3: 定时任务
+```bash
+# 启动定时任务调度器（每天09:00自动执行）
+python scheduler.py
+```
+
+## 工作流程
+
+1. **数据爬取**: 从微信公众号和Archive网站爬取文章
+2. **内容过滤**: 过滤无效内容和垃圾信息
+3. **信息整合**: 去重、分类、格式化
+4. **向量化存储**: 将文章内容向量化并存储到向量数据库
+5. **RAG检索**: 从向量数据库中检索相关内容
+6. **总结生成**: 使用LLM生成结构化的每日总结报告
+7. **保存输出**: 将总结保存为Markdown文件
+
+## 注意事项
+
+- 需要配置阿里千问API密钥（DASHSCOPE_API_KEY）才能生成总结
+- 微信公众号爬取可能需要特殊处理（RSS订阅或第三方服务）
+- Archive网站爬取需要根据具体网站结构调整解析逻辑
+- 首次运行会自动下载嵌入模型（可能需要一些时间）
