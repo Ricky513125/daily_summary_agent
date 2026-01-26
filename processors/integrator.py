@@ -1,6 +1,6 @@
 """信息整合模块"""
 from typing import List, Dict
-from datetime import datetime
+from datetime import datetime, timedelta, timezone
 from collections import defaultdict
 from crawlers.base_crawler import Article
 from utils.logger import logger
@@ -56,46 +56,58 @@ class ContentIntegrator:
         self.logger.info(f"文章分类完成: {dict(categories)}")
         return dict(categories)
     
-    def filter_by_date(self, articles: List[Article], date: datetime = None) -> List[Article]:
-        """按日期过滤文章"""
-        if date is None:
-            date = datetime.now()
+    def filter_by_date(self, articles: List[Article], days_back: int = 7) -> List[Article]:
+        """按日期过滤文章，保留最近N天的文章"""
+        # 计算日期阈值（使用UTC时区）
+        now = datetime.now(timezone.utc)
+        date_threshold = now - timedelta(days=days_back)
         
-        # 只保留当天的文章
-        filtered = [
-            article for article in articles
-            if article.publish_time and article.publish_time.date() == date.date()
-        ]
+        filtered = []
+        for article in articles:
+            if not article.publish_time:
+                # 如果没有发布时间，默认保留
+                filtered.append(article)
+                continue
+            
+            # 确保 publish_time 有时区信息
+            pub_time = article.publish_time
+            if pub_time.tzinfo is None:
+                # 如果没有时区信息，假设为UTC
+                pub_time = pub_time.replace(tzinfo=timezone.utc)
+            
+            # 检查是否在时间范围内
+            if pub_time >= date_threshold:
+                filtered.append(article)
         
-        self.logger.info(f"按日期过滤后剩余 {len(filtered)}/{len(articles)} 篇文章")
+        self.logger.info(f"按日期过滤后剩余 {len(filtered)}/{len(articles)} 篇文章（最近{days_back}天）")
         return filtered
     
-    def integrate(self, articles: List[Article], keywords: List[str] = None) -> Dict:
+    def integrate(self, articles: List[Article], keywords: List[str] = None, days_back: int = 7) -> Dict:
         """整合所有文章"""
         # 去重
         unique_articles = self.deduplicate(articles)
         
-        # 按日期过滤（只保留今天的）
-        today_articles = self.filter_by_date(unique_articles)
+        # 按日期过滤（保留最近N天的）
+        recent_articles = self.filter_by_date(unique_articles, days_back=days_back)
         
         # 分类
         if keywords:
-            categorized = self.categorize(today_articles, keywords)
+            categorized = self.categorize(recent_articles, keywords)
         else:
-            categorized = {"全部": today_articles}
+            categorized = {"全部": recent_articles}
         
         # 统计信息
         stats = {
             "total": len(articles),
             "unique": len(unique_articles),
-            "today": len(today_articles),
+            "recent": len(recent_articles),
             "by_category": {k: len(v) for k, v in categorized.items()}
         }
         
         self.logger.info(f"整合完成: {stats}")
         
         return {
-            "articles": today_articles,
+            "articles": recent_articles,
             "categorized": categorized,
             "stats": stats
         }

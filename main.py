@@ -9,7 +9,7 @@ sys.path.insert(0, str(Path(__file__).parent))
 from config import (
     WECHAT_ACCOUNTS, ARCHIVE_URLS, KEYWORDS,
     DEEPSEEK_API_KEY, ENABLE_ARXIV, ARXIV_CATEGORIES, 
-    ARXIV_MAX_RESULTS, ARXIV_DAYS_BACK
+    ARXIV_MAX_RESULTS, ARXIV_DAYS_BACK, FILTER_DAYS_BACK
 )
 from crawlers.wechat_crawler import WeChatCrawler
 from crawlers.archive_crawler import ArchiveCrawler
@@ -116,7 +116,7 @@ class DailySummaryAgent:
             
             # 3. 信息整合
             self.logger.info("\n[步骤 3/6] 信息整合...")
-            integrated_data = self.integrator.integrate(filtered_articles, keywords=KEYWORDS)
+            integrated_data = self.integrator.integrate(filtered_articles, keywords=KEYWORDS, days_back=FILTER_DAYS_BACK)
             
             articles = integrated_data["articles"]
             categorized = integrated_data["categorized"]
@@ -160,7 +160,7 @@ class DailySummaryAgent:
             self.logger.info(f"\n统计信息:")
             self.logger.info(f"  - 总文章数: {stats['total']}")
             self.logger.info(f"  - 去重后: {stats['unique']}")
-            self.logger.info(f"  - 今日文章: {stats['today']}")
+            self.logger.info(f"  - 最近{FILTER_DAYS_BACK}天文章: {stats['recent']}")
             self.logger.info(f"  - 分类统计: {stats['by_category']}")
             
             return filepath

@@ -41,6 +41,9 @@ ARXIV_DAYS_BACK = int(os.getenv("ARXIV_DAYS_BACK", "7"))
 # 内容过滤关键词
 KEYWORDS = os.getenv("KEYWORDS", "大模型,AI,人工智能,计算机视觉,深度学习,机器学习,LLM,GPT,transformer").split(",")
 
+# 内容过滤天数（保留最近几天的文章）
+FILTER_DAYS_BACK = int(os.getenv("FILTER_DAYS_BACK", "7"))
+
 # 日志配置
 LOG_LEVEL = os.getenv("LOG_LEVEL", "INFO")
 LOG_FILE = str(LOGS_DIR / "agent.log")
