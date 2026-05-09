@@ -68,6 +68,76 @@ class SummaryAggregator:
         except Exception as e:
             self.logger.error(f"汇总总结失败: {e}", exc_info=True)
             raise
+
+    def aggregate_batch_summaries(self, summary_dir: Path, output_path: Path, date_str: str) -> Path:
+        """汇总 batch_*.md 为一个文档（V3批量模式）"""
+        try:
+            self.logger.info(f"开始汇总批量小结文档: {summary_dir}")
+
+            batch_files = sorted(summary_dir.glob("batch_*_of_*.md"))
+            if not batch_files:
+                self.logger.warning("未找到 batch_*.md 文件，跳过汇总")
+                return None
+
+            date_readable = datetime.strptime(date_str, "%Y%m%d").strftime("%Y年%m月%d日")
+            lines: List[str] = [
+                "---",
+                f"title: {date_readable} 批量论文小结汇总",
+                f"date: {date_str}",
+                f"generated_at: {datetime.now().strftime('%Y-%m-%d %H:%M:%S')}",
+                "---",
+                "",
+                f"# {date_readable} 批量论文小结汇总",
+                "",
+                f"> 生成时间: {datetime.now().strftime('%Y年%m月%d日 %H:%M:%S')}",
+                "",
+                "## 📋 目录",
+                "",
+            ]
+
+            for idx, batch_file in enumerate(batch_files, 1):
+                lines.append(f"{idx}. [批次 {idx}]({batch_file.name})")
+
+            lines.extend(["", "---", ""])
+
+            for idx, batch_file in enumerate(batch_files, 1):
+                lines.extend(["", "---", "", f"## 批次 {idx}", ""])
+                with open(batch_file, "r", encoding="utf-8") as f:
+                    content = f.read()
+
+                if content.startswith("---"):
+                    parts = content.split("---", 2)
+                    if len(parts) >= 3:
+                        content = parts[2].strip()
+                lines.append(content.strip())
+
+            # footer
+            lines.extend(
+                [
+                    "",
+                    "---",
+                    "",
+                    "## 📊 统计信息",
+                    "",
+                    f"- **批次数**: {len(batch_files)}",
+                    f"- **生成时间**: {datetime.now().strftime('%Y-%m-%d %H:%M:%S')}",
+                    "",
+                    "---",
+                    "",
+                    "*本文档由 Daily Summary Agent V3 自动生成*",
+                    "",
+                ]
+            )
+
+            output_path.parent.mkdir(parents=True, exist_ok=True)
+            with open(output_path, "w", encoding="utf-8") as f:
+                f.write("\n".join(lines))
+
+            self.logger.info(f"批量汇总文档已生成: {output_path}")
+            return output_path
+        except Exception as e:
+            self.logger.error(f"汇总批量小结失败: {e}", exc_info=True)
+            raise
     
     def _build_header(self, date_str: str, keywords: List[str]) -> List[str]:
         """构建文档头部"""

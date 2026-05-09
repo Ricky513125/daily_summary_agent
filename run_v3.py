@@ -15,9 +15,9 @@ def main():
     logger.info("=" * 60)
     logger.info("版本特性:")
     logger.info(f"- 查看 {args.days_ago} 天前发布的文章")
-    logger.info("- 文件夹按日期组织: 日期/关键词/")
+    logger.info("- 文件夹按日期组织: output/YYYYMMDD/")
     logger.info("- 使用阿里千问生成总结")
-    logger.info("- 每个关键词单独爬取和总结")
+    logger.info("- 跨关键词去重后按批次总结（降低API调用次数）")
     logger.info("=" * 60)
     
     agent = DailySummaryAgentV3(days_ago=args.days_ago)

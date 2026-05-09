@@ -17,10 +17,11 @@ jobs:
     env:
       ENABLE_ARXIV: "true"
       ARXIV_DAYS_AGO: ${{ vars.ARXIV_DAYS_AGO || '1' }}
-      ARXIV_CATEGORIES: ${{ vars.ARXIV_CATEGORIES || 'cs.AI,cs.CV,cs.LG,cs.CL' }}
+      # Default focus: Agent应用开发(40%) + 多模态训练/推理(60%)
+      ARXIV_CATEGORIES: ${{ vars.ARXIV_CATEGORIES || 'cs.CL,cs.CV,cs.AI,cs.LG,cs.HC' }}
       ARXIV_MAX_RESULTS_PER_KEYWORD: ${{ vars.ARXIV_MAX_RESULTS_PER_KEYWORD || '10' }}
       ARXIV_DOWNLOAD_PDF: ${{ vars.ARXIV_DOWNLOAD_PDF || 'false' }}
-      KEYWORDS: ${{ vars.KEYWORDS || '大模型,AI,人工智能,计算机视觉,深度学习,机器学习,LLM,GPT,transformer' }}
+      KEYWORDS: ${{ vars.KEYWORDS || 'agent,LLM agent,tool use,tool calling,function calling,workflow,planning,ReAct,multi-agent,agentic,orchestration,web agent,code agent,multimodal,vision-language,VLM,LVLM,multimodal instruction,visual instruction,alignment,RLHF,DPO,distillation,synthetic data,multimodal reasoning,visual reasoning,grounding,document understanding,OCR,chart understanding,table understanding,layout,video understanding' }}
       DASHSCOPE_API_KEY: ${{ secrets.DASHSCOPE_API_KEY }}
       QWEN_MODEL: ${{ vars.QWEN_MODEL || 'qwen-plus' }}
       EMAIL_ENABLED: ${{ vars.EMAIL_ENABLED || 'false' }}
@@ -29,6 +30,7 @@ jobs:
       SENDER_EMAIL: ${{ secrets.SENDER_EMAIL }}
       SENDER_PASSWORD: ${{ secrets.SENDER_PASSWORD }}
       RECEIVER_EMAILS: ${{ vars.RECEIVER_EMAILS || '' }}
+      ARCHIVE_URLS: ${{ vars.ARCHIVE_URLS || '' }}
       # Prefer secret (some users store it as a secret), then fall back to variable.
       CLOUD_BACKUP_REMOTE: ${{ secrets.CLOUD_BACKUP_REMOTE || vars.CLOUD_BACKUP_REMOTE || 'backup:DailySummaryAgent' }}
 
@@ -78,6 +80,10 @@ jobs:
 
           if [ -d data/papers ]; then
             rclone copy data/papers "$CLOUD_BACKUP_REMOTE/papers" --create-empty-src-dirs
+          fi
+
+          if [ -d data/archive ]; then
+            rclone copy data/archive "$CLOUD_BACKUP_REMOTE/archive" --create-empty-src-dirs
           fi
 
       - name: Commit and push generated summaries

@@ -58,6 +58,9 @@ RECEIVER_EMAILS = os.getenv("RECEIVER_EMAILS", "").split(",") if os.getenv("RECE
 # 内容过滤关键词
 KEYWORDS = os.getenv("KEYWORDS", "大模型,AI,人工智能,计算机视觉,深度学习,机器学习,LLM,GPT,transformer").split(",")
 
+# V3 批量总结：每 N 篇论文调用一次 LLM（跨关键词汇总后分批）
+V3_BATCH_SIZE = int(os.getenv("V3_BATCH_SIZE", "20"))
+
 # 内容过滤天数（保留最近几天的文章）
 FILTER_DAYS_BACK = int(os.getenv("FILTER_DAYS_BACK", "7"))
 
@@ -69,6 +72,13 @@ LOG_FILE = str(LOGS_DIR / "agent.log")
 CHUNK_SIZE = int(os.getenv("CHUNK_SIZE", "1000"))
 CHUNK_OVERLAP = int(os.getenv("CHUNK_OVERLAP", "200"))
 TOP_K = int(os.getenv("TOP_K", "10"))
+
+# 去重配置（避免重复分析同一篇论文）
+DEDUP_ENABLED = os.getenv("DEDUP_ENABLED", "true").lower() == "true"
+# 默认放在 output 下，方便 GitHub Actions 提交并跨天持久化
+DEDUP_CACHE_PATH = os.getenv("DEDUP_CACHE_PATH", str(OUTPUT_DIR / ".cache" / "processed_papers.json"))
+# 只保留最近 N 天的去重记录，避免缓存无限增长
+DEDUP_RETENTION_DAYS = int(os.getenv("DEDUP_RETENTION_DAYS", "180"))
 
 # 爬虫配置
 CRAWL_TIMEOUT = int(os.getenv("CRAWL_TIMEOUT", "30"))

@@ -127,6 +127,8 @@ python scheduler.py
 6. **总结生成**: 使用DeepSeek LLM生成结构化的每日总结报告
 7. **保存输出**: 将总结保存为Markdown文件
 
+> V3（GitHub Actions 默认运行）已优化为“跨关键词去重后按批次总结”：默认每 20 篇论文调用一次 LLM，显著减少每日 API 调用次数。
+
 ## 注意事项
 
 - 需要配置DeepSeek API密钥（DEEPSEEK_API_KEY）才能生成总结
@@ -144,6 +146,7 @@ python scheduler.py
 1. 将仓库推到 GitHub（或 Fork 后使用自己的仓库）
 2. 打开仓库的 **Actions**（首次可能需要点一下启用）
 3. 配置必要的 Secrets / Variables（参考 `.github/workflows/daily_task.yml` 里的 `env:`）
+   - 如需同步保存 Archive 抓取内容：在 Variables 设置 `ARCHIVE_URLS`（英文逗号分隔多个URL）
 
 > 提醒：GitHub Actions 的定时 `cron` 使用 **UTC**。当前配置 `0 0 * * *` 对应新加坡时间 **08:00**。
 
@@ -152,6 +155,7 @@ python scheduler.py
 工作流会在检测到 `RCLONE_CONFIG`（GitHub Secret）后执行备份：
 - `output/` → `CLOUD_BACKUP_REMOTE/output`
 - `data/papers/` → `CLOUD_BACKUP_REMOTE/papers`
+- `data/archive/` → `CLOUD_BACKUP_REMOTE/archive`（如配置了 `ARCHIVE_URLS` 并启用抓取）
 
 按下面步骤把 OneDrive “挂载”成 rclone remote：
 
@@ -174,6 +178,35 @@ cat "$(rclone config file)"
   - 注意：`CLOUD_BACKUP_REMOTE` 必须是 `<remote>:<path>` 形式，例如 `gdrive:DailySummaryAgent`，不能只填文件夹名或路径（比如 `DailySummaryAgent` / `DailySummaryAgent/output`）
 
 之后每天工作流运行完成，产物会自动同步到你的 OneDrive 对应目录下。
+
+## GitHub Actions 邮件通知（可选）
+
+V3 流程在生成完 `output/YYYYMMDD/汇总总结_YYYYMMDD.md` 后可以发送邮件（默认关闭）。
+
+### 开启方式
+
+在 GitHub 仓库里配置：
+
+- **Settings → Secrets and variables → Actions → Variables**
+  - `EMAIL_ENABLED=true`
+  - `RECEIVER_EMAILS=xxx@example.com,yyy@example.com`（多个用英文逗号分隔）
+  - `SMTP_SERVER`（默认 `smtp.gmail.com`）
+  - `SMTP_PORT`（默认 `465`）
+- **Settings → Secrets and variables → Actions → Secrets**
+  - `SENDER_EMAIL`（发件邮箱）
+  - `SENDER_PASSWORD`（邮箱授权码/应用专用密码；Gmail 建议使用 App Password）
+
+> 说明：只有当 `EMAIL_ENABLED=true` 且 `SENDER_EMAIL`、`SENDER_PASSWORD` 都已配置时，工作流才会真正发送邮件；否则会在日志里提示“邮件功能未启用”。
+
+## 避免重复分析同一篇论文（去重缓存）
+
+V3 默认启用“去重缓存”：当同一篇论文同时命中多个关键词、或你重复运行/跨天运行时，会自动跳过已处理过的论文，避免每天重复生成分析。
+
+- 默认缓存文件：`output/.cache/processed_papers.json`（会随 `output/` 一起被 GitHub Actions 提交，从而跨天生效）
+- 可通过环境变量控制：
+  - `DEDUP_ENABLED=true|false`
+  - `DEDUP_CACHE_PATH=...`
+  - `DEDUP_RETENTION_DAYS=180`
 
 ## arXiv支持的分类
 

@@ -1,5 +1,6 @@
 """主程序入口 V3 - 看2天前的文章，按日期组织文件夹，使用阿里千问"""
 import sys
+import json
 from datetime import datetime, timedelta, timezone
 from pathlib import Path
 
@@ -10,13 +11,17 @@ from config import (
     KEYWORDS, DASHSCOPE_API_KEY, ENABLE_ARXIV, ARXIV_CATEGORIES, 
     ARXIV_MAX_RESULTS_PER_KEYWORD, ARXIV_DOWNLOAD_PDF,
     ARXIV_PAPERS_DIR, OUTPUT_DIR, ARXIV_DAYS_AGO,
-    EMAIL_ENABLED, SMTP_SERVER, SMTP_PORT, SENDER_EMAIL, SENDER_PASSWORD, RECEIVER_EMAILS
+    EMAIL_ENABLED, SMTP_SERVER, SMTP_PORT, SENDER_EMAIL, SENDER_PASSWORD, RECEIVER_EMAILS,
+    DEDUP_ENABLED, DEDUP_CACHE_PATH, DEDUP_RETENTION_DAYS,
+    ARCHIVE_URLS, V3_BATCH_SIZE, DATA_DIR
 )
 from crawlers.arxiv_crawler import ArxivCrawler
+from crawlers.archive_crawler import ArchiveCrawler
 from writers.summary_writer_qwen import SummaryWriterQwen
 from utils.summary_aggregator import SummaryAggregator
 from utils.email_sender import EmailSender, markdown_to_html
 from utils.logger import logger
+from utils.paper_deduper import PersistentPaperDeduper
 
 
 class DailySummaryAgentV3:
@@ -43,8 +48,23 @@ class DailySummaryAgentV3:
         
         # 初始化组件
         self.arxiv_crawler = ArxivCrawler(download_dir=str(self.papers_dir))
+        self.archive_crawler = ArchiveCrawler()
         self.summary_writer = SummaryWriterQwen()
         self.aggregator = SummaryAggregator()
+
+        # 初始化去重器（避免跨关键词/跨天重复分析同一篇）
+        self.dedup_enabled = bool(DEDUP_ENABLED)
+        self.deduper = None
+        if self.dedup_enabled:
+            try:
+                self.deduper = PersistentPaperDeduper(
+                    cache_path=DEDUP_CACHE_PATH,
+                    retention_days=DEDUP_RETENTION_DAYS,
+                )
+                self.logger.info(f"去重已启用: cache={DEDUP_CACHE_PATH}, retention_days={DEDUP_RETENTION_DAYS}")
+            except Exception as e:
+                self.logger.warning(f"去重初始化失败，将继续但不做去重: {e}")
+                self.deduper = None
         
         # 初始化邮件发送器
         if EMAIL_ENABLED and SENDER_EMAIL and SENDER_PASSWORD:
@@ -58,14 +78,23 @@ class DailySummaryAgentV3:
         else:
             self.email_sender = None
             self.email_enabled = False
+            missing = []
+            if not EMAIL_ENABLED:
+                missing.append("EMAIL_ENABLED!=true")
+            if not SENDER_EMAIL:
+                missing.append("SENDER_EMAIL")
+            if not SENDER_PASSWORD:
+                missing.append("SENDER_PASSWORD")
+            self.logger.info(f"邮件功能未启用（缺少/未开启: {', '.join(missing)}）")
         
         self.logger.info(f"Daily Summary Agent V3 初始化完成")
         self.logger.info(f"目标日期: {self.target_date_readable} ({self.days_ago}天前)")
         self.logger.info(f"论文保存: {self.papers_dir}")
         self.logger.info(f"总结保存: {self.output_dir}")
+        self.logger.info(f"批量总结: 每 {V3_BATCH_SIZE} 篇调用一次LLM")
     
     def run(self):
-        """运行Agent - 为每个关键词单独处理"""
+        """运行Agent - 跨关键词汇总去重后分批总结（降低API调用次数）"""
         self.logger.info("=" * 80)
         self.logger.info("开始执行每日总结任务 V3")
         self.logger.info(f"查看日期: {self.target_date_readable} ({self.days_ago}天前)")
@@ -81,9 +110,10 @@ class DailySummaryAgentV3:
         
         try:
             total_articles = 0
-            total_summaries = 0
+            total_batches = 0
+            all_articles = []
             
-            # 为每个关键词单独处理
+            # 1) 爬取：为每个关键词抓取论文（去重后汇总）
             for idx, keyword in enumerate(KEYWORDS, 1):
                 keyword = keyword.strip()
                 if not keyword:
@@ -94,7 +124,7 @@ class DailySummaryAgentV3:
                 self.logger.info("=" * 80)
                 
                 try:
-                    # 1. 爬取该关键词在目标日期的论文
+                    # 爬取该关键词在目标日期的论文
                     self.logger.info(f"\n[步骤 1/3] 爬取 [{keyword}] 在 {self.target_date_readable} 发布的论文...")
                     articles = self._crawl_keyword_papers(keyword)
                     
@@ -104,29 +134,42 @@ class DailySummaryAgentV3:
                     
                     self.logger.info(f"[{keyword}] 获取 {len(articles)} 篇论文")
                     total_articles += len(articles)
+                    all_articles.extend(articles)
                     
-                    # 2. 生成该关键词的总结
-                    self.logger.info(f"\n[步骤 2/3] 生成 [{keyword}] 总结...")
-                    summary = self.summary_writer.generate_keyword_summary(
-                        keyword=keyword,
-                        articles=articles,
-                        target_date=self.target_date_readable
-                    )
-                    
-                    # 3. 保存该关键词的总结到日期目录
-                    self.logger.info(f"\n[步骤 3/3] 保存 [{keyword}] 总结...")
-                    filepath = self.summary_writer.save_summary(
-                        summary=summary,
-                        keyword=keyword,
-                        date_str=self.target_date_str
-                    )
-                    total_summaries += 1
-                    
-                    self.logger.info(f"[{keyword}] 总结已保存: {filepath}")
+                    self.logger.info(f"[{keyword}] 已加入汇总队列（当前累计 {len(all_articles)} 篇）")
                     
                 except Exception as e:
                     self.logger.error(f"[{keyword}] 处理失败: {e}", exc_info=True)
                     continue
+
+            # 2) 可选：抓取 Archive 并落盘（用于云盘同步与回溯）
+            self._crawl_and_save_archive()
+
+            # 3) 分批总结（每 N 篇调用一次LLM）
+            all_articles = self._dedupe_in_memory(all_articles)
+            if not all_articles:
+                self.logger.warning("未获取到任何论文，结束任务")
+                return
+
+            all_articles.sort(key=lambda a: getattr(a, "publish_time", datetime.now()), reverse=True)
+            batch_size = max(int(V3_BATCH_SIZE), 1)
+            batches = [all_articles[i : i + batch_size] for i in range(0, len(all_articles), batch_size)]
+            total_batches = len(batches)
+
+            self.logger.info("\n" + "=" * 80)
+            self.logger.info(f"开始批量总结：共 {len(all_articles)} 篇论文，分 {total_batches} 批（每批≤{batch_size}）")
+            self.logger.info("=" * 80)
+
+            for batch_idx, batch_articles in enumerate(batches, 1):
+                self.logger.info(f"\n[批次 {batch_idx}/{total_batches}] 生成批量小结...")
+                batch_summary = self.summary_writer.generate_batch_summary(
+                    articles=batch_articles,
+                    batch_index=batch_idx,
+                    total_batches=total_batches,
+                    target_date=self.target_date_readable,
+                )
+                batch_file = self._save_batch_summary(batch_summary, batch_idx, total_batches)
+                self.logger.info(f"[批次 {batch_idx}/{total_batches}] 已保存: {batch_file}")
             
             # 4. 生成汇总报告
             self.logger.info("\n" + "=" * 80)
@@ -135,7 +178,7 @@ class DailySummaryAgentV3:
             self.logger.info(f"目标日期: {self.target_date_readable}")
             self.logger.info(f"总关键词数: {len(KEYWORDS)}")
             self.logger.info(f"总论文数: {total_articles}")
-            self.logger.info(f"生成总结数: {total_summaries}")
+            self.logger.info(f"生成批次数: {total_batches}")
             self.logger.info(f"论文保存目录: {self.papers_dir}")
             self.logger.info(f"总结保存目录: {self.output_dir}")
             self.logger.info("=" * 80)
@@ -143,13 +186,13 @@ class DailySummaryAgentV3:
             # 生成索引文件
             self._generate_index()
             
-            # 5. 汇总所有总结
-            if total_summaries > 0:
+            # 5. 汇总所有批次小结
+            if total_batches > 0:
                 self.logger.info("\n" + "=" * 80)
                 self.logger.info("汇总总结文档...")
                 self.logger.info("=" * 80)
                 
-                aggregated_file = self._aggregate_and_send(total_summaries)
+                aggregated_file = self._aggregate_and_send(total_batches)
                 
                 if aggregated_file:
                     self.logger.info(f"汇总文档: {aggregated_file}")
@@ -157,6 +200,66 @@ class DailySummaryAgentV3:
         except Exception as e:
             self.logger.error(f"执行任务时出错: {e}", exc_info=True)
             raise
+
+    def _dedupe_in_memory(self, articles: list) -> list:
+        """二次兜底去重：避免同一运行中出现重复key（例如手工拼接带来的重复）。"""
+        if not articles:
+            return []
+        seen = set()
+        kept = []
+        for a in articles:
+            if self.deduper is not None:
+                key = self.deduper.make_key(a)
+            else:
+                key = getattr(a, "arxiv_id", None) or getattr(a, "url", None) or getattr(a, "title", None)
+            if not key or key in seen:
+                continue
+            seen.add(key)
+            kept.append(a)
+        return kept
+
+    def _save_batch_summary(self, summary: str, batch_idx: int, total_batches: int) -> Path:
+        self.output_dir.mkdir(parents=True, exist_ok=True)
+        filename = f"batch_{batch_idx:02d}_of_{total_batches:02d}.md"
+        path = self.output_dir / filename
+        header = f"""---
+title: 批量小结 {batch_idx}/{total_batches}
+date: {self.target_date_str}
+generated_at: {datetime.now().strftime("%Y-%m-%d %H:%M:%S")}
+---
+
+"""
+        with open(path, "w", encoding="utf-8") as f:
+            f.write(header + summary)
+        return path
+
+    def _crawl_and_save_archive(self) -> None:
+        """可选抓取 Archive 内容并保存到 data/archive/YYYYMMDD/ 便于云盘同步。"""
+        try:
+            if not ARCHIVE_URLS:
+                return
+            urls = [u.strip() for u in ARCHIVE_URLS if u and u.strip()]
+            if not urls:
+                return
+
+            self.logger.info("\n" + "=" * 80)
+            self.logger.info(f"抓取 Archive 源：{len(urls)} 个URL")
+            self.logger.info("=" * 80)
+
+            articles = self.archive_crawler.crawl(urls=urls)
+            if not articles:
+                self.logger.warning("Archive 未抓取到文章")
+                return
+
+            archive_dir = Path(DATA_DIR) / "archive" / self.target_date_str
+            archive_dir.mkdir(parents=True, exist_ok=True)
+            json_path = archive_dir / "archive_articles.json"
+            with open(json_path, "w", encoding="utf-8") as f:
+                json.dump([a.to_dict() for a in articles], f, ensure_ascii=False, indent=2)
+
+            self.logger.info(f"Archive 已保存: {json_path}（{len(articles)} 篇）")
+        except Exception as e:
+            self.logger.error(f"Archive 抓取/保存失败: {e}", exc_info=True)
     
     def _crawl_keyword_papers(self, keyword: str) -> list:
         """爬取指定关键词在目标日期的论文"""
@@ -203,7 +306,18 @@ class DailySummaryAgentV3:
                 # 如果论文日期太早，停止搜索
                 if result.published < start_time - timedelta(days=2):
                     break
-            
+
+            # 去重：跨关键词/跨天避免重复分析同一篇论文
+            if self.deduper is not None:
+                deduped, stats = self.deduper.filter_new(
+                    articles,
+                    keyword=keyword,
+                    date_str=self.target_date_str,
+                )
+                if stats.skipped > 0:
+                    self.logger.info(f"[{keyword}] 去重跳过 {stats.skipped} 篇重复论文（保留 {stats.kept}）")
+                return deduped
+
             return articles
             
         except Exception as e:
@@ -218,24 +332,32 @@ class DailySummaryAgentV3:
             lines = [
                 f"# {self.target_date_readable} 论文总结索引",
                 f"\n生成时间: {datetime.now().strftime('%Y-%m-%d %H:%M:%S')}",
-                f"\n## 关键词列表\n"
+                f"\n## 批量小结列表（每 {V3_BATCH_SIZE} 篇一批）\n"
             ]
-            
-            # 列出所有生成的总结文件
-            for keyword in KEYWORDS:
-                keyword = keyword.strip()
-                if not keyword:
-                    continue
-                
-                safe_keyword = keyword.replace("/", "_").replace(" ", "_").replace("\\", "_")
-                summary_file = f"summary_{safe_keyword}.md"
-                summary_path = self.output_dir / summary_file
-                
-                if summary_path.exists():
-                    lines.append(f"- [{keyword}](./{summary_file})")
+
+            batch_files = sorted(self.output_dir.glob("batch_*_of_*.md"))
+            if batch_files:
+                for bf in batch_files:
+                    lines.append(f"- [{bf.name}](./{bf.name})")
+            else:
+                lines.append("- （未生成批量小结）")
+
+            aggregated = self.output_dir / f"汇总总结_{self.target_date_str}.md"
+            if aggregated.exists():
+                lines.append(f"\n## 汇总文档\n")
+                lines.append(f"- [汇总总结_{self.target_date_str}.md](./{aggregated.name})")
             
             lines.append(f"\n## 论文PDF")
             lines.append(f"\nPDF文件保存在: `{self.papers_dir.relative_to(Path.cwd())}/`")
+
+            archive_json = Path(DATA_DIR) / "archive" / self.target_date_str / "archive_articles.json"
+            if archive_json.exists():
+                try:
+                    rel = archive_json.relative_to(Path.cwd())
+                except Exception:
+                    rel = archive_json
+                lines.append("\n## Archive 抓取结果")
+                lines.append(f"\n- JSON: `{rel}`")
             
             with open(index_path, 'w', encoding='utf-8') as f:
                 f.write("\n".join(lines))
@@ -246,15 +368,14 @@ class DailySummaryAgentV3:
             self.logger.error(f"生成索引文件失败: {e}")
     
     def _aggregate_and_send(self, total_summaries: int) -> Path:
-        """汇总总结并发送邮件"""
+        """汇总批量小结并发送邮件"""
         try:
             # 1. 生成汇总文档
             aggregated_file = self.output_dir / f"汇总总结_{self.target_date_str}.md"
-            self.aggregator.aggregate_summaries(
+            self.aggregator.aggregate_batch_summaries(
                 summary_dir=self.output_dir,
                 output_path=aggregated_file,
                 date_str=self.target_date_str,
-                keywords=KEYWORDS
             )
             
             # 2. 发送邮件
@@ -270,7 +391,7 @@ class DailySummaryAgentV3:
                 
                 # 发送邮件
                 date_readable = datetime.strptime(self.target_date_str, "%Y%m%d").strftime("%Y年%m月%d日")
-                subject = f"【AI论文每日总结】{date_readable} - {total_summaries}个关键词"
+                subject = f"【AI论文每日总结】{date_readable} - {total_summaries}批"
                 
                 success = self.email_sender.send_summary(
                     receiver_emails=RECEIVER_EMAILS,
