@@ -135,6 +135,45 @@ python scheduler.py
 - Archive网站爬取需要根据具体网站结构调整解析逻辑
 - 首次运行会自动下载嵌入模型（可能需要一些时间）
 
+## GitHub Actions 自动运行 + OneDrive 备份
+
+本项目已内置 GitHub Actions 工作流：`.github/workflows/daily_task.yml`，会按计划每天自动运行 `python run_v3.py`，并将产物备份到云盘（推荐 OneDrive）。
+
+### 1) 在 GitHub 上开启自动运行
+
+1. 将仓库推到 GitHub（或 Fork 后使用自己的仓库）
+2. 打开仓库的 **Actions**（首次可能需要点一下启用）
+3. 配置必要的 Secrets / Variables（参考 `.github/workflows/daily_task.yml` 里的 `env:`）
+
+> 提醒：GitHub Actions 的定时 `cron` 使用 **UTC**。当前配置 `0 0 * * *` 对应新加坡时间 **08:00**。
+
+### 2) 将每日文件备份到 OneDrive（通过 rclone）
+
+工作流会在检测到 `RCLONE_CONFIG`（GitHub Secret）后执行备份：
+- `output/` → `CLOUD_BACKUP_REMOTE/output`
+- `data/papers/` → `CLOUD_BACKUP_REMOTE/papers`
+
+按下面步骤把 OneDrive “挂载”成 rclone remote：
+
+1. 在你自己的电脑安装 rclone，并创建 OneDrive remote（示例 remote 名称为 `onedrive`）：
+```bash
+rclone config
+```
+
+2. 复制 rclone 配置文件内容（用于放到 GitHub Secret）：
+```bash
+rclone config file
+cat "$(rclone config file)"
+```
+
+3. 在 GitHub 仓库里配置：
+- **Settings → Secrets and variables → Actions → Secrets**
+  - 新增 Secret：`RCLONE_CONFIG`（把上一步的 `rclone.conf` 全文粘贴进去）
+- **Settings → Secrets and variables → Actions → Variables**
+  - 设置 `CLOUD_BACKUP_REMOTE`，例如：`onedrive:DailySummaryAgent`（也可以放到 Secrets 里，同名即可）
+
+之后每天工作流运行完成，产物会自动同步到你的 OneDrive 对应目录下。
+
 ## arXiv支持的分类
 
 常用AI/ML相关分类：
