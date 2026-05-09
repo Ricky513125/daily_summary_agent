@@ -171,6 +171,7 @@ cat "$(rclone config file)"
   - 新增 Secret：`RCLONE_CONFIG`（把上一步的 `rclone.conf` 全文粘贴进去）
 - **Settings → Secrets and variables → Actions → Variables**
   - 设置 `CLOUD_BACKUP_REMOTE`，例如：`onedrive:DailySummaryAgent`（也可以放到 Secrets 里，同名即可）
+  - 注意：`CLOUD_BACKUP_REMOTE` 必须是 `<remote>:<path>` 形式，例如 `gdrive:DailySummaryAgent`，不能只填文件夹名或路径（比如 `DailySummaryAgent` / `DailySummaryAgent/output`）
 
 之后每天工作流运行完成，产物会自动同步到你的 OneDrive 对应目录下。
 
