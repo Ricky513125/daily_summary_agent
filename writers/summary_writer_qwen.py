@@ -120,6 +120,70 @@ class SummaryWriterQwen:
             self.logger.error(f"[{keyword}] 生成总结失败: {e}", exc_info=True)
             return self._generate_simple_summary(keyword, articles, target_date)
 
+    def generate_paper_short_summary(self, article: Article, target_date: str = None) -> str:
+        """为单篇论文生成极简摘要（≤200个中文字符）"""
+        if not self.api_configured:
+            self.logger.error("阿里千问API未配置，无法生成摘要")
+            return ""
+
+        date_str = target_date or datetime.now().strftime("%Y-%m-%d")
+        title = getattr(article, "title", "")
+        url = getattr(article, "url", "")
+        authors = getattr(article, "author", "")
+        arxiv_id = getattr(article, "arxiv_id", "")
+        abstract = (getattr(article, "content", "") or "")[:1200]
+
+        prompt = "\n".join(
+            [
+                f"# 日期: {date_str}",
+                "# 任务: 单篇论文极简摘要",
+                "",
+                "## 材料",
+                f"- 标题: {title}",
+                f"- 作者: {authors}",
+                f"- arXiv ID: {arxiv_id}",
+                f"- 链接: {url}",
+                f"- 摘要(截断): {abstract}",
+                "",
+                "## 输出要求（必须严格遵守）",
+                "1) 只基于材料，不要编造任何未给出的实验结果/数值/对比结论。",
+                "2) 输出为中文纯文本（不要Markdown，不要列表符号）。",
+                "3) 总长度≤200个中文字符（超出会被判失败）。",
+                "4) 结构建议：一句话写“做了什么/怎么做/解决什么”。信息不足就写“材料未提供，无法判断”。",
+            ]
+        )
+
+        messages = [
+            {
+                "role": "system",
+                "content": (
+                    "你是一个严谨的论文摘要助手。\n"
+                    "只使用用户提供材料，不允许臆测；输出必须≤200个中文字符且为纯文本。"
+                ),
+            },
+            {"role": "user", "content": prompt},
+        ]
+
+        try:
+            response = Generation.call(
+                model=QWEN_MODEL,
+                messages=messages,
+                result_format="message",
+                temperature=0.3,
+                max_tokens=600,
+            )
+            if response.status_code != 200:
+                self.logger.error(f"单篇摘要API调用失败: {response.message}")
+                return ""
+            text = (response.output.choices[0].message.content or "").strip()
+            # 兜底清理：去掉换行与多余空白
+            text = " ".join(text.split())
+            # 最后兜底截断（避免偶发超长）
+            return text[:200]
+        except Exception as e:
+            self.logger.error(f"单篇摘要生成失败: {e}", exc_info=True)
+            return ""
+
     def generate_batch_summary(
         self,
         articles: List[Article],
@@ -127,7 +191,7 @@ class SummaryWriterQwen:
         total_batches: int,
         target_date: str = None,
     ) -> str:
-        """对一批论文生成“小总结”（用于减少API调用次数）"""
+        """对一批论文生成“趋势小结”（只基于每篇论文的短摘要）"""
         if not self.api_configured:
             self.logger.error("阿里千问API未配置，无法生成总结")
             date_str = target_date or datetime.now().strftime("%Y-%m-%d")
@@ -138,7 +202,7 @@ class SummaryWriterQwen:
             f"# 日期: {date_str}",
             f"# 批次: {batch_index}/{total_batches}",
             f"\n本批共 {len(articles)} 篇论文（跨多个关键词去重后汇总）。\n",
-            "## 论文列表（仅材料，不要引入外部信息）\n",
+            "## 论文短摘要列表（仅材料，不要引入外部信息）\n",
         ]
 
         for idx, article in enumerate(articles, 1):
@@ -153,21 +217,21 @@ class SummaryWriterQwen:
                 prompt_parts.append(f"- arXiv ID: {getattr(article, 'arxiv_id')}")
             if getattr(article, "tags", None):
                 prompt_parts.append(f"- 命中关键词: {', '.join(getattr(article, 'tags'))}")
-            prompt_parts.append(f"- 摘要(截断): {article.content[:800]}\n")
+            short_summary = getattr(article, "short_summary", "") or ""
+            prompt_parts.append(f"- 短摘要(≤200字): {short_summary}\n")
 
         prompt_parts.append("\n---\n")
         prompt_parts.append("## 任务要求（非常重要）\n")
-        prompt_parts.append("请只基于材料输出总结，禁止编造任何未给出的实验结果/数据/数值/对比结论。")
+        prompt_parts.append("你只能使用上面每篇论文的“短摘要(≤200字)”作为信息来源，不要使用外部知识或你自己的背景常识来补全事实。")
+        prompt_parts.append("禁止编造任何未给出的实验结果/数据/数值/对比结论/开源信息。")
         prompt_parts.append("每条洞察都要在末尾标注依据论文编号，例如（依据：P2,P5）。")
-        prompt_parts.append("如果材料不足以支持判断，请写“材料未提供，无法判断”。")
+        prompt_parts.append("如果短摘要不足以支持判断，请写“材料未提供，无法判断”。")
         prompt_parts.append("\n请输出中文 Markdown，并严格按以下结构（不要增删标题）：")
-        prompt_parts.append("\n### 1) 本批TL;DR（6条以内）")
-        prompt_parts.append("\n### 2) 主题线索（3-5条）")
-        prompt_parts.append("- 每条：主题一句话 + 涉及论文编号（依据：Px）")
-        prompt_parts.append("\n### 3) 值得跟进（最多5条）")
-        prompt_parts.append("- 每条：为什么值得跟进 + 建议下一步怎么验证/复现（依据：Px）")
-        prompt_parts.append("\n### 4) 论文速览（每篇1行）")
-        prompt_parts.append("- 格式：P{n} | 一句话贡献（不超过20字）")
+        prompt_parts.append("\n### 1) 本批研究趋势（3-6条）")
+        prompt_parts.append("\n### 2) 技术路线与应用导向（3-6条）")
+        prompt_parts.append("\n### 3) 风险与不确定性（最多5条）")
+        prompt_parts.append("\n### 4) 重点论文清单（最多5篇）")
+        prompt_parts.append("- 每篇：P{n} + 1句话理由（依据：Px）")
 
         prompt = "\n".join(prompt_parts)
 
@@ -204,6 +268,63 @@ class SummaryWriterQwen:
         except Exception as e:
             self.logger.error(f"[batch {batch_index}/{total_batches}] 生成总结失败: {e}", exc_info=True)
             return f"# 批次 {batch_index}/{total_batches}\n\n*生成异常：{str(e)}*\n"
+
+    def generate_daily_trends_from_batches(
+        self,
+        batch_summaries: List[str],
+        target_date: str = None,
+    ) -> str:
+        """只基于批次趋势小结，生成当天总体趋势汇总"""
+        if not self.api_configured:
+            date_str = target_date or datetime.now().strftime("%Y-%m-%d")
+            return f"# {date_str} 总体趋势汇总\n\n*API未配置，略过生成。*\n"
+
+        date_str = target_date or datetime.now().strftime("%Y-%m-%d")
+        prompt_parts = [
+            f"# 日期: {date_str}",
+            "\n你将得到“多批次论文趋势小结”（这些小结本身只基于每篇论文≤200字短摘要）。",
+            "请你只基于这些批次小结，归纳当天研究趋势与发展导向。",
+            "\n## 批次小结材料\n",
+        ]
+        for idx, bs in enumerate(batch_summaries, 1):
+            prompt_parts.append(f"\n### 批次 {idx}\n{bs.strip()}\n")
+
+        prompt_parts.append("\n---\n")
+        prompt_parts.append("## 输出要求\n")
+        prompt_parts.append("1) 禁止引入外部信息或编造事实。")
+        prompt_parts.append("2) 输出中文 Markdown，结构清晰、可执行。")
+        prompt_parts.append("\n请严格按以下结构输出（不要增删标题）：")
+        prompt_parts.append("\n### 1) 今日总览（100-150字）")
+        prompt_parts.append("\n### 2) 主要研究趋势（5-8条）")
+        prompt_parts.append("\n### 3) 发展导向与落地机会（3-6条）")
+        prompt_parts.append("\n### 4) 关键不确定性/风险（3-6条）")
+        prompt_parts.append("\n### 5) 明日/下周行动建议（3-6条）")
+
+        messages = [
+            {
+                "role": "system",
+                "content": (
+                    "你是一个严谨的研究趋势分析助手。\n"
+                    "只使用用户提供材料，不允许臆测或外推成事实；输出要凝练、可执行。"
+                ),
+            },
+            {"role": "user", "content": "\n".join(prompt_parts)},
+        ]
+
+        try:
+            response = Generation.call(
+                model=QWEN_MODEL,
+                messages=messages,
+                result_format="message",
+                temperature=0.4,
+                max_tokens=2500,
+            )
+            if response.status_code != 200:
+                return f"# {date_str} 总体趋势汇总\n\n*生成失败：{response.message}*\n"
+            return (response.output.choices[0].message.content or "").strip()
+        except Exception as e:
+            self.logger.error(f"生成当天总体趋势失败: {e}", exc_info=True)
+            return f"# {date_str} 总体趋势汇总\n\n*生成异常：{str(e)}*\n"
     
     def _generate_simple_summary(self, keyword: str, articles: List[Article], target_date: str = None) -> str:
         """生成简单的论文列表（当API失败时）"""

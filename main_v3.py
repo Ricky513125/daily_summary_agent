@@ -148,10 +148,46 @@ class DailySummaryAgentV3:
             # 3) 分批总结（每 N 篇调用一次LLM）
             all_articles = self._dedupe_in_memory(all_articles)
             if not all_articles:
-                self.logger.warning("未获取到任何论文，结束任务")
+                self.logger.warning("未获取到任何论文")
+                self._generate_index()
+                self._send_no_papers_email()
                 return
 
             all_articles.sort(key=lambda a: getattr(a, "publish_time", datetime.now()), reverse=True)
+
+            # 3.1) 逐篇生成 ≤200字短摘要（后续所有汇总只基于这些短摘要）
+            self.logger.info("\n" + "=" * 80)
+            self.logger.info(f"开始逐篇生成短摘要（≤200字）：共 {len(all_articles)} 篇")
+            self.logger.info("=" * 80)
+
+            paper_summaries_path = self.output_dir / "paper_summaries.jsonl"
+            self.output_dir.mkdir(parents=True, exist_ok=True)
+            with open(paper_summaries_path, "w", encoding="utf-8") as f:
+                for idx, article in enumerate(all_articles, 1):
+                    self.logger.info(f"[{idx}/{len(all_articles)}] 生成短摘要: {article.title[:60]}...")
+                    short_summary = self.summary_writer.generate_paper_short_summary(
+                        article=article,
+                        target_date=self.target_date_readable,
+                    )
+                    article.short_summary = short_summary
+                    rec = {
+                        "index": idx,
+                        "title": getattr(article, "title", ""),
+                        "url": getattr(article, "url", ""),
+                        "arxiv_id": getattr(article, "arxiv_id", ""),
+                        "publish_time": getattr(article, "publish_time", None).isoformat()
+                        if getattr(article, "publish_time", None)
+                        else None,
+                        "keywords": getattr(article, "tags", []),
+                        "short_summary": short_summary,
+                    }
+                    f.write(json.dumps(rec, ensure_ascii=False) + "\n")
+            self.logger.info(f"短摘要已保存: {paper_summaries_path}")
+
+            # 3.2) 生成便于个人检索的索引表（英文标题 + arXiv/Archive链接）
+            papers_index_path = self._save_papers_index(all_articles)
+            self.logger.info(f"文献索引表已保存: {papers_index_path}")
+
             batch_size = max(int(V3_BATCH_SIZE), 1)
             batches = [all_articles[i : i + batch_size] for i in range(0, len(all_articles), batch_size)]
             total_batches = len(batches)
@@ -160,6 +196,7 @@ class DailySummaryAgentV3:
             self.logger.info(f"开始批量总结：共 {len(all_articles)} 篇论文，分 {total_batches} 批（每批≤{batch_size}）")
             self.logger.info("=" * 80)
 
+            batch_summaries: list[str] = []
             for batch_idx, batch_articles in enumerate(batches, 1):
                 self.logger.info(f"\n[批次 {batch_idx}/{total_batches}] 生成批量小结...")
                 batch_summary = self.summary_writer.generate_batch_summary(
@@ -170,6 +207,15 @@ class DailySummaryAgentV3:
                 )
                 batch_file = self._save_batch_summary(batch_summary, batch_idx, total_batches)
                 self.logger.info(f"[批次 {batch_idx}/{total_batches}] 已保存: {batch_file}")
+                batch_summaries.append(batch_summary)
+
+            # 4) 生成当日总体趋势汇总（只基于批次小结）
+            daily_summary = self.summary_writer.generate_daily_trends_from_batches(
+                batch_summaries=batch_summaries,
+                target_date=self.target_date_readable,
+            )
+            daily_file = self._save_daily_summary(daily_summary)
+            self.logger.info(f"当日总体趋势汇总已保存: {daily_file}")
             
             # 4. 生成汇总报告
             self.logger.info("\n" + "=" * 80)
@@ -186,16 +232,8 @@ class DailySummaryAgentV3:
             # 生成索引文件
             self._generate_index()
             
-            # 5. 汇总所有批次小结
-            if total_batches > 0:
-                self.logger.info("\n" + "=" * 80)
-                self.logger.info("汇总总结文档...")
-                self.logger.info("=" * 80)
-                
-                aggregated_file = self._aggregate_and_send(total_batches)
-                
-                if aggregated_file:
-                    self.logger.info(f"汇总文档: {aggregated_file}")
+            # 5) 发送邮件（附件为当日总体趋势汇总）
+            self._send_daily_email(total_batches=total_batches, daily_file=daily_file)
             
         except Exception as e:
             self.logger.error(f"执行任务时出错: {e}", exc_info=True)
@@ -232,6 +270,109 @@ generated_at: {datetime.now().strftime("%Y-%m-%d %H:%M:%S")}
         with open(path, "w", encoding="utf-8") as f:
             f.write(header + summary)
         return path
+
+    def _save_daily_summary(self, summary: str) -> Path:
+        self.output_dir.mkdir(parents=True, exist_ok=True)
+        path = self.output_dir / f"汇总总结_{self.target_date_str}.md"
+        header = f"""---
+title: 当日总体趋势汇总
+date: {self.target_date_str}
+generated_at: {datetime.now().strftime("%Y-%m-%d %H:%M:%S")}
+---
+
+"""
+        with open(path, "w", encoding="utf-8") as f:
+            f.write(header + summary)
+        return path
+
+    def _save_papers_index(self, articles: list) -> Path:
+        """保存当日论文索引（英文标题 + 链接表），便于检索。"""
+        self.output_dir.mkdir(parents=True, exist_ok=True)
+        path = self.output_dir / "papers_index.md"
+
+        lines = [
+            f"# {self.target_date_readable} 文献索引（可检索）",
+            "",
+            f"> 生成时间: {datetime.now().strftime('%Y-%m-%d %H:%M:%S')}",
+            "",
+            "说明：本表用于个人检索；标题来自源站（通常为英文）。",
+            "",
+            "| # | English Title | arXiv ID | Archive Link | Matched Keywords | Short Summary (≤200字) |",
+            "|---:|---|---|---|---|---|",
+        ]
+
+        for idx, a in enumerate(articles, 1):
+            title = (getattr(a, "title", "") or "").replace("\n", " ").strip()
+            arxiv_id = (getattr(a, "arxiv_id", "") or "").strip()
+            url = (getattr(a, "url", "") or "").strip()
+            keywords = ", ".join(getattr(a, "tags", []) or [])
+            short_summary = (getattr(a, "short_summary", "") or "").replace("\n", " ").strip()
+
+            title_cell = title.replace("|", "\\|")
+            kw_cell = keywords.replace("|", "\\|")
+            sum_cell = short_summary.replace("|", "\\|")
+            link_cell = f"[link]({url})" if url else ""
+
+            lines.append(
+                f"| {idx} | {title_cell} | {arxiv_id} | {link_cell} | {kw_cell} | {sum_cell} |"
+            )
+
+        with open(path, "w", encoding="utf-8") as f:
+            f.write("\n".join(lines))
+        return path
+
+    def _send_no_papers_email(self) -> None:
+        """当天未检索到文献时也发送提示邮件"""
+        if not (self.email_enabled and RECEIVER_EMAILS):
+            return
+        try:
+            date_readable = datetime.strptime(self.target_date_str, "%Y%m%d").strftime("%Y年%m月%d日")
+            subject = f"【AI论文每日总结】{date_readable} - 未检索到符合条件的文献"
+            text = (
+                f"{date_readable} 未检索到符合关键词/分类/日期条件的文献。\n\n"
+                "建议检查：\n"
+                "- KEYWORDS 是否过于严格/过多\n"
+                "- ARXIV_CATEGORIES 是否过滤过窄\n"
+                "- ARXIV_DAYS_AGO 与定时触发日期是否匹配\n"
+            )
+            html = markdown_to_html(text)
+            self.email_sender.send_summary(
+                receiver_emails=RECEIVER_EMAILS,
+                subject=subject,
+                content=html,
+                attachments=[],
+            )
+        except Exception as e:
+            self.logger.error(f"发送无文献提示邮件失败: {e}", exc_info=True)
+
+    def _send_daily_email(self, total_batches: int, daily_file: Path) -> None:
+        """发送当日汇总邮件（附件为当日总体趋势汇总）"""
+        if not (self.email_enabled and RECEIVER_EMAILS):
+            if not self.email_enabled:
+                self.logger.info("邮件功能未启用")
+            else:
+                self.logger.warning("未配置收件人邮箱")
+            return
+
+        try:
+            with open(daily_file, "r", encoding="utf-8") as f:
+                md = f.read()
+            html_content = markdown_to_html(md)
+
+            date_readable = datetime.strptime(self.target_date_str, "%Y%m%d").strftime("%Y年%m月%d日")
+            subject = f"【AI论文每日总结】{date_readable} - {total_batches}批"
+            success = self.email_sender.send_summary(
+                receiver_emails=RECEIVER_EMAILS,
+                subject=subject,
+                content=html_content,
+                attachments=[str(daily_file)],
+            )
+            if success:
+                self.logger.info(f"邮件发送成功: {RECEIVER_EMAILS}")
+            else:
+                self.logger.warning("邮件发送失败")
+        except Exception as e:
+            self.logger.error(f"发送当日汇总邮件失败: {e}", exc_info=True)
 
     def _crawl_and_save_archive(self) -> None:
         """可选抓取 Archive 内容并保存到 data/archive/YYYYMMDD/ 便于云盘同步。"""
@@ -346,6 +487,16 @@ generated_at: {datetime.now().strftime("%Y-%m-%d %H:%M:%S")}
             if aggregated.exists():
                 lines.append(f"\n## 汇总文档\n")
                 lines.append(f"- [汇总总结_{self.target_date_str}.md](./{aggregated.name})")
+
+            paper_summaries = self.output_dir / "paper_summaries.jsonl"
+            if paper_summaries.exists():
+                lines.append("\n## 单篇短摘要")
+                lines.append(f"\n- JSONL: `{paper_summaries.name}`（每篇≤200字）")
+
+            papers_index = self.output_dir / "papers_index.md"
+            if papers_index.exists():
+                lines.append("\n## 文献索引表（英文标题+链接）")
+                lines.append(f"\n- Markdown: [{papers_index.name}](./{papers_index.name})")
             
             lines.append(f"\n## 论文PDF")
             lines.append(f"\nPDF文件保存在: `{self.papers_dir.relative_to(Path.cwd())}/`")
