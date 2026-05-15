@@ -4411,8 +4411,787 @@
       ],
       "last_seen_utc": "2026-05-14T02:33:12.592538+00:00",
       "title": "Quantifying Potential Observation Missingness in Inverse Reinforcement Learning"
+    },
+    "arxiv:2605.12845v1": {
+      "dates": [
+        "20260513"
+      ],
+      "first_seen_utc": "2026-05-15T02:49:34.980476+00:00",
+      "keywords": [
+        "multimodal instruction"
+      ],
+      "last_seen_utc": "2026-05-15T02:49:34.980485+00:00",
+      "title": "AssemblyBench: Physics-Aware Assembly of Complex Industrial Objects"
+    },
+    "arxiv:2605.12882v1": {
+      "dates": [
+        "20260513"
+      ],
+      "first_seen_utc": "2026-05-15T02:50:10.851424+00:00",
+      "keywords": [
+        "document understanding"
+      ],
+      "last_seen_utc": "2026-05-15T02:50:10.851427+00:00",
+      "title": "CiteVQA: Benchmarking Evidence Attribution for Trustworthy Document Intelligence"
+    },
+    "arxiv:2605.12925v1": {
+      "dates": [
+        "20260513"
+      ],
+      "first_seen_utc": "2026-05-15T02:46:41.995989+00:00",
+      "keywords": [
+        "code agent"
+      ],
+      "last_seen_utc": "2026-05-15T02:46:41.995991+00:00",
+      "title": "AgentLens: Revealing The Lucky Pass Problem in SWE-Agent Evaluation"
+    },
+    "arxiv:2605.12947v1": {
+      "dates": [
+        "20260513"
+      ],
+      "first_seen_utc": "2026-05-15T02:46:41.995984+00:00",
+      "keywords": [
+        "code agent"
+      ],
+      "last_seen_utc": "2026-05-15T02:46:41.995986+00:00",
+      "title": "When Should an AI Workflow Release? Always-Valid Inference for Black-Box Generate-Verify Systems"
+    },
+    "arxiv:2605.12953v1": {
+      "dates": [
+        "20260513"
+      ],
+      "first_seen_utc": "2026-05-15T02:50:00.200545+00:00",
+      "keywords": [
+        "multimodal reasoning",
+        "visual reasoning"
+      ],
+      "last_seen_utc": "2026-05-15T02:50:03.912408+00:00",
+      "title": "Seg-Agent: Test-Time Multimodal Reasoning for Training-Free Language-Guided Segmentation"
+    },
+    "arxiv:2605.12954v1": {
+      "dates": [
+        "20260513"
+      ],
+      "first_seen_utc": "2026-05-15T02:50:28.316691+00:00",
+      "keywords": [
+        "video understanding"
+      ],
+      "last_seen_utc": "2026-05-15T02:50:28.316693+00:00",
+      "title": "AdaFocus: Adaptive Relevance-Diversity Sampling with Zero-Cache Look-back for Efficient Long Video Understanding"
+    },
+    "arxiv:2605.12991v1": {
+      "dates": [
+        "20260513"
+      ],
+      "first_seen_utc": "2026-05-15T02:49:46.056578+00:00",
+      "keywords": [
+        "RLHF"
+      ],
+      "last_seen_utc": "2026-05-15T02:49:46.056587+00:00",
+      "title": "Not Just RLHF: Why Alignment Alone Won't Fix Multi-Agent Sycophancy"
+    },
+    "arxiv:2605.13047v1": {
+      "dates": [
+        "20260513"
+      ],
+      "first_seen_utc": "2026-05-15T02:48:43.530086+00:00",
+      "keywords": [
+        "VLM"
+      ],
+      "last_seen_utc": "2026-05-15T02:48:43.530088+00:00",
+      "title": "Revealing the Gap in Human and VLM Scene Perception through Counterfactual Semantic Saliency"
+    },
+    "arxiv:2605.13062v1": {
+      "dates": [
+        "20260513"
+      ],
+      "first_seen_utc": "2026-05-15T02:50:03.912401+00:00",
+      "keywords": [
+        "visual reasoning"
+      ],
+      "last_seen_utc": "2026-05-15T02:50:03.912403+00:00",
+      "title": "Edit-Compass & EditReward-Compass: A Unified Benchmark for Image Editing and Reward Modeling"
+    },
+    "arxiv:2605.13080v1": {
+      "dates": [
+        "20260513"
+      ],
+      "first_seen_utc": "2026-05-15T02:50:28.316686+00:00",
+      "keywords": [
+        "video understanding"
+      ],
+      "last_seen_utc": "2026-05-15T02:50:28.316688+00:00",
+      "title": "Learning to See What You Need: Gaze Attention for Multimodal Large Language Models"
+    },
+    "arxiv:2605.13110v1": {
+      "dates": [
+        "20260513"
+      ],
+      "first_seen_utc": "2026-05-15T02:50:14.442249+00:00",
+      "keywords": [
+        "OCR",
+        "layout"
+      ],
+      "last_seen_utc": "2026-05-15T02:50:24.712289+00:00",
+      "title": "A Multi-Agent Orchestration Framework for Venture Capital Due Diligence"
+    },
+    "arxiv:2605.13119v1": {
+      "dates": [
+        "20260513"
+      ],
+      "first_seen_utc": "2026-05-15T02:48:43.530081+00:00",
+      "keywords": [
+        "VLM"
+      ],
+      "last_seen_utc": "2026-05-15T02:48:43.530083+00:00",
+      "title": "Towards Long-horizon Embodied Agents with Tool-Aligned Vision-Language-Action Models"
+    },
+    "arxiv:2605.13149v1": {
+      "dates": [
+        "20260513"
+      ],
+      "first_seen_utc": "2026-05-15T02:49:56.579160+00:00",
+      "keywords": [
+        "synthetic data"
+      ],
+      "last_seen_utc": "2026-05-15T02:49:56.579163+00:00",
+      "title": "AcquisitionSynthesis: Targeted Data Generation using Acquisition Functions"
+    },
+    "arxiv:2605.13156v1": {
+      "dates": [
+        "20260513"
+      ],
+      "first_seen_utc": "2026-05-15T02:48:43.530077+00:00",
+      "keywords": [
+        "VLM",
+        "multimodal reasoning"
+      ],
+      "last_seen_utc": "2026-05-15T02:50:00.200540+00:00",
+      "title": "Dual-Pathway Circuits of Object Hallucination in Vision-Language Models"
+    },
+    "arxiv:2605.13228v1": {
+      "dates": [
+        "20260513"
+      ],
+      "first_seen_utc": "2026-05-15T02:50:28.316680+00:00",
+      "keywords": [
+        "video understanding"
+      ],
+      "last_seen_utc": "2026-05-15T02:50:28.316682+00:00",
+      "title": "ReTool-Video: Recursive Tool-Using Video Agents with Meta-Augmented Tool Grounding"
+    },
+    "arxiv:2605.13307v1": {
+      "dates": [
+        "20260513"
+      ],
+      "first_seen_utc": "2026-05-15T02:49:49.552485+00:00",
+      "keywords": [
+        "DPO"
+      ],
+      "last_seen_utc": "2026-05-15T02:49:49.552493+00:00",
+      "title": "PRISM-X: Experiments on Personalised Fine-Tuning with Human and Simulated Users"
+    },
+    "arxiv:2605.13330v1": {
+      "dates": [
+        "20260513"
+      ],
+      "first_seen_utc": "2026-05-15T02:50:00.200534+00:00",
+      "keywords": [
+        "multimodal reasoning"
+      ],
+      "last_seen_utc": "2026-05-15T02:50:00.200536+00:00",
+      "title": "FIND: Toward Multimodal Financial Reasoning and Question Answering for Indic Languages"
+    },
+    "arxiv:2605.13352v1": {
+      "dates": [
+        "20260513"
+      ],
+      "first_seen_utc": "2026-05-15T02:48:43.530073+00:00",
+      "keywords": [
+        "VLM"
+      ],
+      "last_seen_utc": "2026-05-15T02:48:43.530074+00:00",
+      "title": "GeoFlowVLM: Geometry-Aware Joint Uncertainty for Frozen Vision-Language Embedding"
+    },
+    "arxiv:2605.13360v2": {
+      "dates": [
+        "20260513"
+      ],
+      "first_seen_utc": "2026-05-15T02:49:56.579152+00:00",
+      "keywords": [
+        "synthetic data"
+      ],
+      "last_seen_utc": "2026-05-15T02:49:56.579155+00:00",
+      "title": "Speculative Interaction Agents: Building Real-Time Agents with Asynchronous I/O and Speculative Tool Calling"
+    },
+    "arxiv:2605.13375v1": {
+      "dates": [
+        "20260513"
+      ],
+      "first_seen_utc": "2026-05-15T02:48:43.530068+00:00",
+      "keywords": [
+        "VLM"
+      ],
+      "last_seen_utc": "2026-05-15T02:48:43.530070+00:00",
+      "title": "GRIP-VLM: Group-Relative Importance Pruning for Efficient Vision-Language Models"
+    },
+    "arxiv:2605.13403v1": {
+      "dates": [
+        "20260513"
+      ],
+      "first_seen_utc": "2026-05-15T02:48:43.530063+00:00",
+      "keywords": [
+        "VLM"
+      ],
+      "last_seen_utc": "2026-05-15T02:48:43.530065+00:00",
+      "title": "RotVLA: Rotational Latent Action for Vision-Language-Action Model"
+    },
+    "arxiv:2605.13481v1": {
+      "dates": [
+        "20260513"
+      ],
+      "first_seen_utc": "2026-05-15T02:33:20.413164+00:00",
+      "keywords": [
+        "LLM agent"
+      ],
+      "last_seen_utc": "2026-05-15T02:33:20.413166+00:00",
+      "title": "PersonalAI 2.0: Enhancing knowledge graph traversal/retrieval with planning mechanism for Personalized LLM Agents"
+    },
+    "arxiv:2605.13486v1": {
+      "dates": [
+        "20260513"
+      ],
+      "first_seen_utc": "2026-05-15T02:33:20.413156+00:00",
+      "keywords": [
+        "LLM agent"
+      ],
+      "last_seen_utc": "2026-05-15T02:33:20.413159+00:00",
+      "title": "R^2-Mem: Reflective Experience for Memory Search"
+    },
+    "arxiv:2605.13527v2": {
+      "dates": [
+        "20260513"
+      ],
+      "first_seen_utc": "2026-05-15T02:49:53.064916+00:00",
+      "keywords": [
+        "distillation"
+      ],
+      "last_seen_utc": "2026-05-15T02:49:53.064919+00:00",
+      "title": "MMSkills: Towards Multimodal Skills for General Visual Agents"
+    },
+    "arxiv:2605.13542v1": {
+      "dates": [
+        "20260513"
+      ],
+      "first_seen_utc": "2026-05-15T02:33:20.413148+00:00",
+      "keywords": [
+        "LLM agent"
+      ],
+      "last_seen_utc": "2026-05-15T02:33:20.413151+00:00",
+      "title": "RealICU: Do LLM Agents Understand Long-Context ICU Data? A Benchmark Beyond Behavior Imitation"
+    },
+    "arxiv:2605.13565v1": {
+      "dates": [
+        "20260513"
+      ],
+      "first_seen_utc": "2026-05-15T02:50:14.442242+00:00",
+      "keywords": [
+        "OCR"
+      ],
+      "last_seen_utc": "2026-05-15T02:50:14.442244+00:00",
+      "title": "Qwen-Image-VAE-2.0 Technical Report"
+    },
+    "arxiv:2605.13581v1": {
+      "dates": [
+        "20260513"
+      ],
+      "first_seen_utc": "2026-05-15T02:49:56.579144+00:00",
+      "keywords": [
+        "synthetic data"
+      ],
+      "last_seen_utc": "2026-05-15T02:49:56.579147+00:00",
+      "title": "HIR-ALIGN: Enhancing Hyperspectral Image Restoration via Diffusion-Based Data Generation"
+    },
+    "arxiv:2605.13586v1": {
+      "dates": [
+        "20260513"
+      ],
+      "first_seen_utc": "2026-05-15T02:50:24.712283+00:00",
+      "keywords": [
+        "layout"
+      ],
+      "last_seen_utc": "2026-05-15T02:50:24.712285+00:00",
+      "title": "HetScene: Heterogeneity-Aware Diffusion for Dense Indoor Scene Generation"
+    },
+    "arxiv:2605.13589v1": {
+      "dates": [
+        "20260513"
+      ],
+      "first_seen_utc": "2026-05-15T02:49:56.579137+00:00",
+      "keywords": [
+        "synthetic data"
+      ],
+      "last_seen_utc": "2026-05-15T02:49:56.579140+00:00",
+      "title": "Causal Learning with the Invariance Principle"
+    },
+    "arxiv:2605.13642v1": {
+      "dates": [
+        "20260513"
+      ],
+      "first_seen_utc": "2026-05-15T02:37:43.002552+00:00",
+      "keywords": [
+        "workflow"
+      ],
+      "last_seen_utc": "2026-05-15T02:37:43.002553+00:00",
+      "title": "Conformal Anomaly Detection in Python: Moving Beyond Heuristic Thresholds with 'nonconform'"
+    },
+    "arxiv:2605.13643v1": {
+      "dates": [
+        "20260513"
+      ],
+      "first_seen_utc": "2026-05-15T02:49:53.064909+00:00",
+      "keywords": [
+        "distillation"
+      ],
+      "last_seen_utc": "2026-05-15T02:49:53.064912+00:00",
+      "title": "Prefix Teach, Suffix Fade: Local Teachability Collapse in Strong-to-Weak On-Policy Distillation"
+    },
+    "arxiv:2605.13647v1": {
+      "dates": [
+        "20260513"
+      ],
+      "first_seen_utc": "2026-05-15T02:37:43.002545+00:00",
+      "keywords": [
+        "workflow"
+      ],
+      "last_seen_utc": "2026-05-15T02:37:43.002547+00:00",
+      "title": "FlowCompile: An Optimizing Compiler for Structured LLM Workflows"
+    },
+    "arxiv:2605.13667v1": {
+      "dates": [
+        "20260513"
+      ],
+      "first_seen_utc": "2026-05-15T02:48:28.934073+00:00",
+      "keywords": [
+        "vision-language",
+        "VLM"
+      ],
+      "last_seen_utc": "2026-05-15T02:48:43.530058+00:00",
+      "title": "SceneGraphVLM: Dynamic Scene Graph Generation from Video with Vision-Language Models"
+    },
+    "arxiv:2605.13713v1": {
+      "dates": [
+        "20260513"
+      ],
+      "first_seen_utc": "2026-05-15T02:49:53.064901+00:00",
+      "keywords": [
+        "distillation"
+      ],
+      "last_seen_utc": "2026-05-15T02:49:53.064904+00:00",
+      "title": "Learning to Optimize Radiotherapy Plans via Fluence Maps Diffusion Model Generation and LSTM-based Optimization"
+    },
+    "arxiv:2605.13724v1": {
+      "dates": [
+        "20260513"
+      ],
+      "first_seen_utc": "2026-05-15T02:49:53.064894+00:00",
+      "keywords": [
+        "distillation"
+      ],
+      "last_seen_utc": "2026-05-15T02:49:53.064896+00:00",
+      "title": "AnyFlow: Any-Step Video Diffusion Model with On-Policy Flow Map Distillation"
+    },
+    "arxiv:2605.13734v1": {
+      "dates": [
+        "20260513"
+      ],
+      "first_seen_utc": "2026-05-15T02:49:53.064886+00:00",
+      "keywords": [
+        "distillation"
+      ],
+      "last_seen_utc": "2026-05-15T02:49:53.064888+00:00",
+      "title": "KVServe: Service-Aware KV Cache Compression for Communication-Efficient Disaggregated LLM Serving"
+    },
+    "arxiv:2605.13755v1": {
+      "dates": [
+        "20260513"
+      ],
+      "first_seen_utc": "2026-05-15T02:49:56.579129+00:00",
+      "keywords": [
+        "synthetic data"
+      ],
+      "last_seen_utc": "2026-05-15T02:49:56.579132+00:00",
+      "title": "Generative Texture Diversification of 3D Pedestrians for Robust Autonomous Driving Perception"
+    },
+    "arxiv:2605.13772v1": {
+      "dates": [
+        "20260513"
+      ],
+      "first_seen_utc": "2026-05-15T02:49:53.064878+00:00",
+      "keywords": [
+        "distillation"
+      ],
+      "last_seen_utc": "2026-05-15T02:49:53.064881+00:00",
+      "title": "Where Does Reasoning Break? Step-Level Hallucination Detection via Hidden-State Transport Geometry"
+    },
+    "arxiv:2605.13775v1": {
+      "dates": [
+        "20260513"
+      ],
+      "first_seen_utc": "2026-05-15T02:48:28.934066+00:00",
+      "keywords": [
+        "vision-language",
+        "VLM"
+      ],
+      "last_seen_utc": "2026-05-15T02:48:43.530055+00:00",
+      "title": "RoboEvolve: Co-Evolving Planner-Simulator for Robotic Manipulation with Limited Data"
+    },
+    "arxiv:2605.13778v1": {
+      "dates": [
+        "20260513"
+      ],
+      "first_seen_utc": "2026-05-15T02:48:28.934058+00:00",
+      "keywords": [
+        "vision-language"
+      ],
+      "last_seen_utc": "2026-05-15T02:48:28.934061+00:00",
+      "title": "Realtime-VLA FLASH: Speculative Inference Framework for Diffusion-based VLAs"
+    },
+    "arxiv:2605.13789v2": {
+      "dates": [
+        "20260513"
+      ],
+      "first_seen_utc": "2026-05-15T02:49:53.064870+00:00",
+      "keywords": [
+        "distillation"
+      ],
+      "last_seen_utc": "2026-05-15T02:49:53.064873+00:00",
+      "title": "ENSEMBITS: an alphabet of protein conformational ensembles"
+    },
+    "arxiv:2605.13815v1": {
+      "dates": [
+        "20260513"
+      ],
+      "first_seen_utc": "2026-05-15T02:49:56.579121+00:00",
+      "keywords": [
+        "synthetic data"
+      ],
+      "last_seen_utc": "2026-05-15T02:49:56.579124+00:00",
+      "title": "OmniLiDAR: A Unified Diffusion Framework for Multi-Domain 3D LiDAR Generation"
+    },
+    "arxiv:2605.13821v1": {
+      "dates": [
+        "20260513"
+      ],
+      "first_seen_utc": "2026-05-15T02:37:43.002537+00:00",
+      "keywords": [
+        "workflow"
+      ],
+      "last_seen_utc": "2026-05-15T02:37:43.002538+00:00",
+      "title": "Harnessing Agentic Evolution"
+    },
+    "arxiv:2605.13831v1": {
+      "dates": [
+        "20260513"
+      ],
+      "first_seen_utc": "2026-05-15T02:37:43.002532+00:00",
+      "keywords": [
+        "workflow",
+        "vision-language",
+        "LVLM",
+        "document understanding",
+        "OCR",
+        "video understanding"
+      ],
+      "last_seen_utc": "2026-05-15T02:50:28.316666+00:00",
+      "title": "Training Long-Context Vision-Language Models Effectively with Generalization Beyond 128K Context"
+    },
+    "arxiv:2605.13835v1": {
+      "dates": [
+        "20260513"
+      ],
+      "first_seen_utc": "2026-05-15T02:48:28.934044+00:00",
+      "keywords": [
+        "vision-language"
+      ],
+      "last_seen_utc": "2026-05-15T02:48:28.934047+00:00",
+      "title": "Unlocking Patch-Level Features for CLIP-Based Class-Incremental Learning"
+    },
+    "arxiv:2605.13909v1": {
+      "dates": [
+        "20260513"
+      ],
+      "first_seen_utc": "2026-05-15T02:33:20.413171+00:00",
+      "keywords": [
+        "LLM agent"
+      ],
+      "last_seen_utc": "2026-05-15T02:33:20.413174+00:00",
+      "title": "TERMS-Bench: Diagnosing LLM Negotiation Agents Beyond Deal Rate"
+    },
+    "arxiv:2605.13918v1": {
+      "dates": [
+        "20260513"
+      ],
+      "first_seen_utc": "2026-05-15T02:36:55.355031+00:00",
+      "keywords": [
+        "function calling"
+      ],
+      "last_seen_utc": "2026-05-15T02:36:55.355040+00:00",
+      "title": "CA2: Code-Aware Agent for Automated Game Testing"
+    },
+    "arxiv:2605.13940v1": {
+      "dates": [
+        "20260513"
+      ],
+      "first_seen_utc": "2026-05-15T02:33:20.413140+00:00",
+      "keywords": [
+        "LLM agent",
+        "workflow"
+      ],
+      "last_seen_utc": "2026-05-15T02:37:43.002542+00:00",
+      "title": "AgentTrap: Measuring Runtime Trust Failures in Third-Party Agent Skills"
+    },
+    "arxiv:2605.13941v1": {
+      "dates": [
+        "20260513"
+      ],
+      "first_seen_utc": "2026-05-15T02:33:20.413133+00:00",
+      "keywords": [
+        "LLM agent"
+      ],
+      "last_seen_utc": "2026-05-15T02:33:20.413136+00:00",
+      "title": "EvolveMem:Self-Evolving Memory Architecture via AutoResearch for LLM Agents"
+    },
+    "arxiv:2605.13950v1": {
+      "dates": [
+        "20260513"
+      ],
+      "first_seen_utc": "2026-05-15T02:33:20.413125+00:00",
+      "keywords": [
+        "LLM agent",
+        "code agent"
+      ],
+      "last_seen_utc": "2026-05-15T02:46:41.995980+00:00",
+      "title": "Collider-Bench: Benchmarking AI Agents with Particle Physics Analysis Reproduction"
+    },
+    "arxiv:2605.13981v1": {
+      "dates": [
+        "20260513"
+      ],
+      "first_seen_utc": "2026-05-15T02:49:53.064861+00:00",
+      "keywords": [
+        "distillation",
+        "synthetic data"
+      ],
+      "last_seen_utc": "2026-05-15T02:49:56.579114+00:00",
+      "title": "Towards Resource-Efficient LLMs: End-to-End Energy Accounting of Distillation Pipelines"
+    },
+    "arxiv:2605.13986v1": {
+      "dates": [
+        "20260513"
+      ],
+      "first_seen_utc": "2026-05-15T02:49:56.579105+00:00",
+      "keywords": [
+        "synthetic data"
+      ],
+      "last_seen_utc": "2026-05-15T02:49:56.579108+00:00",
+      "title": "TabPFN-3: Technical Report"
+    },
+    "arxiv:2605.13998v1": {
+      "dates": [
+        "20260513"
+      ],
+      "first_seen_utc": "2026-05-15T02:49:56.579097+00:00",
+      "keywords": [
+        "synthetic data"
+      ],
+      "last_seen_utc": "2026-05-15T02:49:56.579100+00:00",
+      "title": "Synthetic American Option Pricing via Jump-HMM-Driven Heston Implied Volatility"
+    },
+    "arxiv:2605.14040v1": {
+      "dates": [
+        "20260513"
+      ],
+      "first_seen_utc": "2026-05-15T02:48:28.934037+00:00",
+      "keywords": [
+        "vision-language"
+      ],
+      "last_seen_utc": "2026-05-15T02:48:28.934039+00:00",
+      "title": "Physics-R1: An Audited Olympiad Corpus and Recipe for Visual Physics Reasoning"
+    },
+    "arxiv:2605.14045v1": {
+      "dates": [
+        "20260513"
+      ],
+      "first_seen_utc": "2026-05-15T02:48:28.934029+00:00",
+      "keywords": [
+        "vision-language",
+        "VLM"
+      ],
+      "last_seen_utc": "2026-05-15T02:48:43.530050+00:00",
+      "title": "PVRF: All-in-one Adverse Weather Removal via Prior-modulated and Velocity-constrained Rectified Flow"
+    },
+    "arxiv:2605.14051v1": {
+      "dates": [
+        "20260513"
+      ],
+      "first_seen_utc": "2026-05-15T02:33:20.413117+00:00",
+      "keywords": [
+        "LLM agent",
+        "workflow"
+      ],
+      "last_seen_utc": "2026-05-15T02:37:43.002527+00:00",
+      "title": "SPIN: Structural LLM Planning via Iterative Navigation for Industrial Tasks"
+    },
+    "arxiv:2605.14054v1": {
+      "dates": [
+        "20260513"
+      ],
+      "first_seen_utc": "2026-05-15T02:37:43.002522+00:00",
+      "keywords": [
+        "workflow",
+        "vision-language",
+        "VLM"
+      ],
+      "last_seen_utc": "2026-05-15T02:48:43.530038+00:00",
+      "title": "Bad Seeing or Bad Thinking? Rewarding Perception for Vision-Language Reasoning"
+    },
+    "arxiv:2605.14062v1": {
+      "dates": [
+        "20260513"
+      ],
+      "first_seen_utc": "2026-05-15T02:49:56.579080+00:00",
+      "keywords": [
+        "synthetic data"
+      ],
+      "last_seen_utc": "2026-05-15T02:49:56.579090+00:00",
+      "title": "Know When To Fold 'Em: Token-Efficient LLM Synthetic Data Generation via Multi-Stage In-Flight Rejection"
+    },
+    "arxiv:2605.14067v1": {
+      "dates": [
+        "20260513"
+      ],
+      "first_seen_utc": "2026-05-15T02:37:43.002518+00:00",
+      "keywords": [
+        "workflow"
+      ],
+      "last_seen_utc": "2026-05-15T02:37:43.002519+00:00",
+      "title": "Comparative Evaluation of Machine Learning Approaches for Minority-Class Financial Distress Prediction Under Class Imbalance Constraints"
+    },
+    "arxiv:2605.14068v1": {
+      "dates": [
+        "20260513"
+      ],
+      "first_seen_utc": "2026-05-15T02:48:28.934013+00:00",
+      "keywords": [
+        "vision-language",
+        "visual reasoning"
+      ],
+      "last_seen_utc": "2026-05-15T02:50:03.912389+00:00",
+      "title": "CurveBench: A Benchmark for Exact Topological Reasoning over Nested Jordan Curves"
+    },
+    "arxiv:2605.14071v1": {
+      "dates": [
+        "20260513"
+      ],
+      "first_seen_utc": "2026-05-15T02:49:53.064852+00:00",
+      "keywords": [
+        "distillation"
+      ],
+      "last_seen_utc": "2026-05-15T02:49:53.064855+00:00",
+      "title": "Distribution Corrected Offline Data Distillation for Large Language Models"
+    },
+    "arxiv:2605.14084v1": {
+      "dates": [
+        "20260513"
+      ],
+      "first_seen_utc": "2026-05-15T02:46:41.995973+00:00",
+      "keywords": [
+        "code agent"
+      ],
+      "last_seen_utc": "2026-05-15T02:46:41.995976+00:00",
+      "title": "CRANE: Constrained Reasoning Injection for Code Agents via Nullspace Editing"
+    },
+    "arxiv:2605.14113v1": {
+      "dates": [
+        "20260513"
+      ],
+      "first_seen_utc": "2026-05-15T02:37:43.002512+00:00",
+      "keywords": [
+        "workflow",
+        "distillation"
+      ],
+      "last_seen_utc": "2026-05-15T02:49:53.064837+00:00",
+      "title": "ProtoMedAgent: Multimodal Clinical Interpretability via Privacy-Aware Agentic Workflows"
+    },
+    "arxiv:2605.14126v1": {
+      "dates": [
+        "20260513"
+      ],
+      "first_seen_utc": "2026-05-15T02:33:20.413109+00:00",
+      "keywords": [
+        "LLM agent"
+      ],
+      "last_seen_utc": "2026-05-15T02:33:20.413112+00:00",
+      "title": "Reinforcement Learning for Tool-Calling Agents in Fast Healthcare Interoperability Resources (FHIR)"
+    },
+    "arxiv:2605.14133v1": {
+      "dates": [
+        "20260513"
+      ],
+      "first_seen_utc": "2026-05-15T02:37:43.002497+00:00",
+      "keywords": [
+        "workflow"
+      ],
+      "last_seen_utc": "2026-05-15T02:37:43.002507+00:00",
+      "title": "ClawForge: Generating Executable Interactive Benchmarks for Command-Line Agents"
+    },
+    "arxiv:2605.14135v1": {
+      "dates": [
+        "20260513"
+      ],
+      "first_seen_utc": "2026-05-15T02:50:24.712251+00:00",
+      "keywords": [
+        "layout"
+      ],
+      "last_seen_utc": "2026-05-15T02:50:24.712259+00:00",
+      "title": "PanoPlane: Plane-Aware Panoramic Completion for Sparse-View Indoor 3D Gaussian Splatting"
+    },
+    "arxiv:2605.14141v1": {
+      "dates": [
+        "20260513"
+      ],
+      "first_seen_utc": "2026-05-15T02:33:20.413092+00:00",
+      "keywords": [
+        "LLM agent",
+        "code agent"
+      ],
+      "last_seen_utc": "2026-05-15T02:46:41.995961+00:00",
+      "title": "Distribution-Aware Algorithm Design with LLM Agents"
+    },
+    "arxiv:2605.14186v1": {
+      "dates": [
+        "20260513"
+      ],
+      "first_seen_utc": "2026-05-15T02:50:00.200520+00:00",
+      "keywords": [
+        "multimodal reasoning"
+      ],
+      "last_seen_utc": "2026-05-15T02:50:00.200528+00:00",
+      "title": "LLMs Know When They Know, but Do Not Act on It: A Metacognitive Harness for Test-time Scaling"
+    },
+    "arxiv:2605.14201v1": {
+      "dates": [
+        "20260513"
+      ],
+      "first_seen_utc": "2026-05-15T02:48:28.933996+00:00",
+      "keywords": [
+        "vision-language"
+      ],
+      "last_seen_utc": "2026-05-15T02:48:28.934006+00:00",
+      "title": "MAPLE: Latent Multi-Agent Play for End-to-End Autonomous Driving"
     }
   },
-  "updated_at": "2026-05-14T02:35:11.113156+00:00",
+  "updated_at": "2026-05-15T02:50:28.316751+00:00",
   "version": 1
 }
