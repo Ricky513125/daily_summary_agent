@@ -8649,8 +8649,1226 @@
       ],
       "last_seen_utc": "2026-05-20T02:37:43.454110+00:00",
       "title": "Time to REFLECT: Can We Trust LLM Judges for Evidence-based Research Agents?"
+    },
+    "arxiv:2605.19223v1": {
+      "dates": [
+        "20260519"
+      ],
+      "first_seen_utc": "2026-05-21T02:41:34.325251+00:00",
+      "keywords": [
+        "video understanding"
+      ],
+      "last_seen_utc": "2026-05-21T02:41:34.325254+00:00",
+      "title": "HAVEN: Hierarchically Aligned Multimodal Benchmark for Unified Video Understanding"
+    },
+    "arxiv:2605.19242v1": {
+      "dates": [
+        "20260519"
+      ],
+      "first_seen_utc": "2026-05-21T02:40:50.595507+00:00",
+      "keywords": [
+        "DPO"
+      ],
+      "last_seen_utc": "2026-05-21T02:40:50.595510+00:00",
+      "title": "PhyWorld: Physics-Faithful World Model for Video Generation"
+    },
+    "arxiv:2605.19289v1": {
+      "dates": [
+        "20260519"
+      ],
+      "first_seen_utc": "2026-05-21T02:40:58.645800+00:00",
+      "keywords": [
+        "synthetic data"
+      ],
+      "last_seen_utc": "2026-05-21T02:40:58.645802+00:00",
+      "title": "What Makes Synthetic Data Effective in Image Segmentation"
+    },
+    "arxiv:2605.19307v1": {
+      "dates": [
+        "20260519"
+      ],
+      "first_seen_utc": "2026-05-21T02:41:02.740352+00:00",
+      "keywords": [
+        "multimodal reasoning"
+      ],
+      "last_seen_utc": "2026-05-21T02:41:02.740354+00:00",
+      "title": "MetaRA: Metamorphic Robustness Assessment for Multimodal Large Language Model-based Visual Question Answering Systems"
+    },
+    "arxiv:2605.19309v1": {
+      "dates": [
+        "20260519"
+      ],
+      "first_seen_utc": "2026-05-21T02:41:17.541178+00:00",
+      "keywords": [
+        "OCR"
+      ],
+      "last_seen_utc": "2026-05-21T02:41:17.541181+00:00",
+      "title": "How Do Document Parsers Break? Auditing Structural Vulnerability in Document Intelligence"
+    },
+    "arxiv:2605.19320v1": {
+      "dates": [
+        "20260519"
+      ],
+      "first_seen_utc": "2026-05-21T02:40:50.595477+00:00",
+      "keywords": [
+        "DPO",
+        "OCR"
+      ],
+      "last_seen_utc": "2026-05-21T02:41:17.541160+00:00",
+      "title": "TextAlign: Preference Alignment for Text Rendering with Hierarchical Rewards"
+    },
+    "arxiv:2605.19322v1": {
+      "dates": [
+        "20260519"
+      ],
+      "first_seen_utc": "2026-05-21T02:41:02.740347+00:00",
+      "keywords": [
+        "multimodal reasoning",
+        "video understanding"
+      ],
+      "last_seen_utc": "2026-05-21T02:41:34.325245+00:00",
+      "title": "DynaTok: Temporally Adaptive and Positional Bias-Aware Token Compression for Video-LLMs"
+    },
+    "arxiv:2605.19324v1": {
+      "dates": [
+        "20260519"
+      ],
+      "first_seen_utc": "2026-05-21T02:40:58.645796+00:00",
+      "keywords": [
+        "synthetic data"
+      ],
+      "last_seen_utc": "2026-05-21T02:40:58.645798+00:00",
+      "title": "BrainDyn: A Sheaf Neural ODE for Generative Brain Dynamics"
+    },
+    "arxiv:2605.19338v1": {
+      "dates": [
+        "20260519"
+      ],
+      "first_seen_utc": "2026-05-21T02:40:07.353789+00:00",
+      "keywords": [
+        "orchestration"
+      ],
+      "last_seen_utc": "2026-05-21T02:40:07.353790+00:00",
+      "title": "STAR-PólyaMath: Multi-Agent Reasoning under Persistent Meta-Strategic Supervision"
+    },
+    "arxiv:2605.19342v1": {
+      "dates": [
+        "20260519"
+      ],
+      "first_seen_utc": "2026-05-21T02:41:06.446096+00:00",
+      "keywords": [
+        "visual reasoning"
+      ],
+      "last_seen_utc": "2026-05-21T02:41:06.446098+00:00",
+      "title": "Semantic-Enriched Latent Visual Reasoning"
+    },
+    "arxiv:2605.19350v1": {
+      "dates": [
+        "20260519"
+      ],
+      "first_seen_utc": "2026-05-21T02:41:30.799892+00:00",
+      "keywords": [
+        "layout"
+      ],
+      "last_seen_utc": "2026-05-21T02:41:30.799894+00:00",
+      "title": "CompoSE: Compositional Synthesis and Editing of 3D Shapes via Part-Aware Control"
+    },
+    "arxiv:2605.19382v1": {
+      "dates": [
+        "20260519"
+      ],
+      "first_seen_utc": "2026-05-21T02:41:30.799885+00:00",
+      "keywords": [
+        "layout"
+      ],
+      "last_seen_utc": "2026-05-21T02:41:30.799887+00:00",
+      "title": "PRISM: A Benchmark for Programmatic Spatial-Temporal Reasoning"
+    },
+    "arxiv:2605.19390v1": {
+      "dates": [
+        "20260519"
+      ],
+      "first_seen_utc": "2026-05-21T02:41:34.325237+00:00",
+      "keywords": [
+        "video understanding"
+      ],
+      "last_seen_utc": "2026-05-21T02:41:34.325240+00:00",
+      "title": "LMM-Track4D: Eliciting 4D Dynamic Reasoning in LMMs via Trajectory-Grounded Dialogue"
+    },
+    "arxiv:2605.19394v1": {
+      "dates": [
+        "20260519"
+      ],
+      "first_seen_utc": "2026-05-21T02:40:58.645788+00:00",
+      "keywords": [
+        "synthetic data"
+      ],
+      "last_seen_utc": "2026-05-21T02:40:58.645789+00:00",
+      "title": "EmbGen: Teaching with Reassembled Corpora"
+    },
+    "arxiv:2605.19400v1": {
+      "dates": [
+        "20260519"
+      ],
+      "first_seen_utc": "2026-05-21T02:41:30.799878+00:00",
+      "keywords": [
+        "layout"
+      ],
+      "last_seen_utc": "2026-05-21T02:41:30.799880+00:00",
+      "title": "Once Again, with Style: Understanding and Supporting Partial Reuse in Dashboard Authoring"
+    },
+    "arxiv:2605.19418v1": {
+      "dates": [
+        "20260519"
+      ],
+      "first_seen_utc": "2026-05-21T02:40:00.329137+00:00",
+      "keywords": [
+        "multi-agent"
+      ],
+      "last_seen_utc": "2026-05-21T02:40:00.329139+00:00",
+      "title": "Conflict-Resilient Multi-Agent Reasoning via Signed Graph Modeling"
+    },
+    "arxiv:2605.19522v1": {
+      "dates": [
+        "20260519"
+      ],
+      "first_seen_utc": "2026-05-21T02:41:02.740338+00:00",
+      "keywords": [
+        "multimodal reasoning"
+      ],
+      "last_seen_utc": "2026-05-21T02:41:02.740339+00:00",
+      "title": "iDiff: Interpretable Difference-aware Framework for Pairwise Image Quality Assessment"
+    },
+    "arxiv:2605.19528v1": {
+      "dates": [
+        "20260519"
+      ],
+      "first_seen_utc": "2026-05-21T02:39:37.799812+00:00",
+      "keywords": [
+        "tool use"
+      ],
+      "last_seen_utc": "2026-05-21T02:39:37.799815+00:00",
+      "title": "Towards Camera-Robust 3D Localization: Equation-Anchored Tool-Use for MLLMs"
+    },
+    "arxiv:2605.19538v1": {
+      "dates": [
+        "20260519"
+      ],
+      "first_seen_utc": "2026-05-21T02:41:06.446086+00:00",
+      "keywords": [
+        "visual reasoning"
+      ],
+      "last_seen_utc": "2026-05-21T02:41:06.446088+00:00",
+      "title": "CaptchaMind: Training CAPTCHA Solvers via Reinforcement Learning with Explicit Reasoning Supervision"
+    },
+    "arxiv:2605.19559v1": {
+      "dates": [
+        "20260519"
+      ],
+      "first_seen_utc": "2026-05-21T02:41:34.325230+00:00",
+      "keywords": [
+        "video understanding"
+      ],
+      "last_seen_utc": "2026-05-21T02:41:34.325232+00:00",
+      "title": "EgoCoT-Bench: Benchmarking Grounded and Verifiable Operation-Centric Chain of Thought Reasoning for MLLMs"
+    },
+    "arxiv:2605.19587v1": {
+      "dates": [
+        "20260519"
+      ],
+      "first_seen_utc": "2026-05-21T02:41:30.799864+00:00",
+      "keywords": [
+        "layout"
+      ],
+      "last_seen_utc": "2026-05-21T02:41:30.799867+00:00",
+      "title": "SceneCode: Executable World Programs for Editable Indoor Scenes with Articulated Objects"
+    },
+    "arxiv:2605.19604v1": {
+      "dates": [
+        "20260519"
+      ],
+      "first_seen_utc": "2026-05-21T02:39:45.054011+00:00",
+      "keywords": [
+        "function calling"
+      ],
+      "last_seen_utc": "2026-05-21T02:39:45.054024+00:00",
+      "title": "Formal Skill: Programmable Runtime Skills for Efficient and Accurate LLM Agents"
+    },
+    "arxiv:2605.19743v1": {
+      "dates": [
+        "20260519"
+      ],
+      "first_seen_utc": "2026-05-21T02:39:34.130679+00:00",
+      "keywords": [
+        "LLM agent",
+        "tool use",
+        "multi-agent",
+        "orchestration"
+      ],
+      "last_seen_utc": "2026-05-21T02:40:07.353784+00:00",
+      "title": "EngiAI: A Multi-Agent Framework and Benchmark Suite for LLM-Driven Engineering Design"
+    },
+    "arxiv:2605.19779v1": {
+      "dates": [
+        "20260519"
+      ],
+      "first_seen_utc": "2026-05-21T02:40:00.329128+00:00",
+      "keywords": [
+        "multi-agent"
+      ],
+      "last_seen_utc": "2026-05-21T02:40:00.329130+00:00",
+      "title": "Distribution-Free Uncertainty Quantification for Continuous AI Agent Evaluation"
+    },
+    "arxiv:2605.19782v1": {
+      "dates": [
+        "20260519"
+      ],
+      "first_seen_utc": "2026-05-21T02:39:34.130674+00:00",
+      "keywords": [
+        "LLM agent"
+      ],
+      "last_seen_utc": "2026-05-21T02:39:34.130675+00:00",
+      "title": "Prior Knowledge or Search? A Study of LLM Agents in Hardware-Aware Code Optimization"
+    },
+    "arxiv:2605.19830v1": {
+      "dates": [
+        "20260519"
+      ],
+      "first_seen_utc": "2026-05-21T02:40:58.645782+00:00",
+      "keywords": [
+        "synthetic data"
+      ],
+      "last_seen_utc": "2026-05-21T02:40:58.645783+00:00",
+      "title": "Set-Valued Policy Learning"
+    },
+    "arxiv:2605.19832v1": {
+      "dates": [
+        "20260519"
+      ],
+      "first_seen_utc": "2026-05-21T02:40:07.353779+00:00",
+      "keywords": [
+        "orchestration"
+      ],
+      "last_seen_utc": "2026-05-21T02:40:07.353781+00:00",
+      "title": "Material for Thought: Generative AI as an Active Creative Medium"
+    },
+    "arxiv:2605.19834v1": {
+      "dates": [
+        "20260519"
+      ],
+      "first_seen_utc": "2026-05-21T02:40:00.329124+00:00",
+      "keywords": [
+        "multi-agent",
+        "layout"
+      ],
+      "last_seen_utc": "2026-05-21T02:41:30.799859+00:00",
+      "title": "A Closed-loop, State-centric, Multi-agent Framework for Passenger Load Estimation from Heterogeneous Data Streams"
+    },
+    "arxiv:2605.19846v2": {
+      "dates": [
+        "20260519"
+      ],
+      "first_seen_utc": "2026-05-21T02:41:34.325220+00:00",
+      "keywords": [
+        "video understanding"
+      ],
+      "last_seen_utc": "2026-05-21T02:41:34.325224+00:00",
+      "title": "FineBench: Benchmarking and Enhancing Vision-Language Models for Fine-grained Human Activity Understanding"
+    },
+    "arxiv:2605.19855v1": {
+      "dates": [
+        "20260519"
+      ],
+      "first_seen_utc": "2026-05-21T02:40:58.645778+00:00",
+      "keywords": [
+        "synthetic data"
+      ],
+      "last_seen_utc": "2026-05-21T02:40:58.645779+00:00",
+      "title": "A Framework for Evaluating Zero-Shot Image Generation in Concept-based Explainability"
+    },
+    "arxiv:2605.19859v1": {
+      "dates": [
+        "20260519"
+      ],
+      "first_seen_utc": "2026-05-21T02:41:02.740324+00:00",
+      "keywords": [
+        "multimodal reasoning"
+      ],
+      "last_seen_utc": "2026-05-21T02:41:02.740332+00:00",
+      "title": "Eyes on VLM: Benchmarking Gaze Following and Social Gaze Prediction in Vision Language Models"
+    },
+    "arxiv:2605.19866v1": {
+      "dates": [
+        "20260519"
+      ],
+      "first_seen_utc": "2026-05-21T02:41:13.546467+00:00",
+      "keywords": [
+        "document understanding",
+        "layout"
+      ],
+      "last_seen_utc": "2026-05-21T02:41:30.799853+00:00",
+      "title": "Structured Layout Priors for Robust Out-of-Distribution Visual Document Understanding"
+    },
+    "arxiv:2605.19892v1": {
+      "dates": [
+        "20260519"
+      ],
+      "first_seen_utc": "2026-05-21T02:40:07.353773+00:00",
+      "keywords": [
+        "orchestration"
+      ],
+      "last_seen_utc": "2026-05-21T02:40:07.353775+00:00",
+      "title": "Deep Tech to Space: Space Data Centers and AI Revolution at the Edge"
+    },
+    "arxiv:2605.19895v1": {
+      "dates": [
+        "20260519"
+      ],
+      "first_seen_utc": "2026-05-21T02:41:30.799846+00:00",
+      "keywords": [
+        "layout"
+      ],
+      "last_seen_utc": "2026-05-21T02:41:30.799848+00:00",
+      "title": "Streamlined Constraint Reasoning via CNN Pattern Recognition on Enumerated Solutions"
+    },
+    "arxiv:2605.19932v1": {
+      "dates": [
+        "20260519"
+      ],
+      "first_seen_utc": "2026-05-21T02:39:34.130669+00:00",
+      "keywords": [
+        "LLM agent",
+        "code agent"
+      ],
+      "last_seen_utc": "2026-05-21T02:40:15.410646+00:00",
+      "title": "PEEK: Context Map as an Orientation Cache for Long-Context LLM Agents"
+    },
+    "arxiv:2605.19952v1": {
+      "dates": [
+        "20260519"
+      ],
+      "first_seen_utc": "2026-05-21T02:39:34.130665+00:00",
+      "keywords": [
+        "LLM agent"
+      ],
+      "last_seen_utc": "2026-05-21T02:39:34.130666+00:00",
+      "title": "Rethinking How to Remember: Beyond Atomic Facts in Lifelong LLM Agent Memory"
+    },
+    "arxiv:2605.19988v1": {
+      "dates": [
+        "20260519"
+      ],
+      "first_seen_utc": "2026-05-21T02:40:54.121155+00:00",
+      "keywords": [
+        "distillation"
+      ],
+      "last_seen_utc": "2026-05-21T02:40:54.121156+00:00",
+      "title": "A Case for Agentic Tuning: From Documentation to Action in PostgreSQL"
+    },
+    "arxiv:2605.19995v1": {
+      "dates": [
+        "20260519"
+      ],
+      "first_seen_utc": "2026-05-21T02:40:27.261863+00:00",
+      "keywords": [
+        "VLM"
+      ],
+      "last_seen_utc": "2026-05-21T02:40:27.261864+00:00",
+      "title": "CogOmniControl: Reasoning-Driven Controllable Video Generation via Creative Intent Cognition"
+    },
+    "arxiv:2605.20006v1": {
+      "dates": [
+        "20260519"
+      ],
+      "first_seen_utc": "2026-05-21T02:40:27.261858+00:00",
+      "keywords": [
+        "VLM"
+      ],
+      "last_seen_utc": "2026-05-21T02:40:27.261860+00:00",
+      "title": "GeoX: Mastering Geospatial Reasoning Through Self-Play and Verifiable Rewards"
+    },
+    "arxiv:2605.20023v1": {
+      "dates": [
+        "20260519"
+      ],
+      "first_seen_utc": "2026-05-21T02:39:34.130660+00:00",
+      "keywords": [
+        "LLM agent"
+      ],
+      "last_seen_utc": "2026-05-21T02:39:34.130662+00:00",
+      "title": "When Skills Don't Help: A Negative Result on Procedural Knowledge for Tool-Grounded Agents in Offensive Cybersecurity"
+    },
+    "arxiv:2605.20025v1": {
+      "dates": [
+        "20260519"
+      ],
+      "first_seen_utc": "2026-05-21T02:40:00.329119+00:00",
+      "keywords": [
+        "multi-agent"
+      ],
+      "last_seen_utc": "2026-05-21T02:40:00.329121+00:00",
+      "title": "AutoResearchClaw: Self-Reinforcing Autonomous Research with Human-AI Collaboration"
+    },
+    "arxiv:2605.20033v1": {
+      "dates": [
+        "20260519"
+      ],
+      "first_seen_utc": "2026-05-21T02:40:19.145044+00:00",
+      "keywords": [
+        "multimodal"
+      ],
+      "last_seen_utc": "2026-05-21T02:40:19.145045+00:00",
+      "title": "A Nash Equilibrium Framework For Training-Free Multimodal Step Verification"
+    },
+    "arxiv:2605.20044v1": {
+      "dates": [
+        "20260519"
+      ],
+      "first_seen_utc": "2026-05-21T02:40:54.121150+00:00",
+      "keywords": [
+        "distillation"
+      ],
+      "last_seen_utc": "2026-05-21T02:40:54.121152+00:00",
+      "title": "OP2GS: Object-Aware 3D Gaussian Splatting with Dual-Opacity Primitives"
+    },
+    "arxiv:2605.20049v1": {
+      "dates": [
+        "20260519"
+      ],
+      "first_seen_utc": "2026-05-21T02:40:15.410640+00:00",
+      "keywords": [
+        "code agent"
+      ],
+      "last_seen_utc": "2026-05-21T02:40:15.410642+00:00",
+      "title": "Does Code Cleanliness Affect Coding Agents? A Controlled Minimal-Pair Study"
+    },
+    "arxiv:2605.20061v1": {
+      "dates": [
+        "20260519"
+      ],
+      "first_seen_utc": "2026-05-21T02:39:34.130656+00:00",
+      "keywords": [
+        "LLM agent"
+      ],
+      "last_seen_utc": "2026-05-21T02:39:34.130658+00:00",
+      "title": "Rewarding Beliefs, Not Actions: Consistency-Guided Credit Assignment for Long-Horizon Agents"
+    },
+    "arxiv:2605.20072v1": {
+      "dates": [
+        "20260519"
+      ],
+      "first_seen_utc": "2026-05-21T02:39:34.130651+00:00",
+      "keywords": [
+        "LLM agent"
+      ],
+      "last_seen_utc": "2026-05-21T02:39:34.130653+00:00",
+      "title": "Probing Embodied LLMs: When Higher Observation Fidelity Hurts Problem Solving"
+    },
+    "arxiv:2605.20074v1": {
+      "dates": [
+        "20260519"
+      ],
+      "first_seen_utc": "2026-05-21T02:40:54.121146+00:00",
+      "keywords": [
+        "distillation"
+      ],
+      "last_seen_utc": "2026-05-21T02:40:54.121147+00:00",
+      "title": "Towards Distillation Guarantees under Algorithmic Alignment for Combinatorial Optimization"
+    },
+    "arxiv:2605.20082v1": {
+      "dates": [
+        "20260519"
+      ],
+      "first_seen_utc": "2026-05-21T02:40:27.261853+00:00",
+      "keywords": [
+        "VLM",
+        "DPO"
+      ],
+      "last_seen_utc": "2026-05-21T02:40:50.595462+00:00",
+      "title": "VL-DPO: Vision-Language-Guided Finetuning for Preference-Aligned Autonomous Driving"
+    },
+    "arxiv:2605.20086v1": {
+      "dates": [
+        "20260519"
+      ],
+      "first_seen_utc": "2026-05-21T02:40:15.410626+00:00",
+      "keywords": [
+        "code agent"
+      ],
+      "last_seen_utc": "2026-05-21T02:40:15.410634+00:00",
+      "title": "What Do Evolutionary Coding Agents Evolve?"
+    },
+    "arxiv:2605.20090v1": {
+      "dates": [
+        "20260519"
+      ],
+      "first_seen_utc": "2026-05-21T02:40:19.145036+00:00",
+      "keywords": [
+        "multimodal"
+      ],
+      "last_seen_utc": "2026-05-21T02:40:19.145037+00:00",
+      "title": "MetaEarth-MM: Unified Multimodal Remote Sensing Image Generation with Scene-centered Joint Modeling"
+    },
+    "arxiv:2605.20110v1": {
+      "dates": [
+        "20260519"
+      ],
+      "first_seen_utc": "2026-05-21T02:40:32.630462+00:00",
+      "keywords": [
+        "LVLM"
+      ],
+      "last_seen_utc": "2026-05-21T02:40:32.630465+00:00",
+      "title": "SetCon: Towards Open-Ended Referring Segmentation via Set-Level Concept Prediction"
+    },
+    "arxiv:2605.20147v1": {
+      "dates": [
+        "20260519"
+      ],
+      "first_seen_utc": "2026-05-21T02:40:19.145031+00:00",
+      "keywords": [
+        "multimodal"
+      ],
+      "last_seen_utc": "2026-05-21T02:40:19.145033+00:00",
+      "title": "PixVerve: Advancing Native UHR Image Generation to 100MP with a Large-Scale High-Quality Dataset"
+    },
+    "arxiv:2605.20149v1": {
+      "dates": [
+        "20260519"
+      ],
+      "first_seen_utc": "2026-05-21T02:39:52.266809+00:00",
+      "keywords": [
+        "planning"
+      ],
+      "last_seen_utc": "2026-05-21T02:39:52.266811+00:00",
+      "title": "Less Back-and-Forth: A Comparative Study of Structured Prompting"
+    },
+    "arxiv:2605.20151v1": {
+      "dates": [
+        "20260519"
+      ],
+      "first_seen_utc": "2026-05-21T02:40:58.645773+00:00",
+      "keywords": [
+        "synthetic data"
+      ],
+      "last_seen_utc": "2026-05-21T02:40:58.645774+00:00",
+      "title": "When Does Model Collapse Occur in Structured Interactive Learning?"
+    },
+    "arxiv:2605.20158v1": {
+      "dates": [
+        "20260519"
+      ],
+      "first_seen_utc": "2026-05-21T02:40:22.798226+00:00",
+      "keywords": [
+        "vision-language",
+        "LVLM"
+      ],
+      "last_seen_utc": "2026-05-21T02:40:32.630446+00:00",
+      "title": "Rethinking Visual Attribution for Chest X-ray Reasoning in Large Vision Language Models"
+    },
+    "arxiv:2605.20159v1": {
+      "dates": [
+        "20260519"
+      ],
+      "first_seen_utc": "2026-05-21T02:39:48.570950+00:00",
+      "keywords": [
+        "workflow"
+      ],
+      "last_seen_utc": "2026-05-21T02:39:48.570952+00:00",
+      "title": "Interpretable Computer Vision for Defect Detection in X-ray Tomography of Aerospace SiC/SiC Composites"
+    },
+    "arxiv:2605.20164v1": {
+      "dates": [
+        "20260519"
+      ],
+      "first_seen_utc": "2026-05-21T02:40:19.145027+00:00",
+      "keywords": [
+        "multimodal"
+      ],
+      "last_seen_utc": "2026-05-21T02:40:19.145028+00:00",
+      "title": "Not Every Rubric Teaches Equally: Policy-Aware Rubric Rewards for RLVR"
+    },
+    "arxiv:2605.20165v1": {
+      "dates": [
+        "20260519"
+      ],
+      "first_seen_utc": "2026-05-21T02:40:22.798218+00:00",
+      "keywords": [
+        "vision-language",
+        "VLM"
+      ],
+      "last_seen_utc": "2026-05-21T02:40:27.261848+00:00",
+      "title": "CaMo: Camera Motion Grounded Evaluation and Training for Vision-Language Models"
+    },
+    "arxiv:2605.20172v1": {
+      "dates": [
+        "20260519"
+      ],
+      "first_seen_utc": "2026-05-21T02:39:52.266801+00:00",
+      "keywords": [
+        "planning"
+      ],
+      "last_seen_utc": "2026-05-21T02:39:52.266803+00:00",
+      "title": "Long-term Power Grid Planning via Answer Set Programming"
+    },
+    "arxiv:2605.20173v1": {
+      "dates": [
+        "20260519"
+      ],
+      "first_seen_utc": "2026-05-21T02:39:34.130640+00:00",
+      "keywords": [
+        "LLM agent"
+      ],
+      "last_seen_utc": "2026-05-21T02:39:34.130642+00:00",
+      "title": "A Methodology for Selecting and Composing Runtime Architecture Patterns for Production LLM Agents"
+    },
+    "arxiv:2605.20176v1": {
+      "dates": [
+        "20260519"
+      ],
+      "first_seen_utc": "2026-05-21T02:39:48.570940+00:00",
+      "keywords": [
+        "workflow",
+        "planning",
+        "multimodal",
+        "distillation"
+      ],
+      "last_seen_utc": "2026-05-21T02:40:54.121141+00:00",
+      "title": "ClinSeekAgent: Automating Multimodal Evidence Seeking for Agentic Clinical Reasoning"
+    },
+    "arxiv:2605.20177v1": {
+      "dates": [
+        "20260519"
+      ],
+      "first_seen_utc": "2026-05-21T02:40:22.798211+00:00",
+      "keywords": [
+        "vision-language",
+        "VLM",
+        "visual reasoning"
+      ],
+      "last_seen_utc": "2026-05-21T02:41:06.446072+00:00",
+      "title": "From Seeing to Thinking: Decoupling Perception and Reasoning Improves Post-Training of Vision-Language Models"
+    },
+    "arxiv:2605.20279v1": {
+      "dates": [
+        "20260519"
+      ],
+      "first_seen_utc": "2026-05-21T02:40:58.645792+00:00",
+      "keywords": [
+        "synthetic data"
+      ],
+      "last_seen_utc": "2026-05-21T02:40:58.645794+00:00",
+      "title": "The Economics of Model Collapse: Equilibrium, Welfare, and Optimal Provenance Subsidies in Synthetic Data Markets"
+    },
+    "arxiv:2605.20284v1": {
+      "dates": [
+        "20260519"
+      ],
+      "first_seen_utc": "2026-05-21T02:41:02.740343+00:00",
+      "keywords": [
+        "multimodal reasoning",
+        "visual reasoning"
+      ],
+      "last_seen_utc": "2026-05-21T02:41:06.446092+00:00",
+      "title": "JUDO: A Juxtaposed Domain-Oriented Multimodal Reasoner for Industrial Anomaly QA"
+    },
+    "arxiv:2605.20287v1": {
+      "dates": [
+        "20260519"
+      ],
+      "first_seen_utc": "2026-05-21T02:41:30.799871+00:00",
+      "keywords": [
+        "layout"
+      ],
+      "last_seen_utc": "2026-05-21T02:41:30.799873+00:00",
+      "title": "FusionCell: Cross-Attentive Fusion of Layout Geometry and Netlist Topology for Standard-Cell Performance Prediction"
+    },
+    "arxiv:2605.20291v1": {
+      "dates": [
+        "20260519"
+      ],
+      "first_seen_utc": "2026-05-21T02:40:11.380647+00:00",
+      "keywords": [
+        "web agent"
+      ],
+      "last_seen_utc": "2026-05-21T02:40:11.380657+00:00",
+      "title": "Weasel: Out-of-Domain Generalization for Web Agents via Importance-Diversity Data Selection"
+    },
+    "arxiv:2605.20311v1": {
+      "dates": [
+        "20260519"
+      ],
+      "first_seen_utc": "2026-05-21T02:41:30.799837+00:00",
+      "keywords": [
+        "layout"
+      ],
+      "last_seen_utc": "2026-05-21T02:41:30.799840+00:00",
+      "title": "WaveGraphNet: Physics-Consistent Guided-Wave Damage Localization through Coupled Inverse-Forward Graph Learning"
+    },
+    "arxiv:2605.20315v1": {
+      "dates": [
+        "20260519"
+      ],
+      "first_seen_utc": "2026-05-21T02:39:34.130647+00:00",
+      "keywords": [
+        "LLM agent",
+        "tool use",
+        "workflow",
+        "planning"
+      ],
+      "last_seen_utc": "2026-05-21T02:39:52.266805+00:00",
+      "title": "Mix-Quant: Quantized Prefilling, Precise Decoding for Agentic LLMs"
+    },
+    "arxiv:2605.20316v1": {
+      "dates": [
+        "20260519"
+      ],
+      "first_seen_utc": "2026-05-21T02:40:19.145018+00:00",
+      "keywords": [
+        "multimodal",
+        "vision-language"
+      ],
+      "last_seen_utc": "2026-05-21T02:40:22.798206+00:00",
+      "title": "FullFlow: Upgrading Text-to-Image Flow Matching Models for Bidirectional Vision--Language Generation"
+    },
+    "arxiv:2605.20326v1": {
+      "dates": [
+        "20260519"
+      ],
+      "first_seen_utc": "2026-05-21T02:41:09.991481+00:00",
+      "keywords": [
+        "grounding"
+      ],
+      "last_seen_utc": "2026-05-21T02:41:09.991499+00:00",
+      "title": "Representability-Aware Neural Networks for Reduced Density Matrices: Application to Fractional Chern Insulators"
+    },
+    "arxiv:2605.20328v1": {
+      "dates": [
+        "20260519"
+      ],
+      "first_seen_utc": "2026-05-21T02:41:09.991474+00:00",
+      "keywords": [
+        "grounding"
+      ],
+      "last_seen_utc": "2026-05-21T02:41:09.991476+00:00",
+      "title": "Targeting Clause Type Distributions: a Picklock for Random Satisfiability Problems"
+    },
+    "arxiv:2605.20342v1": {
+      "dates": [
+        "20260519"
+      ],
+      "first_seen_utc": "2026-05-21T02:39:37.799781+00:00",
+      "keywords": [
+        "tool use",
+        "tool calling",
+        "multi-agent",
+        "multimodal",
+        "video understanding"
+      ],
+      "last_seen_utc": "2026-05-21T02:41:34.325202+00:00",
+      "title": "ParaVT: Taming the Tool Prior Paradox for Parallel Tool Use in Agentic Video Reinforcement Learning"
+    },
+    "arxiv:2605.20357v1": {
+      "dates": [
+        "20260519"
+      ],
+      "first_seen_utc": "2026-05-21T02:40:54.121136+00:00",
+      "keywords": [
+        "distillation"
+      ],
+      "last_seen_utc": "2026-05-21T02:40:54.121137+00:00",
+      "title": "Consistently Informative Soft-Label Temperature for Knowledge Distillation"
+    },
+    "arxiv:2605.20362v1": {
+      "dates": [
+        "20260519"
+      ],
+      "first_seen_utc": "2026-05-21T02:39:48.570935+00:00",
+      "keywords": [
+        "workflow"
+      ],
+      "last_seen_utc": "2026-05-21T02:39:48.570937+00:00",
+      "title": "HAPS: Rethinking Image Similarity for Virtual Staining"
+    },
+    "arxiv:2605.20368v1": {
+      "dates": [
+        "20260519"
+      ],
+      "first_seen_utc": "2026-05-21T02:40:58.645766+00:00",
+      "keywords": [
+        "synthetic data"
+      ],
+      "last_seen_utc": "2026-05-21T02:40:58.645769+00:00",
+      "title": "Security Document Classification with a Fine-Tuned Local Large Language Model: Benchmark Data and an Open-Source System"
+    },
+    "arxiv:2605.20372v1": {
+      "dates": [
+        "20260519"
+      ],
+      "first_seen_utc": "2026-05-21T02:40:19.145009+00:00",
+      "keywords": [
+        "multimodal"
+      ],
+      "last_seen_utc": "2026-05-21T02:40:19.145010+00:00",
+      "title": "Latent Space Guided Scenario Sampling for Multimodal Segmentation Under Missing Modalities"
+    },
+    "arxiv:2605.20373v1": {
+      "dates": [
+        "20260519"
+      ],
+      "first_seen_utc": "2026-05-21T02:40:54.121131+00:00",
+      "keywords": [
+        "distillation"
+      ],
+      "last_seen_utc": "2026-05-21T02:40:54.121133+00:00",
+      "title": "SUGAR: A Scalable Human-Video-Driven Generalizable Humanoid Loco-Manipulation Learning Framework"
+    },
+    "arxiv:2605.20385v1": {
+      "dates": [
+        "20260519"
+      ],
+      "first_seen_utc": "2026-05-21T02:41:09.991466+00:00",
+      "keywords": [
+        "grounding"
+      ],
+      "last_seen_utc": "2026-05-21T02:41:09.991469+00:00",
+      "title": "ConceptSeg-R1: Segment Any Concept via Meta-Reinforcement Learning"
+    },
+    "arxiv:2605.20388v1": {
+      "dates": [
+        "20260519"
+      ],
+      "first_seen_utc": "2026-05-21T02:39:52.266792+00:00",
+      "keywords": [
+        "planning",
+        "VLM"
+      ],
+      "last_seen_utc": "2026-05-21T02:40:27.261841+00:00",
+      "title": "How You Move Tells What You'll Do: Trajectory-Conditioned Egocentric Prediction"
+    },
+    "arxiv:2605.20408v1": {
+      "dates": [
+        "20260519"
+      ],
+      "first_seen_utc": "2026-05-21T02:40:46.872459+00:00",
+      "keywords": [
+        "RLHF"
+      ],
+      "last_seen_utc": "2026-05-21T02:40:46.872472+00:00",
+      "title": "Spectral Souping: A Unified Framework for Online Preference Alignment"
+    },
+    "arxiv:2605.20413v1": {
+      "dates": [
+        "20260519"
+      ],
+      "first_seen_utc": "2026-05-21T02:39:48.570931+00:00",
+      "keywords": [
+        "workflow"
+      ],
+      "last_seen_utc": "2026-05-21T02:39:48.570932+00:00",
+      "title": "Supervised Latent Restructuring for Small-Data Quantum Learning in Plant Phenomics"
+    },
+    "arxiv:2605.20416v1": {
+      "dates": [
+        "20260519"
+      ],
+      "first_seen_utc": "2026-05-21T02:40:19.145002+00:00",
+      "keywords": [
+        "multimodal",
+        "vision-language",
+        "synthetic data"
+      ],
+      "last_seen_utc": "2026-05-21T02:40:58.645754+00:00",
+      "title": "Miller-Index-Based Latent Crystallographic Fracture Plane Reasoning with Vision-Language Models"
+    },
+    "arxiv:2605.20425v1": {
+      "dates": [
+        "20260519"
+      ],
+      "first_seen_utc": "2026-05-21T02:39:48.570926+00:00",
+      "keywords": [
+        "workflow",
+        "multi-agent",
+        "grounding"
+      ],
+      "last_seen_utc": "2026-05-21T02:41:09.991460+00:00",
+      "title": "AgentCo-op: Retrieval-Based Synthesis of Interoperable Multi-Agent Workflows"
+    },
+    "arxiv:2605.20439v1": {
+      "dates": [
+        "20260519"
+      ],
+      "first_seen_utc": "2026-05-21T02:39:52.266787+00:00",
+      "keywords": [
+        "planning"
+      ],
+      "last_seen_utc": "2026-05-21T02:39:52.266789+00:00",
+      "title": "Can Conversational XAI Improve User Performance? An Experimental Study"
+    },
+    "arxiv:2605.20442v1": {
+      "dates": [
+        "20260519"
+      ],
+      "first_seen_utc": "2026-05-21T02:40:00.329105+00:00",
+      "keywords": [
+        "multi-agent"
+      ],
+      "last_seen_utc": "2026-05-21T02:40:00.329107+00:00",
+      "title": "Modeling Emotional Dynamics in Agent-to-Agent Interactions on Moltbook"
+    },
+    "arxiv:2605.20448v1": {
+      "dates": [
+        "20260519"
+      ],
+      "first_seen_utc": "2026-05-21T02:39:52.266783+00:00",
+      "keywords": [
+        "planning",
+        "vision-language",
+        "VLM",
+        "layout"
+      ],
+      "last_seen_utc": "2026-05-21T02:41:30.799819+00:00",
+      "title": "Do Vision--Language Models Understand 3D Scenes or Just Catalogue Objects?"
+    },
+    "arxiv:2605.20456v1": {
+      "dates": [
+        "20260519"
+      ],
+      "first_seen_utc": "2026-05-21T02:39:48.570921+00:00",
+      "keywords": [
+        "workflow",
+        "planning",
+        "orchestration"
+      ],
+      "last_seen_utc": "2026-05-21T02:40:07.353767+00:00",
+      "title": "Agentic Agile-V: From Vibe Coding to Verified Engineering in Software and Hardware Development"
+    },
+    "arxiv:2605.20461v1": {
+      "dates": [
+        "20260519"
+      ],
+      "first_seen_utc": "2026-05-21T02:41:09.991453+00:00",
+      "keywords": [
+        "grounding"
+      ],
+      "last_seen_utc": "2026-05-21T02:41:09.991455+00:00",
+      "title": "Understanding Model Behavior in Monocular Polyp Sizing"
+    },
+    "arxiv:2605.20465v1": {
+      "dates": [
+        "20260519"
+      ],
+      "first_seen_utc": "2026-05-21T02:39:48.570916+00:00",
+      "keywords": [
+        "workflow"
+      ],
+      "last_seen_utc": "2026-05-21T02:39:48.570918+00:00",
+      "title": "Art Card Game (ACG): Embedding Illustration in Gameplay to Mitigate Artist Self-Criticism"
+    },
+    "arxiv:2605.20469v1": {
+      "dates": [
+        "20260519"
+      ],
+      "first_seen_utc": "2026-05-21T02:40:22.798187+00:00",
+      "keywords": [
+        "vision-language",
+        "VLM"
+      ],
+      "last_seen_utc": "2026-05-21T02:40:27.261833+00:00",
+      "title": "HalluCXR: Benchmarking and Mitigating Hallucinations in Medical Vision-Language Models for Chest Radiograph Interpretation"
+    },
+    "arxiv:2605.20470v1": {
+      "dates": [
+        "20260519"
+      ],
+      "first_seen_utc": "2026-05-21T02:39:48.570910+00:00",
+      "keywords": [
+        "workflow"
+      ],
+      "last_seen_utc": "2026-05-21T02:39:48.570911+00:00",
+      "title": "EPC-3D-Diff: Equivariant Physics Consistent Conditional 3D Latent Diffusion for CBCT to CT Synthesis"
+    },
+    "arxiv:2605.20476v1": {
+      "dates": [
+        "20260519"
+      ],
+      "first_seen_utc": "2026-05-21T02:40:54.121127+00:00",
+      "keywords": [
+        "distillation"
+      ],
+      "last_seen_utc": "2026-05-21T02:40:54.121128+00:00",
+      "title": "Goodbye Drift: Anchored Tree Sampling for Long-Horizon Video-to-Video Generation"
+    },
+    "arxiv:2605.20477v1": {
+      "dates": [
+        "20260519"
+      ],
+      "first_seen_utc": "2026-05-21T02:40:54.121122+00:00",
+      "keywords": [
+        "distillation"
+      ],
+      "last_seen_utc": "2026-05-21T02:40:54.121124+00:00",
+      "title": "Training Language Agents to Learn from Experience"
+    },
+    "arxiv:2605.20478v1": {
+      "dates": [
+        "20260519"
+      ],
+      "first_seen_utc": "2026-05-21T02:41:09.991445+00:00",
+      "keywords": [
+        "grounding"
+      ],
+      "last_seen_utc": "2026-05-21T02:41:09.991448+00:00",
+      "title": "Stage-Audit: Auditable Source-Frontier Discovery for Cross-Wiki Tables"
+    },
+    "arxiv:2605.20479v1": {
+      "dates": [
+        "20260519"
+      ],
+      "first_seen_utc": "2026-05-21T02:41:09.991436+00:00",
+      "keywords": [
+        "grounding"
+      ],
+      "last_seen_utc": "2026-05-21T02:41:09.991439+00:00",
+      "title": "Oracle Supervision Transfers for Hyperparameter Prediction in Model-Based Image Denoising"
+    },
+    "arxiv:2605.20485v1": {
+      "dates": [
+        "20260519"
+      ],
+      "first_seen_utc": "2026-05-21T02:40:00.329099+00:00",
+      "keywords": [
+        "multi-agent",
+        "orchestration"
+      ],
+      "last_seen_utc": "2026-05-21T02:40:07.353753+00:00",
+      "title": "ZEBRA: Zero-shot Budgeted Resource Allocation for LLM Orchestration"
+    },
+    "arxiv:2605.20495v1": {
+      "dates": [
+        "20260519"
+      ],
+      "first_seen_utc": "2026-05-21T02:40:22.798180+00:00",
+      "keywords": [
+        "vision-language",
+        "VLM",
+        "grounding"
+      ],
+      "last_seen_utc": "2026-05-21T02:41:09.991430+00:00",
+      "title": "A Human-in-the-Loop Framework for Efficient Prompt Selection in Microscopy Vision-Language Models"
+    },
+    "arxiv:2605.20506v1": {
+      "dates": [
+        "20260519"
+      ],
+      "first_seen_utc": "2026-05-21T02:40:54.121117+00:00",
+      "keywords": [
+        "distillation"
+      ],
+      "last_seen_utc": "2026-05-21T02:40:54.121119+00:00",
+      "title": "Reinforcing Human Behavior Simulation via Verbal Feedback"
+    },
+    "arxiv:2605.20510v1": {
+      "dates": [
+        "20260519"
+      ],
+      "first_seen_utc": "2026-05-21T02:39:52.266771+00:00",
+      "keywords": [
+        "planning",
+        "multimodal"
+      ],
+      "last_seen_utc": "2026-05-21T02:40:19.144988+00:00",
+      "title": "ShadeBench: A Benchmark Dataset for Building Shade Simulation in Sustainable Society"
+    },
+    "arxiv:2605.20525v1": {
+      "dates": [
+        "20260519"
+      ],
+      "first_seen_utc": "2026-05-21T02:40:22.798171+00:00",
+      "keywords": [
+        "vision-language",
+        "grounding"
+      ],
+      "last_seen_utc": "2026-05-21T02:41:09.991423+00:00",
+      "title": "NeuroQA: A Large-Scale Image-Grounded Benchmark for 3D Brain MRI Understanding"
+    },
+    "arxiv:2605.20530v1": {
+      "dates": [
+        "20260519"
+      ],
+      "first_seen_utc": "2026-05-21T02:39:30.586993+00:00",
+      "keywords": [
+        "agent",
+        "LLM agent",
+        "tool calling",
+        "agentic"
+      ],
+      "last_seen_utc": "2026-05-21T02:40:03.828377+00:00",
+      "title": "AgentAtlas: Beyond Outcome Leaderboards for LLM Agents"
+    },
+    "arxiv:2605.20539v1": {
+      "dates": [
+        "20260519"
+      ],
+      "first_seen_utc": "2026-05-21T02:39:48.570895+00:00",
+      "keywords": [
+        "workflow"
+      ],
+      "last_seen_utc": "2026-05-21T02:39:48.570905+00:00",
+      "title": "OpenSeisML: Open Large-Scale Real Seismic and well-log Dataset for Generative AI"
+    },
+    "arxiv:2605.20544v1": {
+      "dates": [
+        "20260519"
+      ],
+      "first_seen_utc": "2026-05-21T02:39:30.586986+00:00",
+      "keywords": [
+        "agent",
+        "planning",
+        "agentic",
+        "vision-language",
+        "VLM",
+        "grounding"
+      ],
+      "last_seen_utc": "2026-05-21T02:41:09.991407+00:00",
+      "title": "The Yes-Man Syndrome: Benchmarking Abstention in Embodied Robotic Agents"
+    },
+    "arxiv:2605.20551v1": {
+      "dates": [
+        "20260519"
+      ],
+      "first_seen_utc": "2026-05-21T02:40:54.121102+00:00",
+      "keywords": [
+        "distillation"
+      ],
+      "last_seen_utc": "2026-05-21T02:40:54.121112+00:00",
+      "title": "Faster or Stronger: Towards Flexible Visual Place Recognition via Weighted Aggregation and Token Pruning"
+    },
+    "arxiv:2605.20554v1": {
+      "dates": [
+        "20260519"
+      ],
+      "first_seen_utc": "2026-05-21T02:39:30.586978+00:00",
+      "keywords": [
+        "agent",
+        "agentic"
+      ],
+      "last_seen_utc": "2026-05-21T02:40:03.828368+00:00",
+      "title": "Personality Engineering with AI Agents: A New Methodology for Negotiation Research"
+    },
+    "arxiv:2605.20563v1": {
+      "dates": [
+        "20260519"
+      ],
+      "first_seen_utc": "2026-05-21T02:39:30.586959+00:00",
+      "keywords": [
+        "agent",
+        "multi-agent",
+        "agentic"
+      ],
+      "last_seen_utc": "2026-05-21T02:40:03.828355+00:00",
+      "title": "Multi-agent Collaboration with State Management"
     }
   },
-  "updated_at": "2026-05-20T02:39:29.746016+00:00",
+  "updated_at": "2026-05-21T02:41:34.325321+00:00",
   "version": 1
 }
