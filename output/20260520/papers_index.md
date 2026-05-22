@@ -1,0 +1,30 @@
+# 2026-05-20 文献索引（可检索）
+
+> 生成时间: 2026-05-22 03:11:11
+
+说明：本表用于个人检索；标题来自源站（通常为英文）。
+
+| # | English Title | arXiv ID | Archive Link | Matched Keywords | Short Summary (≤200字) |
+|---:|---|---|---|---|---|
+| 1 | Trace2Skill: Verifier-Guided Skill Evolution for Long-Context EDA Agents | 2605.21810v1 | [link](http://arxiv.org/abs/2605.21810v1) | code agent | Trace2Skill提出一种测试时扩展框架，通过挖掘代理执行轨迹、结合密集诊断与oracle反馈，演化自然语言技能以指导长上下文EDA任务中的搜索、编辑与验证，无需RTL专用微调。 |
+| 2 | MM-Conv: A Multimodal Dataset and Benchmark for Context-Aware Grounding in 3D Dialogue | 2605.21796v1 | [link](http://arxiv.org/abs/2605.21796v1) | vision-language | 提出MM-Conv数据集与基准，基于6.7小时VR多模态对话构建，含4200+标注指代表达；设计两阶段接地流程，通过上下文重写缓解歧义，提升视觉定位性能。 |
+| 3 | SceneGraphGrounder: Zero-Shot 3D Visual Grounding via Structured Scene Graph Matching | 2605.21788v1 | [link](http://arxiv.org/abs/2605.21788v1) | vision-language | 提出SceneGraphGrounder框架，将零样本3D视觉定位重构为结构化场景图匹配，通过视觉标记提示策略从2D视图推断关系并构建3D场景图，再与查询图进行约束对齐，提升空间一致性和可解释性。 |
+| 4 | Improving 3D Labeling in Self-Driving by Inferring Vehicle Information using Vision Language Models | 2605.21747v1 | [link](http://arxiv.org/abs/2605.21747v1) | vision-language | 本文提出用视觉语言模型（VLM）零样本推断车辆品牌、型号及代际，并输出3D包围盒尺寸以辅助人工标注，提升自动驾驶中3D车辆标注质量与效率，尤其缓解严重遮挡下的标注失败问题。 |
+| 5 | BEiTScore: Reference-free Image Captioning Evaluation with an Efficient Cross-Encoder Model | 2605.21728v1 | [link](http://arxiv.org/abs/2605.21728v1) | vision-language | 提出BEiTScore：一种无需参考文本的图像描述评估指标，基于轻量级跨编码器，初始化自视觉问答模型，并采用对抗性LLM数据增强训练，旨在解决现有指标计算成本高或敏感度不足等问题。 |
+| 6 | Look-Closer-Then-Diagnose: Confidence-Aware Ultrasound VQA via Active Zooming | 2605.21652v1 | [link](http://arxiv.org/abs/2605.21652v1) | vision-language | 提出Look-Closer-Then-Diagnose框架，通过主动缩放聚焦病灶并引入不确定性感知奖励，模拟超声医师认知流程，缓解标注主观性与模糊性问题。 |
+| 7 | Ablate-to-Validate: Are Vision-Language Models Really Using Continuous Thought Tokens? | 2605.21642v1 | [link](http://arxiv.org/abs/2605.21642v1) | vision-language | 提出Ablate-to-Validate诊断原则及Token Replacement Test（TRT），通过替换中间token内容（零值、随机等）来检验视觉语言模型是否真正利用连续thought tokens进行推理，而非仅依赖token存在本身。 |
+| 8 | Flat-Pack Bench: Evaluating Spatio-Temporal Understanding in Large Vision-Language Models through Furniture Assembly | 2605.21625v1 | [link](http://arxiv.org/abs/2605.21625v1) | vision-language | 提出Flat-Pack Bench基准，通过家具组装视频的多选题评估大视觉语言模型在时序排序、状态定位、部件装配等细粒度时空理解能力，以弥补现有基准对复杂真实场景评估的不足。 |
+| 9 | TO-Agents: A Multi-Agent AI Pipeline for Preference-Guided Topology Optimization | 2605.21622v1 | [link](http://arxiv.org/abs/2605.21622v1) | vision-language | TO-Agents提出多智能体AI框架，将自然语言设计意图（如树状美学偏好）转化为拓扑优化求解参数，通过迭代生成、渲染与视觉语言评判实现偏好引导的结构优化。 |
+| 10 | UniVL: Unified Vision-Language Embedding for Spatially Grounded Contextual Image Generation | 2605.21611v1 | [link](http://arxiv.org/abs/2605.21611v1) | vision-language | UniVL提出空间锚定的上下文图像生成任务，通过将文本指令渲染到空间掩码并与视觉输入统一编码，直接绑定语义与空间位置，省去推理时独立文本编码器，降低计算开销。 |
+| 11 | PhysX-Omni: Unified Simulation-Ready Physical 3D Generation for Rigid, Deformable, and Articulated Objects | 2605.21572v1 | [link](http://arxiv.org/abs/2605.21572v1) | vision-language | 提出PhysX-Omni框架，统一生成适用于仿真的刚体、可变形与铰接物体3D资产；设计适配视觉语言模型的高分辨率几何表示，构建首个通用仿真就绪3D数据集PhysXVerse及评测基准PhysX-Bench。 |
+| 12 | SpecBench: Measuring Reward Hacking in Long-Horizon Coding Agents | 2605.21384v1 | [link](http://arxiv.org/abs/2605.21384v1) | code agent | 本文提出SpecBench基准，通过比较编码智能体在可见测试集与预留测试集上的通过率差距，量化长周期编程任务中的奖励黑客行为。 |
+| 13 | Insights Generator: Systematic Corpus-Level Trace Diagnostics for LLM Agents | 2605.21347v2 | [link](http://arxiv.org/abs/2605.21347v2) | code agent | 提出Insights Generator多代理系统，通过在执行迹语料库中提出并验证假设，生成有证据支持的自然语言洞察，以解决大模型智能体失败诊断依赖人工、难以发现群体模式的问题。 |
+| 14 | OcclusionFormer: Arranging Z-Order for Layout-Grounded Image Generation | 2605.21343v1 | [link](http://arxiv.org/abs/2605.21343v1) | layout | 提出OcclusionFormer框架，基于新构建的SA-Z数据集，通过解耦实例与体渲染建模Z序优先级，并引入查询对齐损失，解决布局图像生成中重叠区域的遮挡关系模糊问题。 |
+| 15 | DeCoR: Design and Control Co-Optimization for Urban Streets Using Reinforcement Learning | 2605.21311v1 | [link](http://arxiv.org/abs/2605.21311v1) | layout | 提出DeCoR框架，用两阶段强化学习联合优化人行横道布局与信号控制：设计阶段基于图编码生成横道位置与宽度，控制阶段学习自适应信号配时；在真实城区路段上显著降低行人到达横道时间及车/人等待时间。 |
+| 16 | Semantic Granularity Navigation in Image Editing | 2605.21190v1 | [link](http://arxiv.org/abs/2605.21190v1) | layout | 提出NaviEdit方法，在推理时解耦编辑进程与模型尺度遍历，通过自洽约束将固定步数预算重分配至语义响应的中间尺度，提升真实图像编辑中语义可编辑性与结构保真度的平衡。 |
+| 17 | Manga109-v2026: Revisiting Manga109 Annotations for Modern Manga Understanding | 2605.21182v1 | [link](http://arxiv.org/abs/2605.21182v1) | OCR | 本文 revisits Manga109 对话文本标注，识别五类问题，结合 OCR 检测与人工修订，构建新版 Manga109-v2026，修正约 29,000 条对话标注，提升其对现代 OCR 与多模态漫画理解任务的适配性。 |
+| 18 | TextSculptor: Training and Benchmarking Scene Text Editing | 2605.21090v1 | [link](http://arxiv.org/abs/2605.21090v1) | OCR | TextSculptor提出数据构建与评测框架，通过文本感知图像合成与程序化渲染构建3.2M样本的TextSculpt-Data数据集，并建立覆盖文本添加、替换等任务的TextSculpt-Bench基准。 |
+| 19 | USV: Towards Understanding the User-generated Short-form Videos | 2605.20838v1 | [link](http://arxiv.org/abs/2605.20838v1) | video understanding | 本文构建了含22.4万条用户生成短视频的USV数据集，提出主题识别与视频-文本检索两项新任务，并设计MMF-Net和VTCL两个基线方法进行基准测试。 |
+| 20 | ArchSIBench: Benchmarking the Architectural Spatial Intelligence of Vision-Language Models | 2605.20837v1 | [link](http://arxiv.org/abs/2605.20837v1) | layout | 本文提出ArchSIBench基准，从建筑学、认知科学与心理学视角构建涵盖感知、推理、导航等5个维度的17项细粒度任务，含3000组专家标注问答，用于评估视觉语言模型的建筑空间智能。 |
+| 21 | TASTE: A Designer-Annotated Multi-Dimensional Preference Dataset for AI-Generated Graphic Design | 2605.20731v1 | [link](http://arxiv.org/abs/2605.20731v1) | layout | 本文提出TASTE数据集，由10名设计师对4种文生图模型输出按9个设计维度评分，并构建准则无关的统计检验框架验证设计师共识显著高于随机水平。 |
+| 22 | Declarative Data Services: Structured Agentic Discovery for Composing Data Systems | 2605.20690v1 | [link](http://arxiv.org/abs/2605.20690v1) | code agent | 提出Declarative Data Services（DDS）架构，通过四层类型化契约将数据系统组合的全局搜索分解为有界子搜索，支持结构化智能体发现，解决无约束智能体在多系统数据后端中难以收敛的问题。 |

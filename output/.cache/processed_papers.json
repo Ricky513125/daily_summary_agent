@@ -9867,8 +9867,251 @@
       ],
       "last_seen_utc": "2026-05-21T02:40:03.828355+00:00",
       "title": "Multi-agent Collaboration with State Management"
+    },
+    "arxiv:2605.20690v1": {
+      "dates": [
+        "20260520"
+      ],
+      "first_seen_utc": "2026-05-22T02:53:42.014085+00:00",
+      "keywords": [
+        "code agent"
+      ],
+      "last_seen_utc": "2026-05-22T02:53:42.014088+00:00",
+      "title": "Declarative Data Services: Structured Agentic Discovery for Composing Data Systems"
+    },
+    "arxiv:2605.20731v1": {
+      "dates": [
+        "20260520"
+      ],
+      "first_seen_utc": "2026-05-22T03:09:55.942021+00:00",
+      "keywords": [
+        "layout"
+      ],
+      "last_seen_utc": "2026-05-22T03:09:55.942024+00:00",
+      "title": "TASTE: A Designer-Annotated Multi-Dimensional Preference Dataset for AI-Generated Graphic Design"
+    },
+    "arxiv:2605.20837v1": {
+      "dates": [
+        "20260520"
+      ],
+      "first_seen_utc": "2026-05-22T03:09:55.942014+00:00",
+      "keywords": [
+        "layout"
+      ],
+      "last_seen_utc": "2026-05-22T03:09:55.942017+00:00",
+      "title": "ArchSIBench: Benchmarking the Architectural Spatial Intelligence of Vision-Language Models"
+    },
+    "arxiv:2605.20838v1": {
+      "dates": [
+        "20260520"
+      ],
+      "first_seen_utc": "2026-05-22T03:10:22.716905+00:00",
+      "keywords": [
+        "video understanding"
+      ],
+      "last_seen_utc": "2026-05-22T03:10:22.716908+00:00",
+      "title": "USV: Towards Understanding the User-generated Short-form Videos"
+    },
+    "arxiv:2605.21090v1": {
+      "dates": [
+        "20260520"
+      ],
+      "first_seen_utc": "2026-05-22T03:09:21.413934+00:00",
+      "keywords": [
+        "OCR"
+      ],
+      "last_seen_utc": "2026-05-22T03:09:21.413937+00:00",
+      "title": "TextSculptor: Training and Benchmarking Scene Text Editing"
+    },
+    "arxiv:2605.21182v1": {
+      "dates": [
+        "20260520"
+      ],
+      "first_seen_utc": "2026-05-22T03:09:21.413914+00:00",
+      "keywords": [
+        "OCR"
+      ],
+      "last_seen_utc": "2026-05-22T03:09:21.413926+00:00",
+      "title": "Manga109-v2026: Revisiting Manga109 Annotations for Modern Manga Understanding"
+    },
+    "arxiv:2605.21190v1": {
+      "dates": [
+        "20260520"
+      ],
+      "first_seen_utc": "2026-05-22T03:09:55.942007+00:00",
+      "keywords": [
+        "layout"
+      ],
+      "last_seen_utc": "2026-05-22T03:09:55.942010+00:00",
+      "title": "Semantic Granularity Navigation in Image Editing"
+    },
+    "arxiv:2605.21311v1": {
+      "dates": [
+        "20260520"
+      ],
+      "first_seen_utc": "2026-05-22T03:09:55.941998+00:00",
+      "keywords": [
+        "layout"
+      ],
+      "last_seen_utc": "2026-05-22T03:09:55.942001+00:00",
+      "title": "DeCoR: Design and Control Co-Optimization for Urban Streets Using Reinforcement Learning"
+    },
+    "arxiv:2605.21343v1": {
+      "dates": [
+        "20260520"
+      ],
+      "first_seen_utc": "2026-05-22T03:09:55.941980+00:00",
+      "keywords": [
+        "layout"
+      ],
+      "last_seen_utc": "2026-05-22T03:09:55.941990+00:00",
+      "title": "OcclusionFormer: Arranging Z-Order for Layout-Grounded Image Generation"
+    },
+    "arxiv:2605.21347v2": {
+      "dates": [
+        "20260520"
+      ],
+      "first_seen_utc": "2026-05-22T02:53:42.014078+00:00",
+      "keywords": [
+        "code agent"
+      ],
+      "last_seen_utc": "2026-05-22T02:53:42.014081+00:00",
+      "title": "Insights Generator: Systematic Corpus-Level Trace Diagnostics for LLM Agents"
+    },
+    "arxiv:2605.21384v1": {
+      "dates": [
+        "20260520"
+      ],
+      "first_seen_utc": "2026-05-22T02:53:42.014070+00:00",
+      "keywords": [
+        "code agent"
+      ],
+      "last_seen_utc": "2026-05-22T02:53:42.014073+00:00",
+      "title": "SpecBench: Measuring Reward Hacking in Long-Horizon Coding Agents"
+    },
+    "arxiv:2605.21572v1": {
+      "dates": [
+        "20260520"
+      ],
+      "first_seen_utc": "2026-05-22T02:56:22.411188+00:00",
+      "keywords": [
+        "vision-language"
+      ],
+      "last_seen_utc": "2026-05-22T02:56:22.411190+00:00",
+      "title": "PhysX-Omni: Unified Simulation-Ready Physical 3D Generation for Rigid, Deformable, and Articulated Objects"
+    },
+    "arxiv:2605.21611v1": {
+      "dates": [
+        "20260520"
+      ],
+      "first_seen_utc": "2026-05-22T02:56:22.411181+00:00",
+      "keywords": [
+        "vision-language"
+      ],
+      "last_seen_utc": "2026-05-22T02:56:22.411184+00:00",
+      "title": "UniVL: Unified Vision-Language Embedding for Spatially Grounded Contextual Image Generation"
+    },
+    "arxiv:2605.21622v1": {
+      "dates": [
+        "20260520"
+      ],
+      "first_seen_utc": "2026-05-22T02:56:22.411175+00:00",
+      "keywords": [
+        "vision-language"
+      ],
+      "last_seen_utc": "2026-05-22T02:56:22.411177+00:00",
+      "title": "TO-Agents: A Multi-Agent AI Pipeline for Preference-Guided Topology Optimization"
+    },
+    "arxiv:2605.21625v1": {
+      "dates": [
+        "20260520"
+      ],
+      "first_seen_utc": "2026-05-22T02:56:22.411168+00:00",
+      "keywords": [
+        "vision-language",
+        "video understanding"
+      ],
+      "last_seen_utc": "2026-05-22T03:10:22.716889+00:00",
+      "title": "Flat-Pack Bench: Evaluating Spatio-Temporal Understanding in Large Vision-Language Models through Furniture Assembly"
+    },
+    "arxiv:2605.21642v1": {
+      "dates": [
+        "20260520"
+      ],
+      "first_seen_utc": "2026-05-22T02:56:22.411162+00:00",
+      "keywords": [
+        "vision-language"
+      ],
+      "last_seen_utc": "2026-05-22T02:56:22.411164+00:00",
+      "title": "Ablate-to-Validate: Are Vision-Language Models Really Using Continuous Thought Tokens?"
+    },
+    "arxiv:2605.21652v1": {
+      "dates": [
+        "20260520"
+      ],
+      "first_seen_utc": "2026-05-22T02:56:22.411155+00:00",
+      "keywords": [
+        "vision-language"
+      ],
+      "last_seen_utc": "2026-05-22T02:56:22.411157+00:00",
+      "title": "Look-Closer-Then-Diagnose: Confidence-Aware Ultrasound VQA via Active Zooming"
+    },
+    "arxiv:2605.21728v1": {
+      "dates": [
+        "20260520"
+      ],
+      "first_seen_utc": "2026-05-22T02:56:22.411148+00:00",
+      "keywords": [
+        "vision-language"
+      ],
+      "last_seen_utc": "2026-05-22T02:56:22.411151+00:00",
+      "title": "BEiTScore: Reference-free Image Captioning Evaluation with an Efficient Cross-Encoder Model"
+    },
+    "arxiv:2605.21747v1": {
+      "dates": [
+        "20260520"
+      ],
+      "first_seen_utc": "2026-05-22T02:56:22.411141+00:00",
+      "keywords": [
+        "vision-language"
+      ],
+      "last_seen_utc": "2026-05-22T02:56:22.411144+00:00",
+      "title": "Improving 3D Labeling in Self-Driving by Inferring Vehicle Information using Vision Language Models"
+    },
+    "arxiv:2605.21788v1": {
+      "dates": [
+        "20260520"
+      ],
+      "first_seen_utc": "2026-05-22T02:56:22.411134+00:00",
+      "keywords": [
+        "vision-language"
+      ],
+      "last_seen_utc": "2026-05-22T02:56:22.411136+00:00",
+      "title": "SceneGraphGrounder: Zero-Shot 3D Visual Grounding via Structured Scene Graph Matching"
+    },
+    "arxiv:2605.21796v1": {
+      "dates": [
+        "20260520"
+      ],
+      "first_seen_utc": "2026-05-22T02:56:22.411113+00:00",
+      "keywords": [
+        "vision-language"
+      ],
+      "last_seen_utc": "2026-05-22T02:56:22.411126+00:00",
+      "title": "MM-Conv: A Multimodal Dataset and Benchmark for Context-Aware Grounding in 3D Dialogue"
+    },
+    "arxiv:2605.21810v1": {
+      "dates": [
+        "20260520"
+      ],
+      "first_seen_utc": "2026-05-22T02:53:42.014052+00:00",
+      "keywords": [
+        "code agent"
+      ],
+      "last_seen_utc": "2026-05-22T02:53:42.014063+00:00",
+      "title": "Trace2Skill: Verifier-Guided Skill Evolution for Long-Context EDA Agents"
     }
   },
-  "updated_at": "2026-05-21T02:41:34.325321+00:00",
+  "updated_at": "2026-05-22T03:10:22.716974+00:00",
   "version": 1
 }
