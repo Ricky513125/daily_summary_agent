@@ -11347,8 +11347,535 @@
       ],
       "last_seen_utc": "2026-05-23T02:18:53.188131+00:00",
       "title": "Which Way Did It Move? Diagnosing and Overcoming Directional Motion Blindness in Video-LLMs"
+    },
+    "arxiv:2605.25310v1": {
+      "dates": [
+        "20260525"
+      ],
+      "first_seen_utc": "2026-05-27T02:43:53.063728+00:00",
+      "keywords": [
+        "tool use",
+        "tool calling"
+      ],
+      "last_seen_utc": "2026-05-27T02:44:03.625405+00:00",
+      "title": "Tool-Call Dependency Structure is Linearly Decodable in LLM Agent Residual Streams"
+    },
+    "arxiv:2605.25338v1": {
+      "dates": [
+        "20260525"
+      ],
+      "first_seen_utc": "2026-05-27T02:43:53.063720+00:00",
+      "keywords": [
+        "tool use"
+      ],
+      "last_seen_utc": "2026-05-27T02:43:53.063723+00:00",
+      "title": "CausalFlow: Causal Attribution and Counterfactual Repair for LLM Agent Failures"
+    },
+    "arxiv:2605.25357v1": {
+      "dates": [
+        "20260525"
+      ],
+      "first_seen_utc": "2026-05-27T02:43:49.529342+00:00",
+      "keywords": [
+        "LLM agent"
+      ],
+      "last_seen_utc": "2026-05-27T02:43:49.529345+00:00",
+      "title": "Towards Reliable Fetal Ultrasound Interpretation with Multi-Agent Collaboration"
+    },
+    "arxiv:2605.25459v1": {
+      "dates": [
+        "20260525"
+      ],
+      "first_seen_utc": "2026-05-27T02:45:25.883352+00:00",
+      "keywords": [
+        "ReAct"
+      ],
+      "last_seen_utc": "2026-05-27T02:45:25.883354+00:00",
+      "title": "From Simulation to Enaction: Post-trained language models recognize and react to their own generations"
+    },
+    "arxiv:2605.25480v2": {
+      "dates": [
+        "20260525"
+      ],
+      "first_seen_utc": "2026-05-27T02:43:49.529334+00:00",
+      "keywords": [
+        "LLM agent",
+        "tool calling"
+      ],
+      "last_seen_utc": "2026-05-27T02:44:03.625402+00:00",
+      "title": "Retrieval as Reasoning: Self-Evolving Agent-Native Retrieval via LLM-Wiki"
+    },
+    "arxiv:2605.25489v1": {
+      "dates": [
+        "20260525"
+      ],
+      "first_seen_utc": "2026-05-27T02:43:49.529326+00:00",
+      "keywords": [
+        "LLM agent"
+      ],
+      "last_seen_utc": "2026-05-27T02:43:49.529329+00:00",
+      "title": "ATWL: A Formal Language for Representing, Comparing, and Reusing Visual Analytics Workflows"
+    },
+    "arxiv:2605.25604v1": {
+      "dates": [
+        "20260525"
+      ],
+      "first_seen_utc": "2026-05-27T02:43:53.063711+00:00",
+      "keywords": [
+        "tool use"
+      ],
+      "last_seen_utc": "2026-05-27T02:43:53.063714+00:00",
+      "title": "DVAO: Dynamic Variance-adaptive Advantage Optimization for Multi-reward Reinforcement Learning"
+    },
+    "arxiv:2605.25624v1": {
+      "dates": [
+        "20260525"
+      ],
+      "first_seen_utc": "2026-05-27T02:43:53.063703+00:00",
+      "keywords": [
+        "tool use"
+      ],
+      "last_seen_utc": "2026-05-27T02:43:53.063706+00:00",
+      "title": "CUA-Gym: Scaling Verifiable Training Environments and Tasks for Computer-Use Agents"
+    },
+    "arxiv:2605.25632v1": {
+      "dates": [
+        "20260525"
+      ],
+      "first_seen_utc": "2026-05-27T02:43:53.063695+00:00",
+      "keywords": [
+        "tool use",
+        "tool calling"
+      ],
+      "last_seen_utc": "2026-05-27T02:44:03.625398+00:00",
+      "title": "Insuring Every Action: An Authority Frontier Framework for Runtime Actuarial Control of Autonomous AI Agents"
+    },
+    "arxiv:2605.25720v1": {
+      "dates": [
+        "20260525"
+      ],
+      "first_seen_utc": "2026-05-27T02:45:18.144466+00:00",
+      "keywords": [
+        "planning"
+      ],
+      "last_seen_utc": "2026-05-27T02:45:18.144468+00:00",
+      "title": "Learning to Search and Searching to Learn for Generalization in Planning"
+    },
+    "arxiv:2605.25740v1": {
+      "dates": [
+        "20260525"
+      ],
+      "first_seen_utc": "2026-05-27T02:45:18.144462+00:00",
+      "keywords": [
+        "planning"
+      ],
+      "last_seen_utc": "2026-05-27T02:45:18.144464+00:00",
+      "title": "Latent Representation Alignment for Offline Goal-Conditioned Reinforcement Learning"
+    },
+    "arxiv:2605.25746v1": {
+      "dates": [
+        "20260525"
+      ],
+      "first_seen_utc": "2026-05-27T02:45:57.876282+00:00",
+      "keywords": [
+        "multi-agent"
+      ],
+      "last_seen_utc": "2026-05-27T02:45:57.876283+00:00",
+      "title": "Multi-Agent Coordination Adaptation via Structure-Guided Orchestration"
+    },
+    "arxiv:2605.25749v1": {
+      "dates": [
+        "20260525"
+      ],
+      "first_seen_utc": "2026-05-27T02:45:18.144458+00:00",
+      "keywords": [
+        "planning"
+      ],
+      "last_seen_utc": "2026-05-27T02:45:18.144459+00:00",
+      "title": "DeGRe: Dense-supervised Generative Reranking for Recommendation"
+    },
+    "arxiv:2605.25832v1": {
+      "dates": [
+        "20260525"
+      ],
+      "first_seen_utc": "2026-05-27T02:43:49.529311+00:00",
+      "keywords": [
+        "LLM agent"
+      ],
+      "last_seen_utc": "2026-05-27T02:43:49.529314+00:00",
+      "title": "When Search Becomes Memory: Turning Robot Design Trials into Transferable Skills"
+    },
+    "arxiv:2605.25869v1": {
+      "dates": [
+        "20260525"
+      ],
+      "first_seen_utc": "2026-05-27T02:43:49.529304+00:00",
+      "keywords": [
+        "LLM agent"
+      ],
+      "last_seen_utc": "2026-05-27T02:43:49.529307+00:00",
+      "title": "Mitigating Provenance-Role Collapse in Long-Term Agents via Typed Memory Representation"
+    },
+    "arxiv:2605.25929v1": {
+      "dates": [
+        "20260525"
+      ],
+      "first_seen_utc": "2026-05-27T02:45:57.876277+00:00",
+      "keywords": [
+        "multi-agent"
+      ],
+      "last_seen_utc": "2026-05-27T02:45:57.876279+00:00",
+      "title": "Multi-Agent Systems are Mixtures of Experts: Who Becomes an Influencer?"
+    },
+    "arxiv:2605.25931v1": {
+      "dates": [
+        "20260525"
+      ],
+      "first_seen_utc": "2026-05-27T02:45:18.144454+00:00",
+      "keywords": [
+        "planning"
+      ],
+      "last_seen_utc": "2026-05-27T02:45:18.144455+00:00",
+      "title": "Explore Before You Solve: The Speed--Depth Trade-off in Epistemic Agents for ARC-AGI-3"
+    },
+    "arxiv:2605.25958v1": {
+      "dates": [
+        "20260525"
+      ],
+      "first_seen_utc": "2026-05-27T02:44:03.625393+00:00",
+      "keywords": [
+        "tool calling",
+        "multi-agent"
+      ],
+      "last_seen_utc": "2026-05-27T02:45:57.876274+00:00",
+      "title": "PolyGnosis 2.0: Enhancing LLM Reasoning via Agentic Harness Engineering for Polymarket and OSINT Insight Extraction"
+    },
+    "arxiv:2605.25970v1": {
+      "dates": [
+        "20260525"
+      ],
+      "first_seen_utc": "2026-05-27T02:45:57.876270+00:00",
+      "keywords": [
+        "multi-agent"
+      ],
+      "last_seen_utc": "2026-05-27T02:45:57.876272+00:00",
+      "title": "PathWISE: Multi-Agent Cancer Pathway Triaging Ontology Learning from Clinical Flowcharts"
+    },
+    "arxiv:2605.25971v2": {
+      "dates": [
+        "20260525"
+      ],
+      "first_seen_utc": "2026-05-27T02:43:53.063687+00:00",
+      "keywords": [
+        "tool use"
+      ],
+      "last_seen_utc": "2026-05-27T02:43:53.063689+00:00",
+      "title": "Anticipate and Learn: Unleashing Idle-Time Compute in Proactive Agents"
+    },
+    "arxiv:2605.25981v2": {
+      "dates": [
+        "20260525"
+      ],
+      "first_seen_utc": "2026-05-27T02:43:49.529296+00:00",
+      "keywords": [
+        "LLM agent",
+        "ReAct"
+      ],
+      "last_seen_utc": "2026-05-27T02:45:25.883339+00:00",
+      "title": "When Do LLM Agents Treat Surface Noise Differently from Semantic Noise? A 68-Cell Measurement Study with a Held-Out Trace-Level Validation"
+    },
+    "arxiv:2605.26001v1": {
+      "dates": [
+        "20260525"
+      ],
+      "first_seen_utc": "2026-05-27T02:45:57.876265+00:00",
+      "keywords": [
+        "multi-agent"
+      ],
+      "last_seen_utc": "2026-05-27T02:45:57.876267+00:00",
+      "title": "AI-Assisted Systematization for Evaluating GenAI Systems"
+    },
+    "arxiv:2605.26014v1": {
+      "dates": [
+        "20260525"
+      ],
+      "first_seen_utc": "2026-05-27T02:43:53.063680+00:00",
+      "keywords": [
+        "tool use"
+      ],
+      "last_seen_utc": "2026-05-27T02:43:53.063682+00:00",
+      "title": "STORM: Internalized Modeling for Spatial-Temporal Reasoning in Video-Language Models"
+    },
+    "arxiv:2605.26029v1": {
+      "dates": [
+        "20260525"
+      ],
+      "first_seen_utc": "2026-05-27T02:43:49.529280+00:00",
+      "keywords": [
+        "LLM agent"
+      ],
+      "last_seen_utc": "2026-05-27T02:43:49.529283+00:00",
+      "title": "CausaLab: A Scalable Environment for Interactive Causal Discovery Toward AI Scientists"
+    },
+    "arxiv:2605.26037v1": {
+      "dates": [
+        "20260525"
+      ],
+      "first_seen_utc": "2026-05-27T02:43:53.063673+00:00",
+      "keywords": [
+        "tool use"
+      ],
+      "last_seen_utc": "2026-05-27T02:43:53.063675+00:00",
+      "title": "Peak-Then-Collapse and the Four Interface Channels of Knowledge-Graph Tool Use"
+    },
+    "arxiv:2605.26059v1": {
+      "dates": [
+        "20260525"
+      ],
+      "first_seen_utc": "2026-05-27T02:44:50.281115+00:00",
+      "keywords": [
+        "workflow"
+      ],
+      "last_seen_utc": "2026-05-27T02:44:50.281118+00:00",
+      "title": "Accelerating Bayesian inverse design in computational fluid dynamics using neural operators"
+    },
+    "arxiv:2605.26087v1": {
+      "dates": [
+        "20260525"
+      ],
+      "first_seen_utc": "2026-05-27T02:43:49.529261+00:00",
+      "keywords": [
+        "LLM agent"
+      ],
+      "last_seen_utc": "2026-05-27T02:43:49.529273+00:00",
+      "title": "DiscoverPhysics: Benchmarking LLMs for Out-of-the-Box Scientific Thinking"
+    },
+    "arxiv:2605.26089v1": {
+      "dates": [
+        "20260525"
+      ],
+      "first_seen_utc": "2026-05-27T02:44:50.281107+00:00",
+      "keywords": [
+        "workflow"
+      ],
+      "last_seen_utc": "2026-05-27T02:44:50.281110+00:00",
+      "title": "Channel-wise Vector Quantization"
+    },
+    "arxiv:2605.26100v1": {
+      "dates": [
+        "20260525"
+      ],
+      "first_seen_utc": "2026-05-27T02:44:50.281099+00:00",
+      "keywords": [
+        "workflow"
+      ],
+      "last_seen_utc": "2026-05-27T02:44:50.281102+00:00",
+      "title": "Beyond Summaries: Structure-Aware Labeling of Code Changes with Large Language Models"
+    },
+    "arxiv:2605.26112v1": {
+      "dates": [
+        "20260525"
+      ],
+      "first_seen_utc": "2026-05-27T02:43:53.063666+00:00",
+      "keywords": [
+        "tool use",
+        "workflow"
+      ],
+      "last_seen_utc": "2026-05-27T02:44:50.281094+00:00",
+      "title": "From Model Scaling to System Scaling: Scaling the Harness in Agentic AI"
+    },
+    "arxiv:2605.26179v1": {
+      "dates": [
+        "20260525"
+      ],
+      "first_seen_utc": "2026-05-27T02:45:57.876286+00:00",
+      "keywords": [
+        "multi-agent"
+      ],
+      "last_seen_utc": "2026-05-27T02:45:57.876288+00:00",
+      "title": "AutoDFT: A Closed-Loop Multi-Agent Framework for Autonomous DFT Calculations"
+    },
+    "arxiv:2605.26186v1": {
+      "dates": [
+        "20260525"
+      ],
+      "first_seen_utc": "2026-05-27T02:43:49.529319+00:00",
+      "keywords": [
+        "LLM agent"
+      ],
+      "last_seen_utc": "2026-05-27T02:43:49.529322+00:00",
+      "title": "SetupX: Can LLM Agents Learn from Past Failures in Functionality-Correct Code Repository Setup?"
+    },
+    "arxiv:2605.26195v1": {
+      "dates": [
+        "20260525"
+      ],
+      "first_seen_utc": "2026-05-27T02:43:49.529289+00:00",
+      "keywords": [
+        "LLM agent"
+      ],
+      "last_seen_utc": "2026-05-27T02:43:49.529291+00:00",
+      "title": "CyberEvolver: Structured Self-Evolution for Cybersecurity Agents On the Fly"
+    },
+    "arxiv:2605.26200v1": {
+      "dates": [
+        "20260525"
+      ],
+      "first_seen_utc": "2026-05-27T02:44:50.281123+00:00",
+      "keywords": [
+        "workflow"
+      ],
+      "last_seen_utc": "2026-05-27T02:44:50.281125+00:00",
+      "title": "Workflow Closure Is Not Scientific Closure in Auto-Research Systems"
+    },
+    "arxiv:2605.26203v1": {
+      "dates": [
+        "20260525"
+      ],
+      "first_seen_utc": "2026-05-27T02:45:57.876260+00:00",
+      "keywords": [
+        "multi-agent"
+      ],
+      "last_seen_utc": "2026-05-27T02:45:57.876262+00:00",
+      "title": "AgentSociety: Incentivizing Agentic Social Intelligence"
+    },
+    "arxiv:2605.26239v1": {
+      "dates": [
+        "20260525"
+      ],
+      "first_seen_utc": "2026-05-27T02:45:18.144449+00:00",
+      "keywords": [
+        "planning",
+        "multi-agent"
+      ],
+      "last_seen_utc": "2026-05-27T02:45:57.876256+00:00",
+      "title": "Sentinel: Embodied Cooperative Spatial Reasoning and Planning"
+    },
+    "arxiv:2605.26277v1": {
+      "dates": [
+        "20260525"
+      ],
+      "first_seen_utc": "2026-05-27T02:45:18.144444+00:00",
+      "keywords": [
+        "planning"
+      ],
+      "last_seen_utc": "2026-05-27T02:45:18.144446+00:00",
+      "title": "VesselSim: learning 3D blood vessel segmentation without expert annotations"
+    },
+    "arxiv:2605.26286v1": {
+      "dates": [
+        "20260525"
+      ],
+      "first_seen_utc": "2026-05-27T02:45:57.876250+00:00",
+      "keywords": [
+        "multi-agent"
+      ],
+      "last_seen_utc": "2026-05-27T02:45:57.876252+00:00",
+      "title": "Decoupled Delay Compensation: Enhancing Pre-trained MARL Policies via Learned Dynamics Filtering"
+    },
+    "arxiv:2605.26289v1": {
+      "dates": [
+        "20260525"
+      ],
+      "first_seen_utc": "2026-05-27T02:44:03.625380+00:00",
+      "keywords": [
+        "tool calling",
+        "workflow",
+        "multi-agent"
+      ],
+      "last_seen_utc": "2026-05-27T02:45:57.876237+00:00",
+      "title": "Stateful Inference for Low-Latency Multi-Agent Tool Calling"
+    },
+    "arxiv:2605.26305v1": {
+      "dates": [
+        "20260525"
+      ],
+      "first_seen_utc": "2026-05-27T02:44:50.281079+00:00",
+      "keywords": [
+        "workflow"
+      ],
+      "last_seen_utc": "2026-05-27T02:44:50.281082+00:00",
+      "title": "Experiments in Agentic AI for Science"
+    },
+    "arxiv:2605.26321v1": {
+      "dates": [
+        "20260525"
+      ],
+      "first_seen_utc": "2026-05-27T02:44:50.281072+00:00",
+      "keywords": [
+        "workflow"
+      ],
+      "last_seen_utc": "2026-05-27T02:44:50.281074+00:00",
+      "title": "Anchor: Mitigating Artifact Drift in Agent Benchmark Generation"
+    },
+    "arxiv:2605.26329v1": {
+      "dates": [
+        "20260525"
+      ],
+      "first_seen_utc": "2026-05-27T02:44:50.281064+00:00",
+      "keywords": [
+        "workflow"
+      ],
+      "last_seen_utc": "2026-05-27T02:44:50.281066+00:00",
+      "title": "JobBench: Aligning Agent Work With Human Will"
+    },
+    "arxiv:2605.26333v1": {
+      "dates": [
+        "20260525"
+      ],
+      "first_seen_utc": "2026-05-27T02:45:18.144440+00:00",
+      "keywords": [
+        "planning"
+      ],
+      "last_seen_utc": "2026-05-27T02:45:18.144442+00:00",
+      "title": "Managing Uncertainty in LLM-Generated Procedural Knowledge for Virtual Laboratory Planning"
+    },
+    "arxiv:2605.26343v1": {
+      "dates": [
+        "20260525"
+      ],
+      "first_seen_utc": "2026-05-27T02:45:18.144436+00:00",
+      "keywords": [
+        "planning"
+      ],
+      "last_seen_utc": "2026-05-27T02:45:18.144437+00:00",
+      "title": "MechRL: Reinforcement Learning Agents Perform Circuit Discovery for Mechanistic Interpretability"
+    },
+    "arxiv:2605.26346v1": {
+      "dates": [
+        "20260525"
+      ],
+      "first_seen_utc": "2026-05-27T02:44:50.281045+00:00",
+      "keywords": [
+        "workflow"
+      ],
+      "last_seen_utc": "2026-05-27T02:44:50.281056+00:00",
+      "title": "The Daily Dose: Workflow-Integrated Large Language Model Automation for Clinical Summarization and Trial Identification in Radiation Oncology"
+    },
+    "arxiv:2605.26379v1": {
+      "dates": [
+        "20260525"
+      ],
+      "first_seen_utc": "2026-05-27T02:45:18.144430+00:00",
+      "keywords": [
+        "planning"
+      ],
+      "last_seen_utc": "2026-05-27T02:45:18.144432+00:00",
+      "title": "When Does LeJEPA Learn a World Model?"
+    },
+    "arxiv:2605.26396v1": {
+      "dates": [
+        "20260525"
+      ],
+      "first_seen_utc": "2026-05-27T02:43:53.063647+00:00",
+      "keywords": [
+        "tool use",
+        "planning"
+      ],
+      "last_seen_utc": "2026-05-27T02:45:18.144417+00:00",
+      "title": "Advancing Creative Physical Intelligence in Large Multimodal Models"
     }
   },
-  "updated_at": "2026-05-23T02:18:53.188210+00:00",
+  "updated_at": "2026-05-27T02:45:57.876334+00:00",
   "version": 1
 }
