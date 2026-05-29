@@ -11951,8 +11951,118 @@
       ],
       "last_seen_utc": "2026-05-28T02:42:39.436347+00:00",
       "title": "UniMaia: Steering Chess Policies with Language for Human-like Play"
+    },
+    "arxiv:2605.28534v1": {
+      "dates": [
+        "20260527"
+      ],
+      "first_seen_utc": "2026-05-29T02:44:39.048857+00:00",
+      "keywords": [
+        "multi-agent"
+      ],
+      "last_seen_utc": "2026-05-29T02:44:39.048859+00:00",
+      "title": "GUI-CIDER: Mid-training GUI Agents via Causal Internalization and Density-aware Exemplar Reselection"
+    },
+    "arxiv:2605.28607v1": {
+      "dates": [
+        "20260527"
+      ],
+      "first_seen_utc": "2026-05-29T02:44:39.048850+00:00",
+      "keywords": [
+        "multi-agent"
+      ],
+      "last_seen_utc": "2026-05-29T02:44:39.048852+00:00",
+      "title": "Adaptive Multimodal Agents-Based Framework for Automatic Workflow Execution"
+    },
+    "arxiv:2605.28699v1": {
+      "dates": [
+        "20260527"
+      ],
+      "first_seen_utc": "2026-05-29T02:44:39.048843+00:00",
+      "keywords": [
+        "multi-agent"
+      ],
+      "last_seen_utc": "2026-05-29T02:44:39.048845+00:00",
+      "title": "TRACER: Turn-level Regret Matching with Inner Reinforcement Credit for Cooperative Multi-LLM Reasoning"
+    },
+    "arxiv:2605.28816v1": {
+      "dates": [
+        "20260527"
+      ],
+      "first_seen_utc": "2026-05-29T02:44:39.048836+00:00",
+      "keywords": [
+        "multi-agent"
+      ],
+      "last_seen_utc": "2026-05-29T02:44:39.048839+00:00",
+      "title": "Gamma-World: Generative Multi-Agent World Modeling Beyond Two Players"
+    },
+    "arxiv:2605.28978v1": {
+      "dates": [
+        "20260527"
+      ],
+      "first_seen_utc": "2026-05-29T02:44:39.048829+00:00",
+      "keywords": [
+        "multi-agent"
+      ],
+      "last_seen_utc": "2026-05-29T02:44:39.048831+00:00",
+      "title": "VFEAgent: A Multimodal Agent Framework for End-to-End Automated Finite Element Analysis"
+    },
+    "arxiv:2605.29042v1": {
+      "dates": [
+        "20260527"
+      ],
+      "first_seen_utc": "2026-05-29T02:44:39.048822+00:00",
+      "keywords": [
+        "multi-agent"
+      ],
+      "last_seen_utc": "2026-05-29T02:44:39.048825+00:00",
+      "title": "Differentiable Belief-based Opponent Shaping"
+    },
+    "arxiv:2605.29055v1": {
+      "dates": [
+        "20260527"
+      ],
+      "first_seen_utc": "2026-05-29T02:44:39.048814+00:00",
+      "keywords": [
+        "multi-agent"
+      ],
+      "last_seen_utc": "2026-05-29T02:44:39.048817+00:00",
+      "title": "Hallucination Mitigation with Agentic AI, Nested Learning, and AI Sustainability via Semantic Caching"
+    },
+    "arxiv:2605.29062v1": {
+      "dates": [
+        "20260527"
+      ],
+      "first_seen_utc": "2026-05-29T02:44:39.048806+00:00",
+      "keywords": [
+        "multi-agent"
+      ],
+      "last_seen_utc": "2026-05-29T02:44:39.048809+00:00",
+      "title": "Bosses, Kings, and the Commons: Cooperation Under Power Asymmetry in LLM Societies"
+    },
+    "arxiv:2605.29082v1": {
+      "dates": [
+        "20260527"
+      ],
+      "first_seen_utc": "2026-05-29T02:44:39.048798+00:00",
+      "keywords": [
+        "multi-agent"
+      ],
+      "last_seen_utc": "2026-05-29T02:44:39.048801+00:00",
+      "title": "The Importance of Out-of-Band Metadata for Safe Autonomous Agents: The Redpanda Agentic Data Plane"
+    },
+    "arxiv:2605.29146v1": {
+      "dates": [
+        "20260527"
+      ],
+      "first_seen_utc": "2026-05-29T02:44:39.048759+00:00",
+      "keywords": [
+        "multi-agent"
+      ],
+      "last_seen_utc": "2026-05-29T02:44:39.048789+00:00",
+      "title": "SafeRx-Agent: A Knowledge-Grounded Multi-Agent Framework for Safe and Explainable Medication Recommendation"
     }
   },
-  "updated_at": "2026-05-28T02:42:39.436487+00:00",
+  "updated_at": "2026-05-29T02:44:39.048926+00:00",
   "version": 1
 }

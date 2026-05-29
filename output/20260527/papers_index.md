@@ -1,0 +1,18 @@
+# 2026-05-27 文献索引（可检索）
+
+> 生成时间: 2026-05-29 03:05:43
+
+说明：本表用于个人检索；标题来自源站（通常为英文）。
+
+| # | English Title | arXiv ID | Archive Link | Matched Keywords | Short Summary (≤200字) |
+|---:|---|---|---|---|---|
+| 1 | SafeRx-Agent: A Knowledge-Grounded Multi-Agent Framework for Safe and Explainable Medication Recommendation | 2605.29146v1 | [link](http://arxiv.org/abs/2605.29146v1) | multi-agent | 提出SafeRx-Agent多智能体框架，基于患者上下文、外部临床知识和安全验证，实现细粒度（ATC四级码）可追溯用药推荐，提升准确性并控制药物相互作用与禁忌症。 |
+| 2 | The Importance of Out-of-Band Metadata for Safe Autonomous Agents: The Redpanda Agentic Data Plane | 2605.29082v1 | [link](http://arxiv.org/abs/2605.29082v1) | multi-agent | 提出Redpanda Agentic Data Plane架构，通过带外元数据通道在AI代理读写路径之外传递安全上下文与策略信号，以解决代理不可靠导致的安全元数据误传问题。 |
+| 3 | Bosses, Kings, and the Commons: Cooperation Under Power Asymmetry in LLM Societies | 2605.29062v1 | [link](http://arxiv.org/abs/2605.29062v1) | multi-agent | 本文提出SovSim框架，在LLM多智能体模拟中引入权力不对称结构，研究其对公共资源可持续管理的影响。 |
+| 4 | Hallucination Mitigation with Agentic AI, Nested Learning, and AI Sustainability via Semantic Caching | 2605.29055v1 | [link](http://arxiv.org/abs/2605.29055v1) | multi-agent | 本文提出结合代理式AI、嵌套学习与语义缓存的幻觉缓解方法，构建三阶段代理流水线，在310个混合提示上评估五项指标并聚合为总幻觉分（THS），以研究缓解效果与可观测性权衡。 |
+| 5 | Differentiable Belief-based Opponent Shaping | 2605.29042v1 | [link](http://arxiv.org/abs/2605.29042v1) | multi-agent | 提出可微信念基对手塑造（D-BOS）方法，通过微分k步softmax-Bayes信念动态，将观察者信念作为被塑造状态，使策略自然适配环境奖励结构。 |
+| 6 | VFEAgent: A Multimodal Agent Framework for End-to-End Automated Finite Element Analysis | 2605.28978v1 | [link](http://arxiv.org/abs/2605.28978v1) | multi-agent | VFEAgent是面向有限元分析的端到端多模态智能体框架，通过视觉-语言多智能体协同与验证优先的代码生成，实现从图像和文本描述自动建模与仿真，解决现有LLM方法在多模态输入与复杂任务执行上的局限。 |
+| 7 | Gamma-World: Generative Multi-Agent World Modeling Beyond Two Players | 2605.28816v1 | [link](http://arxiv.org/abs/2605.28816v1) | multi-agent | 提出生成式多智能体世界模型Gamma-World，采用Simplex Rotary Agent Encoding实现置换对称的智能体编码，并引入Sparse Hub Attention降低跨智能体注意力计算开销，以支持可扩展、一致的多智能体交互模拟。 |
+| 8 | TRACER: Turn-level Regret Matching with Inner Reinforcement Credit for Cooperative Multi-LLM Reasoning | 2605.28699v1 | [link](http://arxiv.org/abs/2605.28699v1) | multi-agent | TRACER提出一种回合级强化学习框架，通过控制器-遗憾匹配层决定代理发言与否，生成-信用层用角色特异性奖励优化语句，缓解多LLM协作中的稀疏奖励、搭便车和训练开销问题。 |
+| 9 | Adaptive Multimodal Agents-Based Framework for Automatic Workflow Execution | 2605.28607v1 | [link](http://arxiv.org/abs/2605.28607v1) | multi-agent | 提出一种自适应多模态多智能体框架，通过离线构建拓扑知识图谱与推理时结合自适应RAG和闭环协作验证，实现自动工作流执行，解决现有方法难以建模任务转移拓扑的问题。 |
+| 10 | GUI-CIDER: Mid-training GUI Agents via Causal Internalization and Density-aware Exemplar Reselection | 2605.28534v1 | [link](http://arxiv.org/abs/2605.28534v1) | multi-agent | GUI-CIDER提出一种中段训练方法，通过因果内化与密度感知示例重选，显式建模GUI世界知识，分数据合成、示例重选、中段训练三阶段实现。 |
