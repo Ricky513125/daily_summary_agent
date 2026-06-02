@@ -1,4 +1,4 @@
-"""快速启动脚本 V5 - 无 PDF 下载，无 LLM 总结，仅统计文献数并发邮件。"""
+"""快速启动脚本 V5 - 无 PDF 下载，逐篇 LLM 短摘要，无批量/每日汇总，发邮件。"""
 import argparse
 from main_v5 import DailySummaryAgentV5
 from config_v4 import KEYWORDS_V4, EXCLUDE_CATEGORIES_V4, EXCLUDE_KEYWORDS_V4
@@ -17,7 +17,7 @@ def main():
     logger.info(f"- 关键词数: {len(KEYWORDS_V4)}")
     logger.info(f"- 排除分类: {EXCLUDE_CATEGORIES_V4}")
     logger.info(f"- 排除关键词数: {len(EXCLUDE_KEYWORDS_V4)}")
-    logger.info("- 无 PDF 下载，无 LLM 总结，仅统计并发邮件")
+    logger.info("- 无 PDF 下载，逐篇 LLM 短摘要，无批量/每日汇总")
     logger.info("=" * 60)
 
     agent = DailySummaryAgentV5(days_ago=args.days_ago)

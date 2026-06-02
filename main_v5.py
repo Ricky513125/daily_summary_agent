@@ -1,8 +1,10 @@
 """主程序入口 V5 - 在 V4 基础上：
 1. 移除 PDF 下载
-2. 移除 LLM 总结
-3. 只统计文献数，发一封简短邮件（标题 + arXiv 链接列表）
+2. 保留每篇论文的 LLM 短摘要（≤200字）
+3. 移除批量小结和每日趋势汇总
+4. 发邮件（含每篇短摘要）
 """
+import json
 import sys
 import arxiv
 from datetime import datetime, timedelta
@@ -19,17 +21,19 @@ from config import (  # noqa: E402
     SENDER_EMAIL, SENDER_PASSWORD, RECEIVER_EMAILS,
 )
 from config_v4 import KEYWORDS_V4  # noqa: E402
+from writers.summary_writer_v4 import SummaryWriterV4  # noqa: E402
 from utils.logger import logger  # noqa: E402
 from utils.email_sender import EmailSender  # noqa: E402
 
 
 class DailySummaryAgentV5(DailySummaryAgentV4):
-    """V5 Agent：无 PDF 下载、无 LLM，仅统计文献数并发邮件。"""
+    """V5 Agent：无 PDF 下载，逐篇 LLM 短摘要，无批量/每日汇总，发邮件。"""
 
     def __init__(self, days_ago: int = None):
         super().__init__(days_ago=days_ago)
         self.logger = logger.bind(module="main_agent_v5")
-        self.logger.info("V5 启用: 无 PDF 下载 / 无 LLM 总结")
+        self.summary_writer = SummaryWriterV4()
+        self.logger.info("V5 启用: 无 PDF 下载 / 逐篇短摘要 / 无每日汇总")
 
     # ---------- 爬取（跳过 PDF 下载） ----------
     def _crawl_keyword_papers(self, keyword: str) -> list:
@@ -85,10 +89,10 @@ class DailySummaryAgentV5(DailySummaryAgentV4):
             self.logger.error(f"[{keyword}] 爬取失败: {e}", exc_info=True)
             return []
 
-    # ---------- 主流程：只爬取 + 发邮件 ----------
+    # ---------- 主流程：爬取 + 逐篇短摘要 + 发邮件 ----------
     def run(self):
         self.logger.info("=" * 80)
-        self.logger.info(f"开始执行 V5 任务（仅统计，目标日期: {self.target_date_readable}）")
+        self.logger.info(f"开始执行 V5 任务（目标日期: {self.target_date_readable}）")
         self.logger.info("=" * 80)
 
         if not ENABLE_ARXIV:
@@ -109,13 +113,42 @@ class DailySummaryAgentV5(DailySummaryAgentV4):
             articles = self._crawl_keyword_papers(keyword)
             all_articles.extend(articles)
 
-        # 内存去重
+        # 内存去重 + 排序
         all_articles = self._dedupe_in_memory(all_articles)
         all_articles.sort(
             key=lambda a: getattr(a, "publish_time", datetime.now()), reverse=True
         )
 
         self.logger.info(f"共识别到 {len(all_articles)} 篇文献（去重后）")
+
+        if not all_articles:
+            self._send_summary_email([])
+            return
+
+        # 逐篇生成 ≤200字短摘要
+        self.logger.info(f"开始逐篇生成短摘要：共 {len(all_articles)} 篇")
+        paper_summaries_path = self.output_dir / "paper_summaries.jsonl"
+        self.output_dir.mkdir(parents=True, exist_ok=True)
+        with open(paper_summaries_path, "w", encoding="utf-8") as f:
+            for idx, article in enumerate(all_articles, 1):
+                self.logger.info(f"[{idx}/{len(all_articles)}] {article.title[:60]}...")
+                short_summary = self.summary_writer.generate_paper_short_summary(
+                    article=article,
+                    target_date=self.target_date_readable,
+                )
+                article.short_summary = short_summary
+                rec = {
+                    "index": idx,
+                    "title": getattr(article, "title", ""),
+                    "url": getattr(article, "url", ""),
+                    "arxiv_id": getattr(article, "arxiv_id", ""),
+                    "publish_time": getattr(article, "publish_time", None).isoformat()
+                    if getattr(article, "publish_time", None) else None,
+                    "keywords": getattr(article, "tags", []),
+                    "short_summary": short_summary,
+                }
+                f.write(json.dumps(rec, ensure_ascii=False) + "\n")
+        self.logger.info(f"短摘要已保存: {paper_summaries_path}")
 
         self._send_summary_email(all_articles)
 
@@ -140,15 +173,17 @@ class DailySummaryAgentV5(DailySummaryAgentV4):
                 url = getattr(a, "url", "") or ""
                 arxiv_id = getattr(a, "arxiv_id", "") or ""
                 kw = ", ".join(getattr(a, "tags", []) or [])
+                short_summary = (getattr(a, "short_summary", "") or "").replace("\n", "<br>")
                 link = f'<a href="{url}">{arxiv_id or url}</a>' if url else arxiv_id
                 rows.append(
-                    f"<tr><td>{i}</td><td>{title}</td><td>{link}</td><td>{kw}</td></tr>"
+                    f"<tr><td>{i}</td><td>{title}</td><td>{link}</td>"
+                    f"<td>{kw}</td><td>{short_summary}</td></tr>"
                 )
 
             body_lines = [
                 f"<p><b>{date_readable}</b> 共识别到 <b>{len(articles)}</b> 篇符合条件的文献。</p>",
                 "<table border='1' cellpadding='4' cellspacing='0' style='border-collapse:collapse;font-size:13px;'>",
-                "<tr><th>#</th><th>标题</th><th>arXiv</th><th>匹配关键词</th></tr>",
+                "<tr><th>#</th><th>标题</th><th>arXiv</th><th>匹配关键词</th><th>短摘要</th></tr>",
                 *rows,
                 "</table>",
             ]
