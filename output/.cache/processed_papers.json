@@ -13439,8 +13439,108 @@
       ],
       "last_seen_utc": "2026-05-30T02:30:02.161606+00:00",
       "title": "Physics Is All You Need? A Case Study in Physicist-Supervised AI Development of Scientific Software"
+    },
+    "arxiv:2606.01022v1": {
+      "dates": [
+        "20260531"
+      ],
+      "first_seen_utc": "2026-06-02T03:20:20.951138+00:00",
+      "keywords": [
+        "layout"
+      ],
+      "last_seen_utc": "2026-06-02T03:20:20.951141+00:00",
+      "title": "ProductWebGen: Benchmarking Multimodal Product Webpage Generation"
+    },
+    "arxiv:2606.01132v1": {
+      "dates": [
+        "20260531"
+      ],
+      "first_seen_utc": "2026-06-02T03:18:45.949796+00:00",
+      "keywords": [
+        "table understanding"
+      ],
+      "last_seen_utc": "2026-06-02T03:18:45.949808+00:00",
+      "title": "HakushoBench: A Japanese Chart and Table VQA Benchmark from Governmental White Papers"
+    },
+    "arxiv:2606.01138v1": {
+      "dates": [
+        "20260531"
+      ],
+      "first_seen_utc": "2026-06-02T03:20:20.951131+00:00",
+      "keywords": [
+        "layout"
+      ],
+      "last_seen_utc": "2026-06-02T03:20:20.951133+00:00",
+      "title": "AMP: A Vendor-Neutral Wire Format for Agent Memory Operations"
+    },
+    "arxiv:2606.01188v1": {
+      "dates": [
+        "20260531"
+      ],
+      "first_seen_utc": "2026-06-02T03:20:20.951123+00:00",
+      "keywords": [
+        "layout"
+      ],
+      "last_seen_utc": "2026-06-02T03:20:20.951125+00:00",
+      "title": "pcbGPT: Automatic PCB Schematic Synthesis from Natural Language Requirements"
+    },
+    "arxiv:2606.01213v1": {
+      "dates": [
+        "20260531"
+      ],
+      "first_seen_utc": "2026-06-02T03:20:20.951115+00:00",
+      "keywords": [
+        "layout"
+      ],
+      "last_seen_utc": "2026-06-02T03:20:20.951118+00:00",
+      "title": "TECCI: Tricky Edits of Collected and Curated Images"
+    },
+    "arxiv:2606.01393v1": {
+      "dates": [
+        "20260531"
+      ],
+      "first_seen_utc": "2026-06-02T03:16:54.918553+00:00",
+      "keywords": [
+        "OCR",
+        "layout"
+      ],
+      "last_seen_utc": "2026-06-02T03:20:20.951107+00:00",
+      "title": "Dr. DocBench: A Comprehensive Benchmark for Expert-Level and Difficult Document Parsing"
+    },
+    "arxiv:2606.01414v1": {
+      "dates": [
+        "20260531"
+      ],
+      "first_seen_utc": "2026-06-02T03:20:20.951099+00:00",
+      "keywords": [
+        "layout"
+      ],
+      "last_seen_utc": "2026-06-02T03:20:20.951101+00:00",
+      "title": "Agent Skills Should Go Beyond Text: The Case for Visual Skills"
+    },
+    "arxiv:2606.01472v1": {
+      "dates": [
+        "20260531"
+      ],
+      "first_seen_utc": "2026-06-02T03:16:54.918529+00:00",
+      "keywords": [
+        "OCR"
+      ],
+      "last_seen_utc": "2026-06-02T03:16:54.918545+00:00",
+      "title": "Hierarchical Online Prompt Mutation with Dual-Loop Feedback for Guardrailed Evidence Document Generation: A Production-Evaluation Case Study"
+    },
+    "arxiv:2606.01485v1": {
+      "dates": [
+        "20260531"
+      ],
+      "first_seen_utc": "2026-06-02T03:20:20.951062+00:00",
+      "keywords": [
+        "layout"
+      ],
+      "last_seen_utc": "2026-06-02T03:20:20.951090+00:00",
+      "title": "Perception First: A Frontier Native-Video Model with Self-Consistency for Implicit Video Question Answering"
     }
   },
-  "updated_at": "2026-05-30T02:31:16.313774+00:00",
+  "updated_at": "2026-06-02T03:20:20.951217+00:00",
   "version": 1
 }
