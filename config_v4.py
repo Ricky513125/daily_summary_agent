@@ -67,12 +67,12 @@ def _split_csv(s: str) -> list[str]:
     return [x.strip() for x in s.split(",") if x.strip()]
 
 
-KEYWORDS_V4: list[str] = _split_csv(os.getenv("KEYWORDS_V4", _DEFAULT_KEYWORDS_V4))
+KEYWORDS_V4: list[str] = _split_csv(os.getenv("KEYWORDS_V4") or _DEFAULT_KEYWORDS_V4)
 
 EXCLUDE_CATEGORIES_V4: list[str] = [
-    c.lower() for c in _split_csv(os.getenv("EXCLUDE_CATEGORIES_V4", _DEFAULT_EXCLUDE_CATEGORIES_V4))
+    c.lower() for c in _split_csv(os.getenv("EXCLUDE_CATEGORIES_V4") or _DEFAULT_EXCLUDE_CATEGORIES_V4)
 ]
 
 EXCLUDE_KEYWORDS_V4: list[str] = [
-    k.lower() for k in _split_csv(os.getenv("EXCLUDE_KEYWORDS_V4", _DEFAULT_EXCLUDE_KEYWORDS_V4))
+    k.lower() for k in _split_csv(os.getenv("EXCLUDE_KEYWORDS_V4") or _DEFAULT_EXCLUDE_KEYWORDS_V4)
 ]

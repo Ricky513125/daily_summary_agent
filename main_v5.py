@@ -89,19 +89,60 @@ class DailySummaryAgentV5(DailySummaryAgentV4):
             self.logger.error(f"[{keyword}] 爬取失败: {e}", exc_info=True)
             return []
 
+    # ---------- 告警邮件 ----------
+    def _send_alert_email(self, subject: str, body: str) -> None:
+        if not (self.email_enabled and RECEIVER_EMAILS):
+            return
+        html = (
+            "<div style='font-family:Arial,sans-serif;border-left:4px solid #e74c3c;"
+            "padding:12px 16px;background:#fff5f5;'>"
+            f"<h3 style='color:#e74c3c;margin-top:0'>{subject}</h3>"
+            f"<p>{body}</p>"
+            f"<p style='color:#888;font-size:12px'>目标日期: {self.target_date_readable}</p>"
+            "</div>"
+        )
+        try:
+            self.email_sender.send_summary(
+                receiver_emails=RECEIVER_EMAILS,
+                subject=subject,
+                content=html,
+                attachments=[],
+            )
+            self.logger.info(f"告警邮件已发送: {subject}")
+        except Exception as e:
+            self.logger.error(f"告警邮件发送失败: {e}", exc_info=True)
+
     # ---------- 主流程：爬取 + 逐篇短摘要 + 发邮件 ----------
     def run(self):
         self.logger.info("=" * 80)
         self.logger.info(f"开始执行 V5 任务（目标日期: {self.target_date_readable}）")
         self.logger.info("=" * 80)
 
+        try:
+            self._run_inner()
+        except Exception as e:
+            self.logger.error(f"V5 任务异常终止: {e}", exc_info=True)
+            import traceback
+            tb = traceback.format_exc().replace("\n", "<br>").replace(" ", "&nbsp;")
+            self._send_alert_email(
+                subject=f"【告警】AI论文Agent执行失败 ({self.target_date_readable})",
+                body=f"脚本执行过程中抛出异常，请检查 GitHub Actions 日志。<br><br>"
+                     f"<pre style='background:#f8f8f8;padding:8px;font-size:11px'>{tb}</pre>",
+            )
+            raise
+
+    def _run_inner(self):
         if not ENABLE_ARXIV:
             self.logger.warning("arXiv爬取未启用")
             return
 
-        keywords = list(main_v3.KEYWORDS)
+        keywords = list(KEYWORDS_V4)
         if not keywords:
             self.logger.warning("未配置关键词")
+            self._send_alert_email(
+                subject=f"【告警】AI论文Agent未配置关键词 ({self.target_date_readable})",
+                body="KEYWORDS_V4 为空，未执行任何检索。请检查 GitHub Actions 变量配置。",
+            )
             return
 
         all_articles = []
@@ -122,7 +163,11 @@ class DailySummaryAgentV5(DailySummaryAgentV4):
         self.logger.info(f"共识别到 {len(all_articles)} 篇文献（去重后）")
 
         if not all_articles:
-            self._send_summary_email([])
+            self._send_alert_email(
+                subject=f"【告警】AI论文Agent未检索到文献 ({self.target_date_readable})",
+                body="所有关键词均未检索到符合条件的文献。可能原因：当天 arXiv 无新文章、"
+                     "关键词过于严格、或网络/API 访问异常。",
+            )
             return
 
         # 逐篇生成 ≤200字短摘要
