@@ -17,7 +17,7 @@ class ArxivCrawler(BaseCrawler):
     
     def __init__(self, download_dir: str = None):
         super().__init__("arXiv")
-        self.client = arxiv.Client()
+        self.client = arxiv.Client(delay_seconds=5, num_retries=5)
         self.download_dir = Path(download_dir) if download_dir else Path("data/papers")
         self.download_dir.mkdir(parents=True, exist_ok=True)
     

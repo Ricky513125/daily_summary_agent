@@ -20,10 +20,9 @@ jobs:
       ARXIV_CATEGORIES: ${{ vars.ARXIV_CATEGORIES || 'cs.CL,cs.CV,cs.AI,cs.LG' }}
       ARXIV_MAX_RESULTS_PER_KEYWORD: ${{ vars.ARXIV_MAX_RESULTS_PER_KEYWORD || '10' }}
 
-      # V5 沿用 V4 关键词配置
-      KEYWORDS_V4: ${{ vars.KEYWORDS_V4 || '' }}
-      EXCLUDE_CATEGORIES_V4: ${{ vars.EXCLUDE_CATEGORIES_V4 || '' }}
-      EXCLUDE_KEYWORDS_V4: ${{ vars.EXCLUDE_KEYWORDS_V4 || '' }}
+      KEYWORDS_V5: ${{ vars.KEYWORDS_V5 || '' }}
+      EXCLUDE_CATEGORIES_V5: ${{ vars.EXCLUDE_CATEGORIES_V5 || '' }}
+      EXCLUDE_KEYWORDS_V5: ${{ vars.EXCLUDE_KEYWORDS_V5 || '' }}
 
       EMAIL_ENABLED: ${{ vars.EMAIL_ENABLED || 'false' }}
       SMTP_SERVER: ${{ vars.SMTP_SERVER || 'smtp.gmail.com' }}

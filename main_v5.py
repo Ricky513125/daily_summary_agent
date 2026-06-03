@@ -6,6 +6,7 @@
 """
 import json
 import sys
+import time
 import arxiv
 from datetime import datetime, timedelta
 from pathlib import Path
@@ -20,7 +21,7 @@ from config import (  # noqa: E402
     EMAIL_ENABLED, SMTP_SERVER, SMTP_PORT,
     SENDER_EMAIL, SENDER_PASSWORD, RECEIVER_EMAILS,
 )
-from config_v4 import KEYWORDS_V4  # noqa: E402
+from config_v5 import KEYWORDS_V5, EXCLUDE_CATEGORIES_V5, EXCLUDE_KEYWORDS_V5  # noqa: E402
 from writers.summary_writer_v4 import SummaryWriterV4  # noqa: E402
 from utils.logger import logger  # noqa: E402
 from utils.email_sender import EmailSender  # noqa: E402
@@ -33,6 +34,10 @@ class DailySummaryAgentV5(DailySummaryAgentV4):
         super().__init__(days_ago=days_ago)
         self.logger = logger.bind(module="main_agent_v5")
         self.summary_writer = SummaryWriterV4()
+        # 覆盖 V4 的排除规则，使用 V5 专属配置
+        from main_v4 import _build_kw_pattern
+        self._exclude_categories = set(c.lower() for c in EXCLUDE_CATEGORIES_V5)
+        self._exclude_kw_pattern = _build_kw_pattern(EXCLUDE_KEYWORDS_V5)
         self.logger.info("V5 启用: 无 PDF 下载 / 逐篇短摘要 / 无每日汇总")
 
     # ---------- 爬取（跳过 PDF 下载） ----------
@@ -45,49 +50,55 @@ class DailySummaryAgentV5(DailySummaryAgentV4):
             f"{start_time.strftime('%Y-%m-%d %H:%M')} ~ {end_time.strftime('%Y-%m-%d %H:%M')}"
         )
 
-        try:
-            search_query = f'(ti:"{keyword}" OR abs:"{keyword}")'
-            if ARXIV_CATEGORIES:
-                cat_queries = [f"cat:{cat}" for cat in ARXIV_CATEGORIES]
-                search_query += f" AND ({' OR '.join(cat_queries)})"
+        search_query = f'(ti:"{keyword}" OR abs:"{keyword}")'
+        if ARXIV_CATEGORIES:
+            cat_queries = [f"cat:{cat}" for cat in ARXIV_CATEGORIES]
+            search_query += f" AND ({' OR '.join(cat_queries)})"
 
-            search = arxiv.Search(
-                query=search_query,
-                max_results=ARXIV_MAX_RESULTS_PER_KEYWORD * 5,
-                sort_by=arxiv.SortCriterion.SubmittedDate,
-                sort_order=arxiv.SortOrder.Descending,
-            )
+        search = arxiv.Search(
+            query=search_query,
+            max_results=ARXIV_MAX_RESULTS_PER_KEYWORD * 5,
+            sort_by=arxiv.SortCriterion.SubmittedDate,
+            sort_order=arxiv.SortOrder.Descending,
+        )
 
-            articles = []
-            for result in self.arxiv_crawler.client.results(search):
-                if start_time <= result.published < end_time:
-                    article = self.arxiv_crawler._convert_to_article(result, keyword)
-                    if article:
-                        articles.append(article)
-                        self.logger.info(f"[{keyword}] 找到: {article.title[:60]}...")
-                        if len(articles) >= ARXIV_MAX_RESULTS_PER_KEYWORD:
-                            break
+        # 指数退避重试，应对 arXiv 429 限流
+        for attempt in range(1, 4):
+            try:
+                articles = []
+                for result in self.arxiv_crawler.client.results(search):
+                    if start_time <= result.published < end_time:
+                        article = self.arxiv_crawler._convert_to_article(result, keyword)
+                        if article:
+                            articles.append(article)
+                            self.logger.info(f"[{keyword}] 找到: {article.title[:60]}...")
+                            if len(articles) >= ARXIV_MAX_RESULTS_PER_KEYWORD:
+                                break
+                    if result.published < start_time - timedelta(days=2):
+                        break
 
-                if result.published < start_time - timedelta(days=2):
-                    break
-
-            # 去重
-            if self.deduper is not None:
-                deduped, stats = self.deduper.filter_new(
-                    articles, keyword=keyword, date_str=self.target_date_str
-                )
-                if stats.skipped > 0:
-                    self.logger.info(
-                        f"[{keyword}] 去重跳过 {stats.skipped} 篇（保留 {stats.kept}）"
+                # 去重
+                if self.deduper is not None:
+                    deduped, stats = self.deduper.filter_new(
+                        articles, keyword=keyword, date_str=self.target_date_str
                     )
-                articles = deduped
+                    if stats.skipped > 0:
+                        self.logger.info(
+                            f"[{keyword}] 去重跳过 {stats.skipped} 篇（保留 {stats.kept}）"
+                        )
+                    articles = deduped
 
-            # V4 领域排除过滤
-            return self._filter_excluded(articles, keyword)
+                return self._filter_excluded(articles, keyword)
 
-        except Exception as e:
-            self.logger.error(f"[{keyword}] 爬取失败: {e}", exc_info=True)
-            return []
+            except Exception as e:
+                is_429 = "429" in str(e)
+                if is_429 and attempt < 3:
+                    wait = 30 * (2 ** (attempt - 1))  # 30s, 60s
+                    self.logger.warning(f"[{keyword}] 429 限流，{wait}s 后重试 (第{attempt}次)")
+                    time.sleep(wait)
+                else:
+                    self.logger.error(f"[{keyword}] 爬取失败: {e}", exc_info=True)
+                    return []
 
     # ---------- 告警邮件 ----------
     def _send_alert_email(self, subject: str, body: str) -> None:
@@ -136,7 +147,7 @@ class DailySummaryAgentV5(DailySummaryAgentV4):
             self.logger.warning("arXiv爬取未启用")
             return
 
-        keywords = list(KEYWORDS_V4)
+        keywords = list(KEYWORDS_V5)
         if not keywords:
             self.logger.warning("未配置关键词")
             self._send_alert_email(
@@ -153,6 +164,8 @@ class DailySummaryAgentV5(DailySummaryAgentV4):
             self.logger.info(f"[{idx}/{len(keywords)}] 关键词: {keyword}")
             articles = self._crawl_keyword_papers(keyword)
             all_articles.extend(articles)
+            if idx < len(keywords):
+                time.sleep(4)  # arXiv 官方建议请求间隔 ≥3s
 
         # 内存去重 + 排序
         all_articles = self._dedupe_in_memory(all_articles)
