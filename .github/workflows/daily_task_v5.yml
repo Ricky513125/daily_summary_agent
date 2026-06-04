@@ -12,7 +12,7 @@ permissions:
 jobs:
   run-daily-task-v5:
     runs-on: ubuntu-latest
-    timeout-minutes: 30
+    timeout-minutes: 120
 
     env:
       ENABLE_ARXIV: "true"

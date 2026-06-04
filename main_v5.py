@@ -93,7 +93,7 @@ class DailySummaryAgentV5(DailySummaryAgentV4):
             except Exception as e:
                 is_429 = "429" in str(e)
                 if is_429 and attempt < 3:
-                    wait = 30 * (2 ** (attempt - 1))  # 30s, 60s
+                    wait = 60 * (2 ** (attempt - 1))  # 60s, 120s
                     self.logger.warning(f"[{keyword}] 429 限流，{wait}s 后重试 (第{attempt}次)")
                     time.sleep(wait)
                 else:
