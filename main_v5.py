@@ -165,7 +165,7 @@ class DailySummaryAgentV5(DailySummaryAgentV4):
             articles = self._crawl_keyword_papers(keyword)
             all_articles.extend(articles)
             if idx < len(keywords):
-                time.sleep(4)  # arXiv 官方建议请求间隔 ≥3s
+                time.sleep(60)  # 关键词间隔 60s，避免 arXiv 429 限流
 
         # 内存去重 + 排序
         all_articles = self._dedupe_in_memory(all_articles)
