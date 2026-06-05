@@ -40,65 +40,37 @@ class DailySummaryAgentV5(DailySummaryAgentV4):
         self._exclude_kw_pattern = _build_kw_pattern(EXCLUDE_KEYWORDS_V5)
         self.logger.info("V5 启用: 无 PDF 下载 / 逐篇短摘要 / 无每日汇总")
 
-    # ---------- 爬取（跳过 PDF 下载） ----------
-    def _crawl_keyword_papers(self, keyword: str) -> list:
-        start_time = self.target_date.replace(hour=0, minute=0, second=0, microsecond=0)
-        end_time = start_time + timedelta(days=1)
-
-        self.logger.info(
-            f"[{keyword}] 查找时间范围: "
-            f"{start_time.strftime('%Y-%m-%d %H:%M')} ~ {end_time.strftime('%Y-%m-%d %H:%M')}"
-        )
-
-        search_query = f'(ti:"{keyword}" OR abs:"{keyword}")'
-        if ARXIV_CATEGORIES:
-            cat_queries = [f"cat:{cat}" for cat in ARXIV_CATEGORIES]
-            search_query += f" AND ({' OR '.join(cat_queries)})"
-
+    # ---------- 按分类抓取（替代逐关键词方式，大幅减少 API 调用次数） ----------
+    def _crawl_by_category(self, category: str) -> list:
+        """抓取目标日期该分类下的所有论文，返回 arxiv.Result 列表。"""
+        date_from = self.target_date.strftime("%Y%m%d") + "0000"
+        date_to = self.target_date.strftime("%Y%m%d") + "2359"
+        query = f"cat:{category} AND submittedDate:[{date_from} TO {date_to}]"
         search = arxiv.Search(
-            query=search_query,
-            max_results=ARXIV_MAX_RESULTS_PER_KEYWORD * 5,
+            query=query,
+            max_results=500,
             sort_by=arxiv.SortCriterion.SubmittedDate,
             sort_order=arxiv.SortOrder.Descending,
         )
-
-        # 指数退避重试，应对 arXiv 429 限流
         for attempt in range(1, 4):
             try:
-                articles = []
-                for result in self.arxiv_crawler.client.results(search):
-                    if start_time <= result.published < end_time:
-                        article = self.arxiv_crawler._convert_to_article(result, keyword)
-                        if article:
-                            articles.append(article)
-                            self.logger.info(f"[{keyword}] 找到: {article.title[:60]}...")
-                            if len(articles) >= ARXIV_MAX_RESULTS_PER_KEYWORD:
-                                break
-                    if result.published < start_time - timedelta(days=2):
-                        break
-
-                # 去重
-                if self.deduper is not None:
-                    deduped, stats = self.deduper.filter_new(
-                        articles, keyword=keyword, date_str=self.target_date_str
-                    )
-                    if stats.skipped > 0:
-                        self.logger.info(
-                            f"[{keyword}] 去重跳过 {stats.skipped} 篇（保留 {stats.kept}）"
-                        )
-                    articles = deduped
-
-                return self._filter_excluded(articles, keyword)
-
+                results = list(self.arxiv_crawler.client.results(search))
+                self.logger.info(f"[{category}] 获取 {len(results)} 篇")
+                return results
             except Exception as e:
-                is_429 = "429" in str(e)
-                if is_429 and attempt < 3:
-                    wait = 60 * (2 ** (attempt - 1))  # 60s, 120s
-                    self.logger.warning(f"[{keyword}] 429 限流，{wait}s 后重试 (第{attempt}次)")
+                if "429" in str(e) and attempt < 3:
+                    wait = 60 * (2 ** (attempt - 1))
+                    self.logger.warning(f"[{category}] 429 限流，{wait}s 后重试 (第{attempt}次)")
                     time.sleep(wait)
                 else:
-                    self.logger.error(f"[{keyword}] 爬取失败: {e}", exc_info=True)
+                    self.logger.error(f"[{category}] 爬取失败: {e}", exc_info=True)
                     return []
+        return []
+
+    def _match_keywords(self, result) -> list:
+        """返回该论文匹配到的所有 KEYWORDS_V5 关键词列表。"""
+        text = (result.title + " " + result.summary).lower()
+        return [kw for kw in KEYWORDS_V5 if kw.lower() in text]
 
     # ---------- 告警邮件 ----------
     def _send_alert_email(self, subject: str, body: str) -> None:
@@ -147,27 +119,49 @@ class DailySummaryAgentV5(DailySummaryAgentV4):
             self.logger.warning("arXiv爬取未启用")
             return
 
-        keywords = list(KEYWORDS_V5)
-        if not keywords:
-            self.logger.warning("未配置关键词")
-            self._send_alert_email(
-                subject=f"【告警】AI论文Agent未配置关键词 ({self.target_date_readable})",
-                body="KEYWORDS_V4 为空，未执行任何检索。请检查 GitHub Actions 变量配置。",
-            )
-            return
+        categories = ARXIV_CATEGORIES or ["cs.CL", "cs.CV", "cs.AI", "cs.LG"]
+        self.logger.info(f"按分类抓取（{len(categories)} 个分类，替代逐关键词方式）")
 
+        # Step 1: 按分类抓取（4 次请求，取代 40 次）
+        seen_ids: set = set()
+        raw_results = []
+        for idx, cat in enumerate(categories, 1):
+            self.logger.info(f"[{idx}/{len(categories)}] 分类: {cat}，目标日期: {self.target_date_readable}")
+            results = self._crawl_by_category(cat)
+            for r in results:
+                if r.entry_id not in seen_ids:
+                    seen_ids.add(r.entry_id)
+                    raw_results.append(r)
+            if idx < len(categories):
+                time.sleep(10)  # 分类间短暂等待
+
+        self.logger.info(f"分类抓取完成，共 {len(raw_results)} 篇（跨分类去重后）")
+
+        # Step 2: Python 侧关键词匹配 + 排除过滤
         all_articles = []
-        for idx, keyword in enumerate(keywords, 1):
-            keyword = keyword.strip()
-            if not keyword:
+        for result in raw_results:
+            matched_kws = self._match_keywords(result)
+            if not matched_kws:
                 continue
-            self.logger.info(f"[{idx}/{len(keywords)}] 关键词: {keyword}")
-            articles = self._crawl_keyword_papers(keyword)
-            all_articles.extend(articles)
-            if idx < len(keywords):
-                time.sleep(60)  # 关键词间隔 60s，避免 arXiv 429 限流
+            article = self.arxiv_crawler._convert_to_article(result, matched_kws[0])
+            if not article:
+                continue
+            article.tags = matched_kws
+            filtered = self._filter_excluded([article], matched_kws[0])
+            if filtered:
+                all_articles.append(filtered[0])
 
-        # 内存去重 + 排序
+        self.logger.info(f"关键词匹配 + 排除过滤后：{len(all_articles)} 篇")
+
+        # Step 3: 持久化去重（跨天）
+        if self.deduper is not None:
+            all_articles, stats = self.deduper.filter_new(
+                all_articles, date_str=self.target_date_str
+            )
+            if stats.skipped > 0:
+                self.logger.info(f"持久化去重跳过 {stats.skipped} 篇（保留 {stats.kept}）")
+
+        # Step 4: 内存去重 + 排序
         all_articles = self._dedupe_in_memory(all_articles)
         all_articles.sort(
             key=lambda a: getattr(a, "publish_time", datetime.now()), reverse=True
