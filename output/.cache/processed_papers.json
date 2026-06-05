@@ -14687,8 +14687,1475 @@
       ],
       "last_seen_utc": "2026-06-03T04:08:24.567501+00:00",
       "title": "Imaginative Perception Tokens Enhance Spatial Reasoning in Multimodal Language Models"
+    },
+    "arxiv:2606.05523v1": {
+      "dates": [
+        "20260604"
+      ],
+      "first_seen_utc": "2026-06-05T06:40:46.296109+00:00",
+      "keywords": [],
+      "last_seen_utc": "2026-06-05T06:40:46.296111+00:00",
+      "title": "CHASE: Adversarial Red-Blue Teaming for Improving LLM Safety using Reinforcement Learning"
+    },
+    "arxiv:2606.05531v1": {
+      "dates": [
+        "20260604"
+      ],
+      "first_seen_utc": "2026-06-05T06:40:46.296105+00:00",
+      "keywords": [],
+      "last_seen_utc": "2026-06-05T06:40:46.296107+00:00",
+      "title": "Almieyar-Oryx-BloomBench: A Bilingual Multimodal Benchmark for Cognitively Informed Evaluation of Vision-Language Models"
+    },
+    "arxiv:2606.05548v1": {
+      "dates": [
+        "20260604"
+      ],
+      "first_seen_utc": "2026-06-05T06:40:46.296476+00:00",
+      "keywords": [],
+      "last_seen_utc": "2026-06-05T06:40:46.296477+00:00",
+      "title": "ADK Arena: Evaluating Agent Development Kits via LLM-as-a-Developer"
+    },
+    "arxiv:2606.05557v1": {
+      "dates": [
+        "20260604"
+      ],
+      "first_seen_utc": "2026-06-05T06:40:46.296101+00:00",
+      "keywords": [],
+      "last_seen_utc": "2026-06-05T06:40:46.296103+00:00",
+      "title": "AURA: Intent-Directed Probing for Implicit-Need Surfacing in Situated LLM Agents"
+    },
+    "arxiv:2606.05558v1": {
+      "dates": [
+        "20260604"
+      ],
+      "first_seen_utc": "2026-06-05T06:40:46.296554+00:00",
+      "keywords": [],
+      "last_seen_utc": "2026-06-05T06:40:46.296555+00:00",
+      "title": "Autoregressive Diffusion World Models for Off-Policy Evaluation of LLM Agents"
+    },
+    "arxiv:2606.05559v1": {
+      "dates": [
+        "20260604"
+      ],
+      "first_seen_utc": "2026-06-05T06:40:46.296550+00:00",
+      "keywords": [],
+      "last_seen_utc": "2026-06-05T06:40:46.296551+00:00",
+      "title": "CLaaS: Continual learning as a service for sample efficient online learning"
+    },
+    "arxiv:2606.05563v1": {
+      "dates": [
+        "20260604"
+      ],
+      "first_seen_utc": "2026-06-05T06:40:46.296097+00:00",
+      "keywords": [],
+      "last_seen_utc": "2026-06-05T06:40:46.296098+00:00",
+      "title": "SoCRATES: Towards Reliable Automated Evaluation of Proactive LLM Mediation across Domains and Socio-cognitive Variations"
+    },
+    "arxiv:2606.05564v1": {
+      "dates": [
+        "20260604"
+      ],
+      "first_seen_utc": "2026-06-05T06:40:46.296092+00:00",
+      "keywords": [],
+      "last_seen_utc": "2026-06-05T06:40:46.296094+00:00",
+      "title": "Using Large Language Models to Support High Volume Application Review for an Undergraduate Research Program"
+    },
+    "arxiv:2606.05568v1": {
+      "dates": [
+        "20260604"
+      ],
+      "first_seen_utc": "2026-06-05T06:40:46.296088+00:00",
+      "keywords": [],
+      "last_seen_utc": "2026-06-05T06:40:46.296090+00:00",
+      "title": "ColBERTSaR: Sparsified ColBERT Index via Product Quantization"
+    },
+    "arxiv:2606.05606v1": {
+      "dates": [
+        "20260604"
+      ],
+      "first_seen_utc": "2026-06-05T06:40:46.296471+00:00",
+      "keywords": [],
+      "last_seen_utc": "2026-06-05T06:40:46.296473+00:00",
+      "title": "Cross-Epoch Adaptive Rollout Optimization for RL Post-Training"
+    },
+    "arxiv:2606.05608v1": {
+      "dates": [
+        "20260604"
+      ],
+      "first_seen_utc": "2026-06-05T06:40:46.296467+00:00",
+      "keywords": [],
+      "last_seen_utc": "2026-06-05T06:40:46.296469+00:00",
+      "title": "The End of Software Engineering: How AI Agents Are Fundamentally Restructuring the Software Paradigm"
+    },
+    "arxiv:2606.05610v1": {
+      "dates": [
+        "20260604"
+      ],
+      "first_seen_utc": "2026-06-05T06:40:46.296084+00:00",
+      "keywords": [],
+      "last_seen_utc": "2026-06-05T06:40:46.296086+00:00",
+      "title": "Predictable Scaling Laws of Optimal Hyperparameters for LLM Continued Pre-training"
+    },
+    "arxiv:2606.05613v1": {
+      "dates": [
+        "20260604"
+      ],
+      "first_seen_utc": "2026-06-05T06:40:46.296460+00:00",
+      "keywords": [],
+      "last_seen_utc": "2026-06-05T06:40:46.296461+00:00",
+      "title": "Multilingual Fine-Tuning via Localized Gradient Conflict Resolution"
+    },
+    "arxiv:2606.05622v1": {
+      "dates": [
+        "20260604"
+      ],
+      "first_seen_utc": "2026-06-05T06:40:46.296080+00:00",
+      "keywords": [],
+      "last_seen_utc": "2026-06-05T06:40:46.296081+00:00",
+      "title": "AdaPlanBench: Evaluating Adaptive Planning in Large Language Model Agents under World and User Constraints"
+    },
+    "arxiv:2606.05626v1": {
+      "dates": [
+        "20260604"
+      ],
+      "first_seen_utc": "2026-06-05T06:40:46.296076+00:00",
+      "keywords": [],
+      "last_seen_utc": "2026-06-05T06:40:46.296078+00:00",
+      "title": "When New Generators Arrive: Lifelong Machine-Generated Text Attribution via Ridge Feature Transfer"
+    },
+    "arxiv:2606.05632v1": {
+      "dates": [
+        "20260604"
+      ],
+      "first_seen_utc": "2026-06-05T06:40:46.296453+00:00",
+      "keywords": [],
+      "last_seen_utc": "2026-06-05T06:40:46.296457+00:00",
+      "title": "Evaluation of LLMs for Mathematical Formalization in Lean"
+    },
+    "arxiv:2606.05633v1": {
+      "dates": [
+        "20260604"
+      ],
+      "first_seen_utc": "2026-06-05T06:40:46.296449+00:00",
+      "keywords": [],
+      "last_seen_utc": "2026-06-05T06:40:46.296451+00:00",
+      "title": "Answer Presence Drives RAG Rewriting Gains"
+    },
+    "arxiv:2606.05635v1": {
+      "dates": [
+        "20260604"
+      ],
+      "first_seen_utc": "2026-06-05T06:40:46.296249+00:00",
+      "keywords": [],
+      "last_seen_utc": "2026-06-05T06:40:46.296251+00:00",
+      "title": "ShotCrop$^3$: Cropping Human-Centric Images into Cinematic Triple-Shot Compositions"
+    },
+    "arxiv:2606.05639v1": {
+      "dates": [
+        "20260604"
+      ],
+      "first_seen_utc": "2026-06-05T06:40:46.296546+00:00",
+      "keywords": [],
+      "last_seen_utc": "2026-06-05T06:40:46.296547+00:00",
+      "title": "Q-GNN: Query-Conditioned Graph Neural Networks with Type Awareness for Knowledge Graph Completion"
+    },
+    "arxiv:2606.05646v1": {
+      "dates": [
+        "20260604"
+      ],
+      "first_seen_utc": "2026-06-05T06:40:46.296445+00:00",
+      "keywords": [],
+      "last_seen_utc": "2026-06-05T06:40:46.296447+00:00",
+      "title": "Enhancing Software Engineering Through Closed-Loop Memory Optimization"
+    },
+    "arxiv:2606.05649v1": {
+      "dates": [
+        "20260604"
+      ],
+      "first_seen_utc": "2026-06-05T06:40:46.296542+00:00",
+      "keywords": [],
+      "last_seen_utc": "2026-06-05T06:40:46.296543+00:00",
+      "title": "Diff2SP: Diffusion Models for Correlated Scenario Generation in Stochastic Programming"
+    },
+    "arxiv:2606.05652v1": {
+      "dates": [
+        "20260604"
+      ],
+      "first_seen_utc": "2026-06-05T06:40:46.296245+00:00",
+      "keywords": [],
+      "last_seen_utc": "2026-06-05T06:40:46.296247+00:00",
+      "title": "CoFi-UCGen: Coarse-to-Fine Unsupervised Conditional Generation without Label Priors"
+    },
+    "arxiv:2606.05658v1": {
+      "dates": [
+        "20260604"
+      ],
+      "first_seen_utc": "2026-06-05T06:40:46.296441+00:00",
+      "keywords": [],
+      "last_seen_utc": "2026-06-05T06:40:46.296443+00:00",
+      "title": "Agent-Orchestrated Adaptive RAG: A Comparative Study on Structured and Multi-Hop Retrieval"
+    },
+    "arxiv:2606.05670v1": {
+      "dates": [
+        "20260604"
+      ],
+      "first_seen_utc": "2026-06-05T06:40:46.296433+00:00",
+      "keywords": [],
+      "last_seen_utc": "2026-06-05T06:40:46.296438+00:00",
+      "title": "Do More Agents Help? Controlled and Protocol-Aligned Evaluation of LLM Agent Workflows"
+    },
+    "arxiv:2606.05680v1": {
+      "dates": [
+        "20260604"
+      ],
+      "first_seen_utc": "2026-06-05T06:40:46.296538+00:00",
+      "keywords": [],
+      "last_seen_utc": "2026-06-05T06:40:46.296540+00:00",
+      "title": "CASS-RTL: Correctness-Aware Subspace Steering for RTL Generation with LLMs"
+    },
+    "arxiv:2606.05688v1": {
+      "dates": [
+        "20260604"
+      ],
+      "first_seen_utc": "2026-06-05T06:40:46.296072+00:00",
+      "keywords": [],
+      "last_seen_utc": "2026-06-05T06:40:46.296074+00:00",
+      "title": "Value-and-Structure Alignment for Routing-Consistent Quantization of Mixture-of-Experts Models"
+    },
+    "arxiv:2606.05693v1": {
+      "dates": [
+        "20260604"
+      ],
+      "first_seen_utc": "2026-06-05T06:40:46.296534+00:00",
+      "keywords": [],
+      "last_seen_utc": "2026-06-05T06:40:46.296536+00:00",
+      "title": "MolE-RAG: Molecular Structure-Enhanced Retrieval-Augmented Generation for Chemistry"
+    },
+    "arxiv:2606.05697v1": {
+      "dates": [
+        "20260604"
+      ],
+      "first_seen_utc": "2026-06-05T06:40:46.296429+00:00",
+      "keywords": [],
+      "last_seen_utc": "2026-06-05T06:40:46.296431+00:00",
+      "title": "PerceptUI: LLM Agents as Human-Aligned Synthetic Users for UI/UX Evaluation"
+    },
+    "arxiv:2606.05700v1": {
+      "dates": [
+        "20260604"
+      ],
+      "first_seen_utc": "2026-06-05T06:40:46.296239+00:00",
+      "keywords": [],
+      "last_seen_utc": "2026-06-05T06:40:46.296240+00:00",
+      "title": "T-SAR-JEPA: Self-Supervised Temporal Anomaly Detection in SAR Amplitude Stacks via Latent Prediction"
+    },
+    "arxiv:2606.05704v1": {
+      "dates": [
+        "20260604"
+      ],
+      "first_seen_utc": "2026-06-05T06:40:46.296425+00:00",
+      "keywords": [],
+      "last_seen_utc": "2026-06-05T06:40:46.296427+00:00",
+      "title": "Critic-Guided Heterogeneous Multi-Agent Reasoning for Reliable Mathematical Problem Solving"
+    },
+    "arxiv:2606.05711v1": {
+      "dates": [
+        "20260604"
+      ],
+      "first_seen_utc": "2026-06-05T06:40:46.296068+00:00",
+      "keywords": [],
+      "last_seen_utc": "2026-06-05T06:40:46.296070+00:00",
+      "title": "Beyond tokens: a unified framework for latent communication in LLM-based multi-agent systems"
+    },
+    "arxiv:2606.05716v1": {
+      "dates": [
+        "20260604"
+      ],
+      "first_seen_utc": "2026-06-05T06:40:46.296064+00:00",
+      "keywords": [],
+      "last_seen_utc": "2026-06-05T06:40:46.296066+00:00",
+      "title": "Interpreting Style Representations via Style-Eliciting Prompts"
+    },
+    "arxiv:2606.05720v1": {
+      "dates": [
+        "20260604"
+      ],
+      "first_seen_utc": "2026-06-05T06:40:46.296421+00:00",
+      "keywords": [],
+      "last_seen_utc": "2026-06-05T06:40:46.296423+00:00",
+      "title": "Microskill Architecture: A Modular Skill-Driven Framework for AI-Native Code Generation"
+    },
+    "arxiv:2606.05729v1": {
+      "dates": [
+        "20260604"
+      ],
+      "first_seen_utc": "2026-06-05T06:40:46.296527+00:00",
+      "keywords": [],
+      "last_seen_utc": "2026-06-05T06:40:46.296531+00:00",
+      "title": "Automated Proving of Shannon-Type Entropy Inequalities via Fine-Tuned Language Models and Guided Tree Search"
+    },
+    "arxiv:2606.05734v1": {
+      "dates": [
+        "20260604"
+      ],
+      "first_seen_utc": "2026-06-05T06:40:46.296060+00:00",
+      "keywords": [],
+      "last_seen_utc": "2026-06-05T06:40:46.296061+00:00",
+      "title": "When AI Says It Feels"
+    },
+    "arxiv:2606.05736v1": {
+      "dates": [
+        "20260604"
+      ],
+      "first_seen_utc": "2026-06-05T06:40:46.296234+00:00",
+      "keywords": [],
+      "last_seen_utc": "2026-06-05T06:40:46.296236+00:00",
+      "title": "VTI-CoT: Visual-Textual Interleaved Chain of Thought for Video Reasoning"
+    },
+    "arxiv:2606.05742v1": {
+      "dates": [
+        "20260604"
+      ],
+      "first_seen_utc": "2026-06-05T06:40:46.296056+00:00",
+      "keywords": [],
+      "last_seen_utc": "2026-06-05T06:40:46.296057+00:00",
+      "title": "AdaPLD: Adaptive Retrieval and Reuse for Efficient Model-Free Speculative Decoding"
+    },
+    "arxiv:2606.05744v1": {
+      "dates": [
+        "20260604"
+      ],
+      "first_seen_utc": "2026-06-05T06:40:46.296052+00:00",
+      "keywords": [],
+      "last_seen_utc": "2026-06-05T06:40:46.296053+00:00",
+      "title": "PlanBench-V: A Spatial Planning Map Benchmark for Vision-Language Models"
+    },
+    "arxiv:2606.05748v1": {
+      "dates": [
+        "20260604"
+      ],
+      "first_seen_utc": "2026-06-05T06:40:46.296047+00:00",
+      "keywords": [],
+      "last_seen_utc": "2026-06-05T06:40:46.296049+00:00",
+      "title": "UNIVID: Unified Vision-Language Model for Video Moderation"
+    },
+    "arxiv:2606.05769v1": {
+      "dates": [
+        "20260604"
+      ],
+      "first_seen_utc": "2026-06-05T06:40:46.296230+00:00",
+      "keywords": [],
+      "last_seen_utc": "2026-06-05T06:40:46.296232+00:00",
+      "title": "Imagine Before You Predict: Interleaved Latent Visual Reasoning for Video Event Prediction"
+    },
+    "arxiv:2606.05778v1": {
+      "dates": [
+        "20260604"
+      ],
+      "first_seen_utc": "2026-06-05T06:40:46.296226+00:00",
+      "keywords": [],
+      "last_seen_utc": "2026-06-05T06:40:46.296228+00:00",
+      "title": "Beyond Absolute Scores: Relative Edit-induced Difference for Generalizable Image Aesthetic Assessment"
+    },
+    "arxiv:2606.05781v1": {
+      "dates": [
+        "20260604"
+      ],
+      "first_seen_utc": "2026-06-05T06:40:46.296523+00:00",
+      "keywords": [],
+      "last_seen_utc": "2026-06-05T06:40:46.296525+00:00",
+      "title": "Domain-Adapted Small Language Models with Hybrid Post-Processing: Achieving Cost-Efficient, Low-Latency Multi-Label Structured Prediction via LoRA Fine-Tuning on Scarce Data"
+    },
+    "arxiv:2606.05792v1": {
+      "dates": [
+        "20260604"
+      ],
+      "first_seen_utc": "2026-06-05T06:40:46.296417+00:00",
+      "keywords": [],
+      "last_seen_utc": "2026-06-05T06:40:46.296419+00:00",
+      "title": "Can LLMs Write Correct TLA+ Specifications? Evaluating Natural-Language-to-TLA+ Generation"
+    },
+    "arxiv:2606.05793v1": {
+      "dates": [
+        "20260604"
+      ],
+      "first_seen_utc": "2026-06-05T06:40:46.296043+00:00",
+      "keywords": [],
+      "last_seen_utc": "2026-06-05T06:40:46.296045+00:00",
+      "title": "CollabBench: Benchmarking and Unleashing Collaborative Ability of LLMs with Diverse Players via Proactive Engagement"
+    },
+    "arxiv:2606.05799v1": {
+      "dates": [
+        "20260604"
+      ],
+      "first_seen_utc": "2026-06-05T06:40:46.296035+00:00",
+      "keywords": [],
+      "last_seen_utc": "2026-06-05T06:40:46.296040+00:00",
+      "title": "CaliDist: Calibrating Large Language Models via Behavioral Robustness to Distraction"
+    },
+    "arxiv:2606.05804v1": {
+      "dates": [
+        "20260604"
+      ],
+      "first_seen_utc": "2026-06-05T06:40:46.296031+00:00",
+      "keywords": [],
+      "last_seen_utc": "2026-06-05T06:40:46.296032+00:00",
+      "title": "Can LLMs Be Constrained to the Past? Improving Knowledge Cutoff through Recall-Based Prompting"
+    },
+    "arxiv:2606.05805v1": {
+      "dates": [
+        "20260604"
+      ],
+      "first_seen_utc": "2026-06-05T06:40:46.296413+00:00",
+      "keywords": [],
+      "last_seen_utc": "2026-06-05T06:40:46.296415+00:00",
+      "title": "From Risk Classification to Action Plan Remediation: A Guardrail Feedback Driven Framework for LLM Agents"
+    },
+    "arxiv:2606.05806v1": {
+      "dates": [
+        "20260604"
+      ],
+      "first_seen_utc": "2026-06-05T06:40:46.296409+00:00",
+      "keywords": [],
+      "last_seen_utc": "2026-06-05T06:40:46.296411+00:00",
+      "title": "When Tools Fail: Benchmarking Dynamic Replanning and Anomaly Recovery in LLM Agents"
+    },
+    "arxiv:2606.05816v1": {
+      "dates": [
+        "20260604"
+      ],
+      "first_seen_utc": "2026-06-05T06:40:46.296219+00:00",
+      "keywords": [],
+      "last_seen_utc": "2026-06-05T06:40:46.296224+00:00",
+      "title": "Emotion-Aware Image Generation from Korean Diary Text via LLM-based Prompt Translation and LoRA Fine-Tuning"
+    },
+    "arxiv:2606.05817v1": {
+      "dates": [
+        "20260604"
+      ],
+      "first_seen_utc": "2026-06-05T06:40:46.296405+00:00",
+      "keywords": [],
+      "last_seen_utc": "2026-06-05T06:40:46.296406+00:00",
+      "title": "Consistency Training Along the Transformer Stack"
+    },
+    "arxiv:2606.05828v1": {
+      "dates": [
+        "20260604"
+      ],
+      "first_seen_utc": "2026-06-05T06:40:46.296026+00:00",
+      "keywords": [],
+      "last_seen_utc": "2026-06-05T06:40:46.296028+00:00",
+      "title": "Statistical Priors for Implicit Preferences: Decoupling Skill Selection as a Local Harness in Personal Agents"
+    },
+    "arxiv:2606.05833v1": {
+      "dates": [
+        "20260604"
+      ],
+      "first_seen_utc": "2026-06-05T06:40:46.296215+00:00",
+      "keywords": [],
+      "last_seen_utc": "2026-06-05T06:40:46.296217+00:00",
+      "title": "Learning Geometric Representations from Videos for Spatial Intelligent Multimodal Large Language Models"
+    },
+    "arxiv:2606.05836v1": {
+      "dates": [
+        "20260604"
+      ],
+      "first_seen_utc": "2026-06-05T06:40:46.296022+00:00",
+      "keywords": [],
+      "last_seen_utc": "2026-06-05T06:40:46.296023+00:00",
+      "title": "ProSPy: A Profiling-Driven SQL-Python Agentic Framework for Enterprise Text-to-SQL"
+    },
+    "arxiv:2606.05843v1": {
+      "dates": [
+        "20260604"
+      ],
+      "first_seen_utc": "2026-06-05T06:40:46.296018+00:00",
+      "keywords": [],
+      "last_seen_utc": "2026-06-05T06:40:46.296019+00:00",
+      "title": "Mechanistic Insights into Functional Sparsity in Multimodal LLMs via CoRe Heads"
+    },
+    "arxiv:2606.05847v1": {
+      "dates": [
+        "20260604"
+      ],
+      "first_seen_utc": "2026-06-05T06:40:46.296400+00:00",
+      "keywords": [],
+      "last_seen_utc": "2026-06-05T06:40:46.296402+00:00",
+      "title": "Agentic Molecular Recovery via Molecule-Aware Exploration"
+    },
+    "arxiv:2606.05852v1": {
+      "dates": [
+        "20260604"
+      ],
+      "first_seen_utc": "2026-06-05T06:40:46.296396+00:00",
+      "keywords": [],
+      "last_seen_utc": "2026-06-05T06:40:46.296398+00:00",
+      "title": "UniVoice: A Unified Model for Speech and Singing Voice Generation"
+    },
+    "arxiv:2606.05858v1": {
+      "dates": [
+        "20260604"
+      ],
+      "first_seen_utc": "2026-06-05T06:40:46.296014+00:00",
+      "keywords": [],
+      "last_seen_utc": "2026-06-05T06:40:46.296015+00:00",
+      "title": "ReverseEOL: Improving Training-free Text Embeddings via Text Reversal in Decoder-only LLMs"
+    },
+    "arxiv:2606.05859v1": {
+      "dates": [
+        "20260604"
+      ],
+      "first_seen_utc": "2026-06-05T06:40:46.296009+00:00",
+      "keywords": [],
+      "last_seen_utc": "2026-06-05T06:40:46.296011+00:00",
+      "title": "TARPO: Token-Wise Latent-Explicit Reasoning via Action-Routing Policy Optimization"
+    },
+    "arxiv:2606.05860v1": {
+      "dates": [
+        "20260604"
+      ],
+      "first_seen_utc": "2026-06-05T06:40:46.296519+00:00",
+      "keywords": [],
+      "last_seen_utc": "2026-06-05T06:40:46.296521+00:00",
+      "title": "GenAutoML: An Agentic Framework for Dynamic Architecture Generation and Optimization in Time-Series Analysis"
+    },
+    "arxiv:2606.05861v1": {
+      "dates": [
+        "20260604"
+      ],
+      "first_seen_utc": "2026-06-05T06:40:46.296392+00:00",
+      "keywords": [],
+      "last_seen_utc": "2026-06-05T06:40:46.296394+00:00",
+      "title": "LLMCodec: Adapting Video Codecs for Efficient Weight Compression of Large Language Models"
+    },
+    "arxiv:2606.05864v1": {
+      "dates": [
+        "20260604"
+      ],
+      "first_seen_utc": "2026-06-05T06:40:46.296005+00:00",
+      "keywords": [],
+      "last_seen_utc": "2026-06-05T06:40:46.296007+00:00",
+      "title": "Analysis of the Neglect-Zero Effect in Large Language Models"
+    },
+    "arxiv:2606.05868v1": {
+      "dates": [
+        "20260604"
+      ],
+      "first_seen_utc": "2026-06-05T06:40:46.296001+00:00",
+      "keywords": [],
+      "last_seen_utc": "2026-06-05T06:40:46.296002+00:00",
+      "title": "YouZhi: Towards High-Concurrency Financial LLMs via Adaptive GQA-to-MLA Transition"
+    },
+    "arxiv:2606.05871v1": {
+      "dates": [
+        "20260604"
+      ],
+      "first_seen_utc": "2026-06-05T06:40:46.296388+00:00",
+      "keywords": [],
+      "last_seen_utc": "2026-06-05T06:40:46.296390+00:00",
+      "title": "Compositional Boundaries for Density Fusion"
+    },
+    "arxiv:2606.05874v1": {
+      "dates": [
+        "20260604"
+      ],
+      "first_seen_utc": "2026-06-05T06:40:46.295997+00:00",
+      "keywords": [],
+      "last_seen_utc": "2026-06-05T06:40:46.295998+00:00",
+      "title": "Evaluating Stochastic Collapse and Implicit Bias in Multimodal Large Language Models"
+    },
+    "arxiv:2606.05875v1": {
+      "dates": [
+        "20260604"
+      ],
+      "first_seen_utc": "2026-06-05T06:40:46.296384+00:00",
+      "keywords": [],
+      "last_seen_utc": "2026-06-05T06:40:46.296385+00:00",
+      "title": "QCFuse: Query-Aware Cache Fusion via Compressed View for Efficient RAG Serving"
+    },
+    "arxiv:2606.05878v1": {
+      "dates": [
+        "20260604"
+      ],
+      "first_seen_utc": "2026-06-05T06:40:46.296516+00:00",
+      "keywords": [],
+      "last_seen_utc": "2026-06-05T06:40:46.296517+00:00",
+      "title": "TS-ICL: A Flexible Time-Indexed Foundation Model for Time Series via In-Context Learning"
+    },
+    "arxiv:2606.05883v1": {
+      "dates": [
+        "20260604"
+      ],
+      "first_seen_utc": "2026-06-05T06:40:46.296211+00:00",
+      "keywords": [],
+      "last_seen_utc": "2026-06-05T06:40:46.296213+00:00",
+      "title": "Geometry-Aware Dataset Condensation for Diffusion Model Training"
+    },
+    "arxiv:2606.05885v1": {
+      "dates": [
+        "20260604"
+      ],
+      "first_seen_utc": "2026-06-05T06:40:46.296512+00:00",
+      "keywords": [],
+      "last_seen_utc": "2026-06-05T06:40:46.296513+00:00",
+      "title": "When Denser Credit Is Not Enough: Evidence-Calibrated Policy Optimization for Long-Horizon LLM Agent Training"
+    },
+    "arxiv:2606.05890v1": {
+      "dates": [
+        "20260604"
+      ],
+      "first_seen_utc": "2026-06-05T06:40:46.295992+00:00",
+      "keywords": [],
+      "last_seen_utc": "2026-06-05T06:40:46.295994+00:00",
+      "title": "Staying with the Uncertainty: Uncertainty-Scaffolding Strategies for Artificial Moral Advisors in LLM-to-LLM Simulated Conversations"
+    },
+    "arxiv:2606.05896v1": {
+      "dates": [
+        "20260604"
+      ],
+      "first_seen_utc": "2026-06-05T06:40:46.296208+00:00",
+      "keywords": [],
+      "last_seen_utc": "2026-06-05T06:40:46.296209+00:00",
+      "title": "Resonant Minds: Closed-Loop Social Avatars with Theory of Mind"
+    },
+    "arxiv:2606.05901v1": {
+      "dates": [
+        "20260604"
+      ],
+      "first_seen_utc": "2026-06-05T06:40:46.295987+00:00",
+      "keywords": [],
+      "last_seen_utc": "2026-06-05T06:40:46.295989+00:00",
+      "title": "Reducing Hallucinations in Complex Question Answering using Simple Graph-based Retrieval-Augmented Generation (long version)"
+    },
+    "arxiv:2606.05917v1": {
+      "dates": [
+        "20260604"
+      ],
+      "first_seen_utc": "2026-06-05T06:40:46.295892+00:00",
+      "keywords": [],
+      "last_seen_utc": "2026-06-05T06:40:46.295983+00:00",
+      "title": "MemoryCard: Topic-Aware Multi-Modal Clue Compression for Long-Video Question Answering"
+    },
+    "arxiv:2606.05920v1": {
+      "dates": [
+        "20260604"
+      ],
+      "first_seen_utc": "2026-06-05T06:40:46.295884+00:00",
+      "keywords": [],
+      "last_seen_utc": "2026-06-05T06:40:46.295887+00:00",
+      "title": "Asuka-Bench: Benchmarking Code Agents on Underspecified User Intent and Multi-Round Refinement"
+    },
+    "arxiv:2606.05922v1": {
+      "dates": [
+        "20260604"
+      ],
+      "first_seen_utc": "2026-06-05T06:40:46.295877+00:00",
+      "keywords": [],
+      "last_seen_utc": "2026-06-05T06:40:46.295880+00:00",
+      "title": "Retrospective Harness Optimization: Improving LLM Agents via Self-Preference over Trajectory Rollouts"
+    },
+    "arxiv:2606.05924v1": {
+      "dates": [
+        "20260604"
+      ],
+      "first_seen_utc": "2026-06-05T06:40:46.295870+00:00",
+      "keywords": [],
+      "last_seen_utc": "2026-06-05T06:40:46.295873+00:00",
+      "title": "Better Literary Translation: A Multi-Aspect Data Generation and LLM Training Approach"
+    },
+    "arxiv:2606.05937v1": {
+      "dates": [
+        "20260604"
+      ],
+      "first_seen_utc": "2026-06-05T06:40:46.295863+00:00",
+      "keywords": [],
+      "last_seen_utc": "2026-06-05T06:40:46.295865+00:00",
+      "title": "Large Language Models are Perplexed by some Political Parties"
+    },
+    "arxiv:2606.05949v1": {
+      "dates": [
+        "20260604"
+      ],
+      "first_seen_utc": "2026-06-05T06:40:46.296204+00:00",
+      "keywords": [],
+      "last_seen_utc": "2026-06-05T06:40:46.296205+00:00",
+      "title": "Faithful, Enriched, and Precise: Benchmarking Natural-Science Illustration Generation by T2I models"
+    },
+    "arxiv:2606.05950v1": {
+      "dates": [
+        "20260604"
+      ],
+      "first_seen_utc": "2026-06-05T06:40:46.296380+00:00",
+      "keywords": [],
+      "last_seen_utc": "2026-06-05T06:40:46.296381+00:00",
+      "title": "Edit-R2: Context-Aware Reinforcement Learning for Multi-Turn Image Editing"
+    },
+    "arxiv:2606.05958v1": {
+      "dates": [
+        "20260604"
+      ],
+      "first_seen_utc": "2026-06-05T06:40:46.296508+00:00",
+      "keywords": [],
+      "last_seen_utc": "2026-06-05T06:40:46.296509+00:00",
+      "title": "Steering Vectors are an Adversarial Attack Surface"
+    },
+    "arxiv:2606.05981v1": {
+      "dates": [
+        "20260604"
+      ],
+      "first_seen_utc": "2026-06-05T06:40:46.296200+00:00",
+      "keywords": [],
+      "last_seen_utc": "2026-06-05T06:40:46.296201+00:00",
+      "title": "Video-Rate Streaming Stylization on a Vision-Aware MLLM-Conditioned Edit Diffusion: Asymmetric Batched Inference on a Distilled UNet + MLLM Text Encoder"
+    },
+    "arxiv:2606.05985v1": {
+      "dates": [
+        "20260604"
+      ],
+      "first_seen_utc": "2026-06-05T06:40:46.295855+00:00",
+      "keywords": [],
+      "last_seen_utc": "2026-06-05T06:40:46.295858+00:00",
+      "title": "Beyond Alignment: Value Diversity as a Collective Property in Multicultural Agent Systems"
+    },
+    "arxiv:2606.05988v1": {
+      "dates": [
+        "20260604"
+      ],
+      "first_seen_utc": "2026-06-05T06:40:46.295849+00:00",
+      "keywords": [],
+      "last_seen_utc": "2026-06-05T06:40:46.295851+00:00",
+      "title": "Compress-Distill: Reasoning Trace Compression for Efficient Knowledge Distillation"
+    },
+    "arxiv:2606.05997v1": {
+      "dates": [
+        "20260604"
+      ],
+      "first_seen_utc": "2026-06-05T06:40:46.296196+00:00",
+      "keywords": [],
+      "last_seen_utc": "2026-06-05T06:40:46.296197+00:00",
+      "title": "Multimodal Sexism Identification and Characterization using Large Language Models and Gradient Boosting"
+    },
+    "arxiv:2606.05999v1": {
+      "dates": [
+        "20260604"
+      ],
+      "first_seen_utc": "2026-06-05T06:40:46.296191+00:00",
+      "keywords": [],
+      "last_seen_utc": "2026-06-05T06:40:46.296193+00:00",
+      "title": "ATT-CR: Adaptive Triangular Transformer for Cloud Removal"
+    },
+    "arxiv:2606.06003v1": {
+      "dates": [
+        "20260604"
+      ],
+      "first_seen_utc": "2026-06-05T06:40:46.296362+00:00",
+      "keywords": [],
+      "last_seen_utc": "2026-06-05T06:40:46.296363+00:00",
+      "title": "Beyond Vector Similarity: A Structural Analysis of Graph-Augmented Retrieval for Industrial Knowledge Graphs"
+    },
+    "arxiv:2606.06004v1": {
+      "dates": [
+        "20260604"
+      ],
+      "first_seen_utc": "2026-06-05T06:40:46.295842+00:00",
+      "keywords": [],
+      "last_seen_utc": "2026-06-05T06:40:46.295844+00:00",
+      "title": "The Generator-Eraser Paradox: Community Guidelines for Responsible LLM-Assisted Dialect Resource Creation"
+    },
+    "arxiv:2606.06020v1": {
+      "dates": [
+        "20260604"
+      ],
+      "first_seen_utc": "2026-06-05T06:40:46.296176+00:00",
+      "keywords": [],
+      "last_seen_utc": "2026-06-05T06:40:46.296178+00:00",
+      "title": "ReSAGE-PAR: Representational Similarity Assessment for Generative Expansion in Pedestrian Attribute Recognition"
+    },
+    "arxiv:2606.06022v1": {
+      "dates": [
+        "20260604"
+      ],
+      "first_seen_utc": "2026-06-05T06:40:46.295834+00:00",
+      "keywords": [],
+      "last_seen_utc": "2026-06-05T06:40:46.295837+00:00",
+      "title": "Contextualized Prompting For Stance Detection On Social Media"
+    },
+    "arxiv:2606.06025v1": {
+      "dates": [
+        "20260604"
+      ],
+      "first_seen_utc": "2026-06-05T06:40:46.295827+00:00",
+      "keywords": [],
+      "last_seen_utc": "2026-06-05T06:40:46.295830+00:00",
+      "title": "EGTR-Review: Efficient Evidence-Grounded Scientific Peer Review Generation via Multi-Agent Teacher Distillation"
+    },
+    "arxiv:2606.06027v1": {
+      "dates": [
+        "20260604"
+      ],
+      "first_seen_utc": "2026-06-05T06:40:46.295820+00:00",
+      "keywords": [],
+      "last_seen_utc": "2026-06-05T06:40:46.295822+00:00",
+      "title": "RedditPersona: A Modular Framework for Community-Conditioned LLM Adaptation from Reddit"
+    },
+    "arxiv:2606.06031v1": {
+      "dates": [
+        "20260604"
+      ],
+      "first_seen_utc": "2026-06-05T06:40:46.295812+00:00",
+      "keywords": [],
+      "last_seen_utc": "2026-06-05T06:40:46.295815+00:00",
+      "title": "NAVIRA: Decoupled Stochastic Remasking for Masked Diffusion Language Models"
+    },
+    "arxiv:2606.06036v1": {
+      "dates": [
+        "20260604"
+      ],
+      "first_seen_utc": "2026-06-05T06:40:46.296358+00:00",
+      "keywords": [],
+      "last_seen_utc": "2026-06-05T06:40:46.296359+00:00",
+      "title": "Memory is Reconstructed, Not Retrieved: Graph Memory for LLM Agents"
+    },
+    "arxiv:2606.06042v1": {
+      "dates": [
+        "20260604"
+      ],
+      "first_seen_utc": "2026-06-05T06:40:46.296172+00:00",
+      "keywords": [],
+      "last_seen_utc": "2026-06-05T06:40:46.296174+00:00",
+      "title": "LoomVideo: Unifying Multimodal Inputs into Video Generation and Editing"
+    },
+    "arxiv:2606.06044v1": {
+      "dates": [
+        "20260604"
+      ],
+      "first_seen_utc": "2026-06-05T06:40:46.295805+00:00",
+      "keywords": [],
+      "last_seen_utc": "2026-06-05T06:40:46.295808+00:00",
+      "title": "IA-RAG: Interval-Algebra-Driven Temporal Reasoning for Dynamic Knowledge Retrieval"
+    },
+    "arxiv:2606.06047v1": {
+      "dates": [
+        "20260604"
+      ],
+      "first_seen_utc": "2026-06-05T06:40:46.295798+00:00",
+      "keywords": [],
+      "last_seen_utc": "2026-06-05T06:40:46.295800+00:00",
+      "title": "Automatic Labelling of Speech Translation Errors"
+    },
+    "arxiv:2606.06054v1": {
+      "dates": [
+        "20260604"
+      ],
+      "first_seen_utc": "2026-06-05T06:40:46.296353+00:00",
+      "keywords": [],
+      "last_seen_utc": "2026-06-05T06:40:46.296355+00:00",
+      "title": "Beyond Similarity: Trustworthy Memory Search for Personal AI Agents"
+    },
+    "arxiv:2606.06055v1": {
+      "dates": [
+        "20260604"
+      ],
+      "first_seen_utc": "2026-06-05T06:40:46.296349+00:00",
+      "keywords": [],
+      "last_seen_utc": "2026-06-05T06:40:46.296351+00:00",
+      "title": "When Should Memory Stay Silent: Measuring Memory-Use Boundaries in Memory-Augmented Conversational Agents"
+    },
+    "arxiv:2606.06066v1": {
+      "dates": [
+        "20260604"
+      ],
+      "first_seen_utc": "2026-06-05T06:40:46.296168+00:00",
+      "keywords": [],
+      "last_seen_utc": "2026-06-05T06:40:46.296170+00:00",
+      "title": "FontFusion: Enhancing Generative Text in Diffusion Models with Typographic Conditioning"
+    },
+    "arxiv:2606.06080v1": {
+      "dates": [
+        "20260604"
+      ],
+      "first_seen_utc": "2026-06-05T06:40:46.295790+00:00",
+      "keywords": [],
+      "last_seen_utc": "2026-06-05T06:40:46.295793+00:00",
+      "title": "On Advantage Estimates for Max@K Policy Gradients"
+    },
+    "arxiv:2606.06087v1": {
+      "dates": [
+        "20260604"
+      ],
+      "first_seen_utc": "2026-06-05T06:40:46.295783+00:00",
+      "keywords": [],
+      "last_seen_utc": "2026-06-05T06:40:46.295785+00:00",
+      "title": "LatentSkill: From In-Context Textual Skills to In-Weight Latent Skills for LLM Agents"
+    },
+    "arxiv:2606.06090v1": {
+      "dates": [
+        "20260604"
+      ],
+      "first_seen_utc": "2026-06-05T06:40:46.296345+00:00",
+      "keywords": [],
+      "last_seen_utc": "2026-06-05T06:40:46.296347+00:00",
+      "title": "Beyond Semantic Organization: Memory as Execution State Management for Long-Horizon Agents"
+    },
+    "arxiv:2606.06096v1": {
+      "dates": [
+        "20260604"
+      ],
+      "first_seen_utc": "2026-06-05T06:40:46.295775+00:00",
+      "keywords": [],
+      "last_seen_utc": "2026-06-05T06:40:46.295778+00:00",
+      "title": "OrderGrad: Optimizing Beyond the Mean with Order-Statistic Policy Gradient Estimation"
+    },
+    "arxiv:2606.06098v1": {
+      "dates": [
+        "20260604"
+      ],
+      "first_seen_utc": "2026-06-05T06:40:46.295768+00:00",
+      "keywords": [],
+      "last_seen_utc": "2026-06-05T06:40:46.295770+00:00",
+      "title": "IR3DE: A Linear Router for Large Language Models"
+    },
+    "arxiv:2606.06099v1": {
+      "dates": [
+        "20260604"
+      ],
+      "first_seen_utc": "2026-06-05T06:40:46.296342+00:00",
+      "keywords": [],
+      "last_seen_utc": "2026-06-05T06:40:46.296343+00:00",
+      "title": "CogManip: Benchmarking Manipulative Behavior in Multi-Turn Interactions with Large Language Model"
+    },
+    "arxiv:2606.06100v1": {
+      "dates": [
+        "20260604"
+      ],
+      "first_seen_utc": "2026-06-05T06:40:46.296164+00:00",
+      "keywords": [],
+      "last_seen_utc": "2026-06-05T06:40:46.296165+00:00",
+      "title": "HyperVis: Continuous Latent Visual Relational Graphs on the Lorentz Hyperboloid for Compositional Reasoning"
+    },
+    "arxiv:2606.06114v1": {
+      "dates": [
+        "20260604"
+      ],
+      "first_seen_utc": "2026-06-05T06:40:46.296337+00:00",
+      "keywords": [],
+      "last_seen_utc": "2026-06-05T06:40:46.296339+00:00",
+      "title": "Towards Healthy Evolution: Exploring the Role and Mechanisms of Human-Agent Interaction in Self-Evolving Systems"
+    },
+    "arxiv:2606.06120v1": {
+      "dates": [
+        "20260604"
+      ],
+      "first_seen_utc": "2026-06-05T06:40:46.296159+00:00",
+      "keywords": [],
+      "last_seen_utc": "2026-06-05T06:40:46.296161+00:00",
+      "title": "Diff-CA: Separating Common and Salient Factors with Diffusion Models"
+    },
+    "arxiv:2606.06123v1": {
+      "dates": [
+        "20260604"
+      ],
+      "first_seen_utc": "2026-06-05T06:40:46.296504+00:00",
+      "keywords": [],
+      "last_seen_utc": "2026-06-05T06:40:46.296505+00:00",
+      "title": "Adaptive state-action abstractions via rate-distortion"
+    },
+    "arxiv:2606.06133v1": {
+      "dates": [
+        "20260604"
+      ],
+      "first_seen_utc": "2026-06-05T06:40:46.296331+00:00",
+      "keywords": [],
+      "last_seen_utc": "2026-06-05T06:40:46.296335+00:00",
+      "title": "TLA-Prover: Verifiable TLA+ Specification Synthesis via Preference-Optimized Low-Rank Adaptation"
+    },
+    "arxiv:2606.06136v1": {
+      "dates": [
+        "20260604"
+      ],
+      "first_seen_utc": "2026-06-05T06:40:46.296327+00:00",
+      "keywords": [],
+      "last_seen_utc": "2026-06-05T06:40:46.296328+00:00",
+      "title": "A Finite Certificate for the Positive $n=9$ Vasc Inequality"
+    },
+    "arxiv:2606.06160v1": {
+      "dates": [
+        "20260604"
+      ],
+      "first_seen_utc": "2026-06-05T06:40:46.295760+00:00",
+      "keywords": [],
+      "last_seen_utc": "2026-06-05T06:40:46.295762+00:00",
+      "title": "Where does Absolute Position come from in decoder-only Transformers?"
+    },
+    "arxiv:2606.06164v1": {
+      "dates": [
+        "20260604"
+      ],
+      "first_seen_utc": "2026-06-05T06:40:46.296500+00:00",
+      "keywords": [],
+      "last_seen_utc": "2026-06-05T06:40:46.296501+00:00",
+      "title": "On the training of physics-informed neural operators for solving parametric partial differential equations"
+    },
+    "arxiv:2606.06178v1": {
+      "dates": [
+        "20260604"
+      ],
+      "first_seen_utc": "2026-06-05T06:40:46.295751+00:00",
+      "keywords": [],
+      "last_seen_utc": "2026-06-05T06:40:46.295754+00:00",
+      "title": "Learning to Route LLMs from Implicit Cost-Performance Preferences via Meta-Learning"
+    },
+    "arxiv:2606.06179v1": {
+      "dates": [
+        "20260604"
+      ],
+      "first_seen_utc": "2026-06-05T06:40:46.296496+00:00",
+      "keywords": [],
+      "last_seen_utc": "2026-06-05T06:40:46.296497+00:00",
+      "title": "Diffusion Models Observe Only Gradients: A Geometric Perspective on Score Matching Errors"
+    },
+    "arxiv:2606.06186v1": {
+      "dates": [
+        "20260604"
+      ],
+      "first_seen_utc": "2026-06-05T06:40:46.296153+00:00",
+      "keywords": [],
+      "last_seen_utc": "2026-06-05T06:40:46.296154+00:00",
+      "title": "Adversarial Attacks Already Tell the Answer: Directional Bias-Guided Test-time Defense for Vision-Language Models"
+    },
+    "arxiv:2606.06197v1": {
+      "dates": [
+        "20260604"
+      ],
+      "first_seen_utc": "2026-06-05T06:40:46.295743+00:00",
+      "keywords": [],
+      "last_seen_utc": "2026-06-05T06:40:46.295746+00:00",
+      "title": "Improving Answer Extraction in Context-based Question Answering Systems Using LLMs"
+    },
+    "arxiv:2606.06203v1": {
+      "dates": [
+        "20260604"
+      ],
+      "first_seen_utc": "2026-06-05T06:40:46.295735+00:00",
+      "keywords": [],
+      "last_seen_utc": "2026-06-05T06:40:46.295737+00:00",
+      "title": "Dense Contexts Are Hard Contexts: Lexical Density Limits Effective Context in LLMs"
+    },
+    "arxiv:2606.06211v1": {
+      "dates": [
+        "20260604"
+      ],
+      "first_seen_utc": "2026-06-05T06:40:46.295727+00:00",
+      "keywords": [],
+      "last_seen_utc": "2026-06-05T06:40:46.295730+00:00",
+      "title": "FiLM-Based Speaker Conditioning of a SpeechLLM for Pathological Speech Recognition"
+    },
+    "arxiv:2606.06212v1": {
+      "dates": [
+        "20260604"
+      ],
+      "first_seen_utc": "2026-06-05T06:40:46.296322+00:00",
+      "keywords": [],
+      "last_seen_utc": "2026-06-05T06:40:46.296324+00:00",
+      "title": "Evaluating Agentic Configuration Repair for Computer Networks"
+    },
+    "arxiv:2606.06214v1": {
+      "dates": [
+        "20260604"
+      ],
+      "first_seen_utc": "2026-06-05T06:40:46.296319+00:00",
+      "keywords": [],
+      "last_seen_utc": "2026-06-05T06:40:46.296320+00:00",
+      "title": "Towards the Readability of LLM-Generated Codes through Multitask Representation Engineering"
+    },
+    "arxiv:2606.06235v1": {
+      "dates": [
+        "20260604"
+      ],
+      "first_seen_utc": "2026-06-05T06:40:46.296315+00:00",
+      "keywords": [],
+      "last_seen_utc": "2026-06-05T06:40:46.296316+00:00",
+      "title": "Design a Reliable LLM-Integrated Interface for Mortality Forecasting"
+    },
+    "arxiv:2606.06236v1": {
+      "dates": [
+        "20260604"
+      ],
+      "first_seen_utc": "2026-06-05T06:40:46.296492+00:00",
+      "keywords": [],
+      "last_seen_utc": "2026-06-05T06:40:46.296493+00:00",
+      "title": "Tracing the Oracle: Improving Diffusion Timestep Scheduling for 3D CT Reconstruction"
+    },
+    "arxiv:2606.06238v1": {
+      "dates": [
+        "20260604"
+      ],
+      "first_seen_utc": "2026-06-05T06:40:46.296487+00:00",
+      "keywords": [],
+      "last_seen_utc": "2026-06-05T06:40:46.296489+00:00",
+      "title": "Generative Criticality in Large Language Model Temperature Scaling"
+    },
+    "arxiv:2606.06240v1": {
+      "dates": [
+        "20260604"
+      ],
+      "first_seen_utc": "2026-06-05T06:40:46.296311+00:00",
+      "keywords": [],
+      "last_seen_utc": "2026-06-05T06:40:46.296312+00:00",
+      "title": "TOKI: A Bitemporal Operator Algebra for Contradiction Resolution in LLM-Agent Persistent Memory"
+    },
+    "arxiv:2606.06249v1": {
+      "dates": [
+        "20260604"
+      ],
+      "first_seen_utc": "2026-06-05T06:40:46.296148+00:00",
+      "keywords": [],
+      "last_seen_utc": "2026-06-05T06:40:46.296150+00:00",
+      "title": "GRAMformer: Any-Order Modality Interactions via Volumetric Multimodal Cross-Attention"
+    },
+    "arxiv:2606.06256v1": {
+      "dates": [
+        "20260604"
+      ],
+      "first_seen_utc": "2026-06-05T06:40:46.296307+00:00",
+      "keywords": [],
+      "last_seen_utc": "2026-06-05T06:40:46.296308+00:00",
+      "title": "RedKnot: Efficient Long-Context LLM Serving with Head-Aware KV Reuse and SegPagedAttention"
+    },
+    "arxiv:2606.06260v1": {
+      "dates": [
+        "20260604"
+      ],
+      "first_seen_utc": "2026-06-05T06:40:46.295719+00:00",
+      "keywords": [],
+      "last_seen_utc": "2026-06-05T06:40:46.295722+00:00",
+      "title": "OneReason Technical Report"
+    },
+    "arxiv:2606.06261v1": {
+      "dates": [
+        "20260604"
+      ],
+      "first_seen_utc": "2026-06-05T06:40:46.296302+00:00",
+      "keywords": [],
+      "last_seen_utc": "2026-06-05T06:40:46.296304+00:00",
+      "title": "DAST: A VLM-LLM Framework for Cross-Interface Anomaly Detection in O-RAN"
+    },
+    "arxiv:2606.06266v1": {
+      "dates": [
+        "20260604"
+      ],
+      "first_seen_utc": "2026-06-05T06:40:46.295712+00:00",
+      "keywords": [],
+      "last_seen_utc": "2026-06-05T06:40:46.295714+00:00",
+      "title": "From Self to Other: Evaluating Demographic Perspective-Taking in LLM Hate Speech Annotation"
+    },
+    "arxiv:2606.06271v1": {
+      "dates": [
+        "20260604"
+      ],
+      "first_seen_utc": "2026-06-05T06:40:46.295705+00:00",
+      "keywords": [],
+      "last_seen_utc": "2026-06-05T06:40:46.295707+00:00",
+      "title": "FOXGLOVE: Understanding Goal-Oriented and Anchored Writing Feedback from Experts and LLMs on Argumentative Essays"
+    },
+    "arxiv:2606.06284v1": {
+      "dates": [
+        "20260604"
+      ],
+      "first_seen_utc": "2026-06-05T06:40:46.296298+00:00",
+      "keywords": [],
+      "last_seen_utc": "2026-06-05T06:40:46.296299+00:00",
+      "title": "ToolChoiceConfusion: Causal Minimal Tool Filtering for Reliable LLM Agents"
+    },
+    "arxiv:2606.06286v1": {
+      "dates": [
+        "20260604"
+      ],
+      "first_seen_utc": "2026-06-05T06:40:46.295698+00:00",
+      "keywords": [],
+      "last_seen_utc": "2026-06-05T06:40:46.295700+00:00",
+      "title": "LLMs Can Leak Training Data But Do They Want To? A Propensity-Aware Evaluation of Memorization in LLMs"
+    },
+    "arxiv:2606.06294v1": {
+      "dates": [
+        "20260604"
+      ],
+      "first_seen_utc": "2026-06-05T06:40:46.296144+00:00",
+      "keywords": [],
+      "last_seen_utc": "2026-06-05T06:40:46.296146+00:00",
+      "title": "Towards One-to-Many Temporal Grounding"
+    },
+    "arxiv:2606.06302v1": {
+      "dates": [
+        "20260604"
+      ],
+      "first_seen_utc": "2026-06-05T06:40:46.296484+00:00",
+      "keywords": [],
+      "last_seen_utc": "2026-06-05T06:40:46.296485+00:00",
+      "title": "Tangram: Unlocking Non-Uniform KV Cache for Efficient Multi-turn LLM Serving"
+    },
+    "arxiv:2606.06303v1": {
+      "dates": [
+        "20260604"
+      ],
+      "first_seen_utc": "2026-06-05T06:40:46.296294+00:00",
+      "keywords": [],
+      "last_seen_utc": "2026-06-05T06:40:46.296295+00:00",
+      "title": "Plug-and-Play Guidance for Discrete Diffusion Models via Gradient-Informed Logit Correction"
+    },
+    "arxiv:2606.06309v1": {
+      "dates": [
+        "20260604"
+      ],
+      "first_seen_utc": "2026-06-05T06:40:46.296140+00:00",
+      "keywords": [],
+      "last_seen_utc": "2026-06-05T06:40:46.296141+00:00",
+      "title": "RhymeFlow: Training-Free Acceleration for Video Generation with Asynchronous Denoising Flow Scheduling"
+    },
+    "arxiv:2606.06320v1": {
+      "dates": [
+        "20260604"
+      ],
+      "first_seen_utc": "2026-06-05T06:40:46.295690+00:00",
+      "keywords": [],
+      "last_seen_utc": "2026-06-05T06:40:46.295693+00:00",
+      "title": "Learning What to Forget: Improving LLM Unlearning via Learned Token-Level Importance"
+    },
+    "arxiv:2606.06322v1": {
+      "dates": [
+        "20260604"
+      ],
+      "first_seen_utc": "2026-06-05T06:40:46.296290+00:00",
+      "keywords": [],
+      "last_seen_utc": "2026-06-05T06:40:46.296291+00:00",
+      "title": "DragOn: A Benchmark and Dataset for Drag-Based GUI Interactions"
+    },
+    "arxiv:2606.06337v1": {
+      "dates": [
+        "20260604"
+      ],
+      "first_seen_utc": "2026-06-05T06:40:46.296286+00:00",
+      "keywords": [],
+      "last_seen_utc": "2026-06-05T06:40:46.296287+00:00",
+      "title": "TokenMizer: Graph-Structured Session Memory for Long-Horizon LLM Context Management"
+    },
+    "arxiv:2606.06356v1": {
+      "dates": [
+        "20260604"
+      ],
+      "first_seen_utc": "2026-06-05T06:40:46.296282+00:00",
+      "keywords": [],
+      "last_seen_utc": "2026-06-05T06:40:46.296283+00:00",
+      "title": "Where Should Knowledge Enter? A Layered Framework for Knowledge Infusion in Multimodal Iterative Generative Mo"
+    },
+    "arxiv:2606.06357v1": {
+      "dates": [
+        "20260604"
+      ],
+      "first_seen_utc": "2026-06-05T06:40:46.296278+00:00",
+      "keywords": [],
+      "last_seen_utc": "2026-06-05T06:40:46.296279+00:00",
+      "title": "F3-Tokenizer: Taming Audio Autoencoder Latents for Understanding and Generation"
+    },
+    "arxiv:2606.06361v1": {
+      "dates": [
+        "20260604"
+      ],
+      "first_seen_utc": "2026-06-05T06:40:46.296125+00:00",
+      "keywords": [],
+      "last_seen_utc": "2026-06-05T06:40:46.296137+00:00",
+      "title": "Physics in 2-Steps: Locking Motion Priors Before Visual Refinement Erases Them"
+    },
+    "arxiv:2606.06363v1": {
+      "dates": [
+        "20260604"
+      ],
+      "first_seen_utc": "2026-06-05T06:40:46.296121+00:00",
+      "keywords": [],
+      "last_seen_utc": "2026-06-05T06:40:46.296123+00:00",
+      "title": "GMBFormer: An NDVI-Guided Global Memory Bank Transformer for Urban Green-Space Extraction from Ultra-High-Resolution Imagery"
+    },
+    "arxiv:2606.06364v1": {
+      "dates": [
+        "20260604"
+      ],
+      "first_seen_utc": "2026-06-05T06:40:46.296480+00:00",
+      "keywords": [],
+      "last_seen_utc": "2026-06-05T06:40:46.296481+00:00",
+      "title": "End-to-End Subgraph Detection with GraphDETR"
+    },
+    "arxiv:2606.06388v1": {
+      "dates": [
+        "20260604"
+      ],
+      "first_seen_utc": "2026-06-05T06:40:46.295683+00:00",
+      "keywords": [],
+      "last_seen_utc": "2026-06-05T06:40:46.295685+00:00",
+      "title": "Humans' ALMANAC: A Human Collaboration Dataset of Action-Level Mental Model Annotations for Agent Collaboration"
+    },
+    "arxiv:2606.06399v1": {
+      "dates": [
+        "20260604"
+      ],
+      "first_seen_utc": "2026-06-05T06:40:46.295676+00:00",
+      "keywords": [],
+      "last_seen_utc": "2026-06-05T06:40:46.295678+00:00",
+      "title": "CollabSim: A CSCW-Grounded Methodology for Investigating Collaborative Competence of LLM Agents through Controlled Multi-Agent Experiments"
+    },
+    "arxiv:2606.06420v1": {
+      "dates": [
+        "20260604"
+      ],
+      "first_seen_utc": "2026-06-05T06:40:46.295668+00:00",
+      "keywords": [],
+      "last_seen_utc": "2026-06-05T06:40:46.295671+00:00",
+      "title": "A Komi-Yazva--Russian Parallel Corpus and Evaluation Protocol for Zero- and Few-Shot LLM Translation"
+    },
+    "arxiv:2606.06428v1": {
+      "dates": [
+        "20260604"
+      ],
+      "first_seen_utc": "2026-06-05T06:40:46.295653+00:00",
+      "keywords": [],
+      "last_seen_utc": "2026-06-05T06:40:46.295656+00:00",
+      "title": "Reinforcement Learning Elicits Contextual Learning of Unseen Language Translation"
+    },
+    "arxiv:2606.06443v1": {
+      "dates": [
+        "20260604"
+      ],
+      "first_seen_utc": "2026-06-05T06:40:46.295646+00:00",
+      "keywords": [],
+      "last_seen_utc": "2026-06-05T06:40:46.295648+00:00",
+      "title": "Revising Context, Shifting Simulated Stance: Auditing LLM-Based Stance Simulation in Online Discussions"
+    },
+    "arxiv:2606.06444v1": {
+      "dates": [
+        "20260604"
+      ],
+      "first_seen_utc": "2026-06-05T06:40:46.295638+00:00",
+      "keywords": [],
+      "last_seen_utc": "2026-06-05T06:40:46.295640+00:00",
+      "title": "USAD 2.0: Scaling Representation Distillation for Universal Audio Understanding"
+    },
+    "arxiv:2606.06447v1": {
+      "dates": [
+        "20260604"
+      ],
+      "first_seen_utc": "2026-06-05T06:40:46.295630+00:00",
+      "keywords": [],
+      "last_seen_utc": "2026-06-05T06:40:46.295633+00:00",
+      "title": "Latent Reasoning with Normalizing Flows"
+    },
+    "arxiv:2606.06453v1": {
+      "dates": [
+        "20260604"
+      ],
+      "first_seen_utc": "2026-06-05T06:40:46.296274+00:00",
+      "keywords": [],
+      "last_seen_utc": "2026-06-05T06:40:46.296276+00:00",
+      "title": "Vortex: Efficient and Programmable Sparse Attention Serving for AI Agents"
+    },
+    "arxiv:2606.06454v1": {
+      "dates": [
+        "20260604"
+      ],
+      "first_seen_utc": "2026-06-05T06:40:46.295621+00:00",
+      "keywords": [],
+      "last_seen_utc": "2026-06-05T06:40:46.295624+00:00",
+      "title": "Scaffold, Not Vocabulary? A Controlled, Two-Tier, Pre-Registered Study of a Popperian Code-Generation Skill"
+    },
+    "arxiv:2606.06462v1": {
+      "dates": [
+        "20260604"
+      ],
+      "first_seen_utc": "2026-06-05T06:40:46.296270+00:00",
+      "keywords": [],
+      "last_seen_utc": "2026-06-05T06:40:46.296271+00:00",
+      "title": "Benchmark Everything Everywhere All at Once"
+    },
+    "arxiv:2606.06464v1": {
+      "dates": [
+        "20260604"
+      ],
+      "first_seen_utc": "2026-06-05T06:40:46.295613+00:00",
+      "keywords": [],
+      "last_seen_utc": "2026-06-05T06:40:46.295616+00:00",
+      "title": "Human Adults and LLMs as Scientists: Who Benefits from Active Exploration?"
+    },
+    "arxiv:2606.06467v1": {
+      "dates": [
+        "20260604"
+      ],
+      "first_seen_utc": "2026-06-05T06:40:46.295604+00:00",
+      "keywords": [],
+      "last_seen_utc": "2026-06-05T06:40:46.295607+00:00",
+      "title": "You Only Index Once: Cross-Layer Sparse Attention with Shared Routing"
+    },
+    "arxiv:2606.06468v1": {
+      "dates": [
+        "20260604"
+      ],
+      "first_seen_utc": "2026-06-05T06:40:46.296266+00:00",
+      "keywords": [],
+      "last_seen_utc": "2026-06-05T06:40:46.296267+00:00",
+      "title": "Goedel-Architect: Streamlining Formal Theorem Proving with Blueprint Generation and Refinement"
+    },
+    "arxiv:2606.06470v1": {
+      "dates": [
+        "20260604"
+      ],
+      "first_seen_utc": "2026-06-05T06:40:46.296262+00:00",
+      "keywords": [],
+      "last_seen_utc": "2026-06-05T06:40:46.296263+00:00",
+      "title": "PC Layer: Polynomial Weight Preconditioning for Improving LLM Pre-Training"
+    },
+    "arxiv:2606.06475v1": {
+      "dates": [
+        "20260604"
+      ],
+      "first_seen_utc": "2026-06-05T06:40:46.296258+00:00",
+      "keywords": [],
+      "last_seen_utc": "2026-06-05T06:40:46.296259+00:00",
+      "title": "RREDCoT: Segment-Level Reward Redistribution for Reasoning Models"
+    },
+    "arxiv:2606.06476v1": {
+      "dates": [
+        "20260604"
+      ],
+      "first_seen_utc": "2026-06-05T06:40:46.296117+00:00",
+      "keywords": [],
+      "last_seen_utc": "2026-06-05T06:40:46.296119+00:00",
+      "title": "Thinking with Imagination: Agentic Visual Spatial Reasoning with World Simulators"
+    },
+    "arxiv:2606.06479v1": {
+      "dates": [
+        "20260604"
+      ],
+      "first_seen_utc": "2026-06-05T06:40:46.296253+00:00",
+      "keywords": [],
+      "last_seen_utc": "2026-06-05T06:40:46.296255+00:00",
+      "title": "Pretraining Recurrent Networks without Recurrence"
+    },
+    "arxiv:2606.06481v1": {
+      "dates": [
+        "20260604"
+      ],
+      "first_seen_utc": "2026-06-05T06:40:46.295579+00:00",
+      "keywords": [],
+      "last_seen_utc": "2026-06-05T06:40:46.295595+00:00",
+      "title": "Operation-Guided Progressive Human-to-AI Text Transformation Benchmark for Multi-Granularity AI-Text Detection"
+    },
+    "arxiv:2606.06485v1": {
+      "dates": [
+        "20260604"
+      ],
+      "first_seen_utc": "2026-06-05T06:40:46.296113+00:00",
+      "keywords": [],
+      "last_seen_utc": "2026-06-05T06:40:46.296115+00:00",
+      "title": "PAR3D: A Unified 3D-MLLM with Part-Aware Representation for Scene Understanding"
     }
   },
-  "updated_at": "2026-06-03T04:10:31.150088+00:00",
+  "updated_at": "2026-06-05T06:40:46.296623+00:00",
   "version": 1
 }
