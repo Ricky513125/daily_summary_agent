@@ -53225,8 +53225,512 @@
       "keywords": [],
       "last_seen_utc": "2026-08-14T04:07:34.135083+00:00",
       "title": "QuoteBench: How Matched Scores Can Hide Command-Path Failures"
+    },
+    "arxiv:2608.15975v1": {
+      "dates": [
+        "20260817"
+      ],
+      "first_seen_utc": "2026-08-18T02:54:57.723732+00:00",
+      "keywords": [],
+      "last_seen_utc": "2026-08-18T02:54:57.723735+00:00",
+      "title": "A Scalable Pipeline for LLM-Teacher Distillation Labeling: Work-Stealing Job Scheduling and Memory-Aware GPU Concurrency"
+    },
+    "arxiv:2608.15976v1": {
+      "dates": [
+        "20260817"
+      ],
+      "first_seen_utc": "2026-08-18T02:54:57.723728+00:00",
+      "keywords": [],
+      "last_seen_utc": "2026-08-18T02:54:57.723729+00:00",
+      "title": "Fiber Fingerprints of Hidden Learning-State Dynamics"
+    },
+    "arxiv:2608.15980v1": {
+      "dates": [
+        "20260817"
+      ],
+      "first_seen_utc": "2026-08-18T02:54:57.723724+00:00",
+      "keywords": [],
+      "last_seen_utc": "2026-08-18T02:54:57.723725+00:00",
+      "title": "Whose Gold? Annotator-Pool Disagreement Is Large at the Item Level, and Hidden by Small Leaderboards"
+    },
+    "arxiv:2608.16010v1": {
+      "dates": [
+        "20260817"
+      ],
+      "first_seen_utc": "2026-08-18T02:54:57.723604+00:00",
+      "keywords": [],
+      "last_seen_utc": "2026-08-18T02:54:57.723605+00:00",
+      "title": "Breaking the Compression Barrier: Cross-Architecture Compression Boundary Learning via Reverse Regrowth"
+    },
+    "arxiv:2608.16011v1": {
+      "dates": [
+        "20260817"
+      ],
+      "first_seen_utc": "2026-08-18T02:54:57.723599+00:00",
+      "keywords": [],
+      "last_seen_utc": "2026-08-18T02:54:57.723601+00:00",
+      "title": "ReRef-3D: A Benchmark for Spatial Referring Expression-Guided 3D Scene Rearrangement"
+    },
+    "arxiv:2608.16015v1": {
+      "dates": [
+        "20260817"
+      ],
+      "first_seen_utc": "2026-08-18T02:54:57.723595+00:00",
+      "keywords": [],
+      "last_seen_utc": "2026-08-18T02:54:57.723596+00:00",
+      "title": "Multi-scale Decomposed Convolution Refinement Network for Visible-Infrared Person Re-Identification"
+    },
+    "arxiv:2608.16050v1": {
+      "dates": [
+        "20260817"
+      ],
+      "first_seen_utc": "2026-08-18T02:54:57.723720+00:00",
+      "keywords": [],
+      "last_seen_utc": "2026-08-18T02:54:57.723721+00:00",
+      "title": "Structured Prediction for Scalable Spreadsheet Table Understanding: From Cell Types to Table Ranges (Extended Version)"
+    },
+    "arxiv:2608.16072v1": {
+      "dates": [
+        "20260817"
+      ],
+      "first_seen_utc": "2026-08-18T02:54:57.723716+00:00",
+      "keywords": [],
+      "last_seen_utc": "2026-08-18T02:54:57.723717+00:00",
+      "title": "Learn What's Left, Not What's Mastered: Saturation Aware Advantage Reweighting for Multi-Reward Policy Optimization"
+    },
+    "arxiv:2608.16081v1": {
+      "dates": [
+        "20260817"
+      ],
+      "first_seen_utc": "2026-08-18T02:54:57.723591+00:00",
+      "keywords": [],
+      "last_seen_utc": "2026-08-18T02:54:57.723592+00:00",
+      "title": "SafeGesture: Evaluating Fine-Grained Hand Gesture Understanding in Vision-Language Models through Scenario-Conditioned Safety Interpretation"
+    },
+    "arxiv:2608.16082v1": {
+      "dates": [
+        "20260817"
+      ],
+      "first_seen_utc": "2026-08-18T02:54:57.723711+00:00",
+      "keywords": [],
+      "last_seen_utc": "2026-08-18T02:54:57.723713+00:00",
+      "title": "Towards Reasonable Molecular Structure Elucidation from Infrared Spectroscopy with Chemical Feedback"
+    },
+    "arxiv:2608.16097v1": {
+      "dates": [
+        "20260817"
+      ],
+      "first_seen_utc": "2026-08-18T02:54:57.723705+00:00",
+      "keywords": [],
+      "last_seen_utc": "2026-08-18T02:54:57.723707+00:00",
+      "title": "Unifying Graph Neural Networks Through a Common Layer Equation"
+    },
+    "arxiv:2608.16104v1": {
+      "dates": [
+        "20260817"
+      ],
+      "first_seen_utc": "2026-08-18T02:54:57.723586+00:00",
+      "keywords": [],
+      "last_seen_utc": "2026-08-18T02:54:57.723588+00:00",
+      "title": "Nexus: Structured Synergy for Efficient Text-to-Image Generation using Rectified Flow Model"
+    },
+    "arxiv:2608.16143v1": {
+      "dates": [
+        "20260817"
+      ],
+      "first_seen_utc": "2026-08-18T02:54:57.723581+00:00",
+      "keywords": [],
+      "last_seen_utc": "2026-08-18T02:54:57.723583+00:00",
+      "title": "AnyTalk: Speech Animation for Arbitrary Characters Leveraging a Video Generation Model"
+    },
+    "arxiv:2608.16167v1": {
+      "dates": [
+        "20260817"
+      ],
+      "first_seen_utc": "2026-08-18T02:54:57.723701+00:00",
+      "keywords": [],
+      "last_seen_utc": "2026-08-18T02:54:57.723702+00:00",
+      "title": "RadioVIL: Anomaly-Aware Diffusion Models for Radio Map Inpainting and Zero-Shot Vehicle Localization"
+    },
+    "arxiv:2608.16180v1": {
+      "dates": [
+        "20260817"
+      ],
+      "first_seen_utc": "2026-08-18T02:54:57.723696+00:00",
+      "keywords": [],
+      "last_seen_utc": "2026-08-18T02:54:57.723698+00:00",
+      "title": "Demystifying Oversmoothing in Sheaf Neural Networks: An Index-Theoretic Criterion"
+    },
+    "arxiv:2608.16182v1": {
+      "dates": [
+        "20260817"
+      ],
+      "first_seen_utc": "2026-08-18T02:54:57.723692+00:00",
+      "keywords": [],
+      "last_seen_utc": "2026-08-18T02:54:57.723694+00:00",
+      "title": "Understanding and Stabilizing Deep Q-Learning via Controlled Bootstrapping and Regulated Value Dynamics"
+    },
+    "arxiv:2608.16201v1": {
+      "dates": [
+        "20260817"
+      ],
+      "first_seen_utc": "2026-08-18T02:54:57.723688+00:00",
+      "keywords": [],
+      "last_seen_utc": "2026-08-18T02:54:57.723690+00:00",
+      "title": "Multi-Granularity Sentiment Integration for LLM-Based Multimodal Sentiment Analysis"
+    },
+    "arxiv:2608.16210v1": {
+      "dates": [
+        "20260817"
+      ],
+      "first_seen_utc": "2026-08-18T02:54:57.723684+00:00",
+      "keywords": [],
+      "last_seen_utc": "2026-08-18T02:54:57.723686+00:00",
+      "title": "Conditional Evaluation of Language Models with Cheap Auxiliary Signals"
+    },
+    "arxiv:2608.16216v1": {
+      "dates": [
+        "20260817"
+      ],
+      "first_seen_utc": "2026-08-18T02:54:57.723680+00:00",
+      "keywords": [],
+      "last_seen_utc": "2026-08-18T02:54:57.723682+00:00",
+      "title": "Beyond Peak Backlog: Conditional Energy and Temporal Geometry in Capacity-Constrained Delayed Bandit Optimization"
+    },
+    "arxiv:2608.16225v1": {
+      "dates": [
+        "20260817"
+      ],
+      "first_seen_utc": "2026-08-18T02:54:57.723577+00:00",
+      "keywords": [],
+      "last_seen_utc": "2026-08-18T02:54:57.723578+00:00",
+      "title": "PCT-Prompt: A Prompt-Guided Transformer Framework for Dense Prediction Tasks in Point Clouds"
+    },
+    "arxiv:2608.16249v1": {
+      "dates": [
+        "20260817"
+      ],
+      "first_seen_utc": "2026-08-18T02:54:57.723676+00:00",
+      "keywords": [],
+      "last_seen_utc": "2026-08-18T02:54:57.723677+00:00",
+      "title": "SAUL: Sharpness-Aware Augmented-Lagrangian Unlearning"
+    },
+    "arxiv:2608.16259v1": {
+      "dates": [
+        "20260817"
+      ],
+      "first_seen_utc": "2026-08-18T02:54:57.723573+00:00",
+      "keywords": [],
+      "last_seen_utc": "2026-08-18T02:54:57.723574+00:00",
+      "title": "Defake-o3: From Speculative Rationales to Verifiable Evidence for Explainable AIGI Detection"
+    },
+    "arxiv:2608.16284v1": {
+      "dates": [
+        "20260817"
+      ],
+      "first_seen_utc": "2026-08-18T02:54:57.723569+00:00",
+      "keywords": [],
+      "last_seen_utc": "2026-08-18T02:54:57.723570+00:00",
+      "title": "TransAnyText: Translating Arbitrary Text in E-commerce Images via Structured Visual Generation"
+    },
+    "arxiv:2608.16310v1": {
+      "dates": [
+        "20260817"
+      ],
+      "first_seen_utc": "2026-08-18T02:54:57.723564+00:00",
+      "keywords": [],
+      "last_seen_utc": "2026-08-18T02:54:57.723566+00:00",
+      "title": "Cross-View Urban Sensing: Mapping Subjective Streetscape Perception via AlphaEarth Embeddings and Urban Context"
+    },
+    "arxiv:2608.16320v1": {
+      "dates": [
+        "20260817"
+      ],
+      "first_seen_utc": "2026-08-18T02:54:57.723559+00:00",
+      "keywords": [],
+      "last_seen_utc": "2026-08-18T02:54:57.723561+00:00",
+      "title": "StreamOPD: A Post-Training Recipe with Spatio-Temporal Cue Gating for Streaming Video Understanding"
+    },
+    "arxiv:2608.16336v1": {
+      "dates": [
+        "20260817"
+      ],
+      "first_seen_utc": "2026-08-18T02:54:57.723672+00:00",
+      "keywords": [],
+      "last_seen_utc": "2026-08-18T02:54:57.723673+00:00",
+      "title": "Beyond Binary Priorities: Multi-Tier SLA Scheduling for Large Language Model Serving"
+    },
+    "arxiv:2608.16340v1": {
+      "dates": [
+        "20260817"
+      ],
+      "first_seen_utc": "2026-08-18T02:54:57.723668+00:00",
+      "keywords": [],
+      "last_seen_utc": "2026-08-18T02:54:57.723669+00:00",
+      "title": "LiD-GLM: Lipschitz-constrained Deep Generalized Linear Models"
+    },
+    "arxiv:2608.16347v1": {
+      "dates": [
+        "20260817"
+      ],
+      "first_seen_utc": "2026-08-18T02:54:57.723662+00:00",
+      "keywords": [],
+      "last_seen_utc": "2026-08-18T02:54:57.723663+00:00",
+      "title": "Architecture-Dependent Causal Transfer of Activation States Across Large Language Models"
+    },
+    "arxiv:2608.16380v1": {
+      "dates": [
+        "20260817"
+      ],
+      "first_seen_utc": "2026-08-18T02:54:57.723554+00:00",
+      "keywords": [],
+      "last_seen_utc": "2026-08-18T02:54:57.723556+00:00",
+      "title": "Synthetic Data Augmentation for Satellite-Based Analysis of Battle-Damaged Agricultural Fields in Ukraine"
+    },
+    "arxiv:2608.16407v1": {
+      "dates": [
+        "20260817"
+      ],
+      "first_seen_utc": "2026-08-18T02:54:57.723658+00:00",
+      "keywords": [],
+      "last_seen_utc": "2026-08-18T02:54:57.723659+00:00",
+      "title": "POI Recommendation with LLM-Augmented Multi-Graph Learning and Contrastive Alignment"
+    },
+    "arxiv:2608.16409v1": {
+      "dates": [
+        "20260817"
+      ],
+      "first_seen_utc": "2026-08-18T02:54:57.723654+00:00",
+      "keywords": [],
+      "last_seen_utc": "2026-08-18T02:54:57.723655+00:00",
+      "title": "SoftModel: A Neural Model That Grows Its Own Topology -- Governed Structural Growth for Continual In-Service Learning"
+    },
+    "arxiv:2608.16416v1": {
+      "dates": [
+        "20260817"
+      ],
+      "first_seen_utc": "2026-08-18T02:54:57.723649+00:00",
+      "keywords": [],
+      "last_seen_utc": "2026-08-18T02:54:57.723651+00:00",
+      "title": "Evolving Executable Pipeline Programs for AutoML with Language Models"
+    },
+    "arxiv:2608.16473v1": {
+      "dates": [
+        "20260817"
+      ],
+      "first_seen_utc": "2026-08-18T02:54:57.723645+00:00",
+      "keywords": [],
+      "last_seen_utc": "2026-08-18T02:54:57.723646+00:00",
+      "title": "Reference-free logged energy-oracle recovery for neural approximations of symmetric coercive variational problems: conforming Riesz reconstruction and archive-level selection"
+    },
+    "arxiv:2608.16477v1": {
+      "dates": [
+        "20260817"
+      ],
+      "first_seen_utc": "2026-08-18T02:54:57.723640+00:00",
+      "keywords": [],
+      "last_seen_utc": "2026-08-18T02:54:57.723642+00:00",
+      "title": "Pallas: A Proactive KV Cache Migration Framework for LLM Inference in AI-RAN"
+    },
+    "arxiv:2608.16480v1": {
+      "dates": [
+        "20260817"
+      ],
+      "first_seen_utc": "2026-08-18T02:54:57.723549+00:00",
+      "keywords": [],
+      "last_seen_utc": "2026-08-18T02:54:57.723551+00:00",
+      "title": "RISE: Roadside Infrastructure Sequence Understanding across 3D Tracking and Structured Vision-Language Reasoning"
+    },
+    "arxiv:2608.16484v1": {
+      "dates": [
+        "20260817"
+      ],
+      "first_seen_utc": "2026-08-18T02:54:57.723544+00:00",
+      "keywords": [],
+      "last_seen_utc": "2026-08-18T02:54:57.723546+00:00",
+      "title": "Remote-Sensing City Layout Extraction with MLLM"
+    },
+    "arxiv:2608.16514v1": {
+      "dates": [
+        "20260817"
+      ],
+      "first_seen_utc": "2026-08-18T02:54:57.723540+00:00",
+      "keywords": [],
+      "last_seen_utc": "2026-08-18T02:54:57.723542+00:00",
+      "title": "Matched Outcomes, Divergent Gaze: How Foveated MLLMs Search Compared to Humans"
+    },
+    "arxiv:2608.16546v1": {
+      "dates": [
+        "20260817"
+      ],
+      "first_seen_utc": "2026-08-18T02:54:57.723536+00:00",
+      "keywords": [],
+      "last_seen_utc": "2026-08-18T02:54:57.723537+00:00",
+      "title": "Supervising the Path to Fine Scales: GalerkinFlow for Scientific-Field and Image Super-Resolution"
+    },
+    "arxiv:2608.16585v1": {
+      "dates": [
+        "20260817"
+      ],
+      "first_seen_utc": "2026-08-18T02:54:57.723529+00:00",
+      "keywords": [],
+      "last_seen_utc": "2026-08-18T02:54:57.723531+00:00",
+      "title": "SQuad: Sub-Quadratic Attention Distillation for Efficient Video Generation"
+    },
+    "arxiv:2608.16622v1": {
+      "dates": [
+        "20260817"
+      ],
+      "first_seen_utc": "2026-08-18T02:54:57.723525+00:00",
+      "keywords": [],
+      "last_seen_utc": "2026-08-18T02:54:57.723526+00:00",
+      "title": "HarmTrace: Anchor-Calibrated Decoupled Optimization for Fine-Grained Target Identification in Harmful Memes"
+    },
+    "arxiv:2608.16632v1": {
+      "dates": [
+        "20260817"
+      ],
+      "first_seen_utc": "2026-08-18T02:54:57.723520+00:00",
+      "keywords": [],
+      "last_seen_utc": "2026-08-18T02:54:57.723522+00:00",
+      "title": "DRAFE: Domain-Robust Asymmetric Fusion of Heterogeneous Detection Transformers for Cross-City Fine-Grained Traffic Object Detection"
+    },
+    "arxiv:2608.16645v1": {
+      "dates": [
+        "20260817"
+      ],
+      "first_seen_utc": "2026-08-18T02:54:57.723485+00:00",
+      "keywords": [],
+      "last_seen_utc": "2026-08-18T02:54:57.723487+00:00",
+      "title": "Reconstruction: A Blind Benchmark for Recovering Research Ideas from Pre-Publication Bibliographies"
+    },
+    "arxiv:2608.16647v1": {
+      "dates": [
+        "20260817"
+      ],
+      "first_seen_utc": "2026-08-18T02:54:57.723479+00:00",
+      "keywords": [],
+      "last_seen_utc": "2026-08-18T02:54:57.723481+00:00",
+      "title": "Every Coin Has Two Sides: On the Dual Nature of Generalization in On-Policy Distillation of Large Language Models"
+    },
+    "arxiv:2608.16650v1": {
+      "dates": [
+        "20260817"
+      ],
+      "first_seen_utc": "2026-08-18T02:54:57.723474+00:00",
+      "keywords": [],
+      "last_seen_utc": "2026-08-18T02:54:57.723476+00:00",
+      "title": "PCA-guided Activation Scaling for Monotonic Bidirectional Control over LLM Sycophancy"
+    },
+    "arxiv:2608.16664v1": {
+      "dates": [
+        "20260817"
+      ],
+      "first_seen_utc": "2026-08-18T02:54:57.723634+00:00",
+      "keywords": [],
+      "last_seen_utc": "2026-08-18T02:54:57.723636+00:00",
+      "title": "Random Quadratic Form with random forcing: Metastable synchronization by noise"
+    },
+    "arxiv:2608.16710v1": {
+      "dates": [
+        "20260817"
+      ],
+      "first_seen_utc": "2026-08-18T02:54:57.723629+00:00",
+      "keywords": [],
+      "last_seen_utc": "2026-08-18T02:54:57.723631+00:00",
+      "title": "The Ethical Decision Head: Operationalizing Normative Ethics in Autonomous Vehicles via Reinforcement Learning from Human Feedback"
+    },
+    "arxiv:2608.16739v1": {
+      "dates": [
+        "20260817"
+      ],
+      "first_seen_utc": "2026-08-18T02:54:57.723625+00:00",
+      "keywords": [],
+      "last_seen_utc": "2026-08-18T02:54:57.723627+00:00",
+      "title": "Le Critique: Privileged Value Functions for LLM Reinforcement Learning"
+    },
+    "arxiv:2608.16747v1": {
+      "dates": [
+        "20260817"
+      ],
+      "first_seen_utc": "2026-08-18T02:54:57.723621+00:00",
+      "keywords": [],
+      "last_seen_utc": "2026-08-18T02:54:57.723622+00:00",
+      "title": "Would this change your answer? Evaluating Explanations of LLM Behavior In The Wild with Counterfactual Experiments"
+    },
+    "arxiv:2608.16756v1": {
+      "dates": [
+        "20260817"
+      ],
+      "first_seen_utc": "2026-08-18T02:54:57.723515+00:00",
+      "keywords": [],
+      "last_seen_utc": "2026-08-18T02:54:57.723517+00:00",
+      "title": "Binarized High-Efficiency RAW Video Restoration and Beyond"
+    },
+    "arxiv:2608.16760v1": {
+      "dates": [
+        "20260817"
+      ],
+      "first_seen_utc": "2026-08-18T02:54:57.723617+00:00",
+      "keywords": [],
+      "last_seen_utc": "2026-08-18T02:54:57.723618+00:00",
+      "title": "On the Principles Behind Neural Network Optimizers"
+    },
+    "arxiv:2608.16786v1": {
+      "dates": [
+        "20260817"
+      ],
+      "first_seen_utc": "2026-08-18T02:54:57.723510+00:00",
+      "keywords": [],
+      "last_seen_utc": "2026-08-18T02:54:57.723512+00:00",
+      "title": "Revisiting Classifier-Free Guidance Methods in Latent Diffusion Models"
+    },
+    "arxiv:2608.16793v1": {
+      "dates": [
+        "20260817"
+      ],
+      "first_seen_utc": "2026-08-18T02:54:57.723503+00:00",
+      "keywords": [],
+      "last_seen_utc": "2026-08-18T02:54:57.723507+00:00",
+      "title": "PixRestore: Unified Image Restoration via Pixel Diffusion Transformer"
+    },
+    "arxiv:2608.16812v1": {
+      "dates": [
+        "20260817"
+      ],
+      "first_seen_utc": "2026-08-18T02:54:57.723494+00:00",
+      "keywords": [],
+      "last_seen_utc": "2026-08-18T02:54:57.723496+00:00",
+      "title": "Unlocking the Potential of Image Editing via Concept Scaling and Dense Supervision"
+    },
+    "arxiv:2608.16834v1": {
+      "dates": [
+        "20260817"
+      ],
+      "first_seen_utc": "2026-08-18T02:54:57.723467+00:00",
+      "keywords": [],
+      "last_seen_utc": "2026-08-18T02:54:57.723470+00:00",
+      "title": "Model Hypnosis: Strong control of AI via additive subliminal effects"
+    },
+    "arxiv:2608.16868v1": {
+      "dates": [
+        "20260817"
+      ],
+      "first_seen_utc": "2026-08-18T02:54:57.723445+00:00",
+      "keywords": [],
+      "last_seen_utc": "2026-08-18T02:54:57.723457+00:00",
+      "title": "Towards Computational Provenance: Carrying Causal-State Evidence in Generated Text"
+    },
+    "arxiv:2608.16887v1": {
+      "dates": [
+        "20260817"
+      ],
+      "first_seen_utc": "2026-08-18T02:54:57.723490+00:00",
+      "keywords": [],
+      "last_seen_utc": "2026-08-18T02:54:57.723491+00:00",
+      "title": "An Empirical Study of Training Pixel-Space Text-to-Image Diffusion Models"
     }
   },
-  "updated_at": "2026-08-14T04:07:34.135396+00:00",
+  "updated_at": "2026-08-18T02:54:57.723792+00:00",
   "version": 1
 }
